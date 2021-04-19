@@ -1,0 +1,96 @@
+<xml>
+    <images>
+        <image id="azure.skins.button" src="themes/azure/skins/button.tga" alpha="themes/azure/skins/button.tga"/>
+        <image id="azure.skins.back" src="themes/azure/skins/back.tga" alpha="themes/azure/skins/back.tga"/>
+        <image id="azure.skins.decoration" src="themes/azure/skins/decoration.tga" alpha="themes/azure/skins/decoration.tga"/>
+        <image id="azure.skins.frame" src="themes/azure/skins/frame.tga" alpha="themes/azure/skins/frame.tga"/>
+        <image id="azure.skins.frame_edge" src="themes/azure/skins/frame_edge.tga" alpha="themes/azure/skins/frame_edge.tga"/>
+        <image id="azure.skins.frame_and_shadow" src="themes/azure/skins/frame_and_shadow.tga" alpha="themes/azure/skins/frame_and_shadow.tga"/>
+        <image id="azure.skins.selection" src="themes/azure/skins/selection.tga" alpha="themes/azure/skins/selection.tga"/>
+        <image id="azure.skins.table" src="themes/azure/skins/table.tga" alpha="themes/azure/skins/table.tga"/>
+        <image id="azure.skins.slider_vertical" src="themes/azure/skins/slider_vertical.tga" alpha="themes/azure/skins/slider_vertical.tga"/>
+        <image id="azure.skins.slider_horizontal" src="themes/azure/skins/slider_horizontal.tga" alpha="themes/azure/skins/slider_horizontal.tga"/>
+        <image id="azure.skins.grip_vertical" src="themes/azure/skins/grip_vertical.tga" alpha="themes/azure/skins/grip_vertical.tga"/>
+        <image id="azure.skins.grip_horizontal" src="themes/azure/skins/grip_horizontal.tga" alpha="themes/azure/skins/grip_horizontal.tga"/>
+        <image id="azure.skins.line_vertical" src="themes/azure/skins/line_vertical.tga" alpha="themes/azure/skins/line_vertical.tga"/>
+        <image id="azure.skins.line_horizontal" src="themes/azure/skins/line_horizontal.tga" alpha="themes/azure/skins/line_horizontal.tga"/>
+        <image id="azure.skins.slider_vertical_and_shadow" src="themes/azure/skins/slider_vertical_and_shadow.tga" alpha="themes/azure/skins/slider_vertical_and_shadow.tga"/>
+        <image id="azure.skins.grip_vertical_and_shadow" src="themes/azure/skins/grip_vertical_and_shadow.tga" alpha="themes/azure/skins/grip_vertical_and_shadow.tga"/>
+    </images>
+
+    <mappings>
+        <map id="azure.skins.empty" values="0"/>
+        <map id="azure.skins.button" values="0,3,1,4"/>
+        <map id="azure.skins.switch" values="0,2,1,4"/>
+        <map id="azure.skins.list" values="2,8,10"/>
+        <map id="azure.skins.slider" values="0,1,2,4,6,7"/>
+        <map id="azure.skins.slider_and_shadow" values="0,4"/>
+        <map id="azure.skins.grip" values="0,1,4"/>
+    </mappings>
+
+    <skins>
+        <skinset id="azure.skins.empty.set" mapping="azure.skins.empty">
+            <parametric border_type="NONE" use_body="0"/>
+        </skinset>
+        
+        <dicer id="azure.skins.button.dicer" image_ids="azure.skins.button.source" img="azure.skins.button" columns="1" rows="4"/>
+        <skinset id="azure.skins.button.set" mapping="azure.skins.button">
+            <frame img="azure.skins.button.source[0]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="azure.skins.button.source[1]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="azure.skins.button.source[2]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="azure.skins.button.source[3]" left="15" right="15" top="15" bottom="15"/>
+        </skinset>
+        
+        <skinset id="azure.skins.switch.set" mapping="azure.skins.switch">
+            <frame img="azure.skins.button.source[0]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="azure.skins.button.source[1]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="azure.skins.button.source[2]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="azure.skins.button.source[3]" left="15" right="15" top="15" bottom="15"/>
+        </skinset>
+        
+        <dicer id="azure.skins.selection.dicer" image_ids="azure.skins.selection.source" img="azure.skins.selection" columns="1" rows="2"/>
+        <frame id="azure.skins.selection.selected" img="azure.skins.selection.source[0]" left="8" right="8" top="8" bottom="8" dimensions="128,32"/>
+        <frame id="azure.skins.selection.focused" img="azure.skins.selection.source[1]" left="8" right="8" top="8" bottom="8" dimensions="128,32"/>
+        <skinmixer id="azure.skins.list.set" mapping="azure.skins.list">
+            <state>
+                <mix id="azure.skins.selection.selected"/>
+            </state>
+            <state>
+                <mix id="azure.skins.selection.focused"/>
+            </state>
+            <state>
+                <mix id="azure.skins.selection.selected"/>
+                <mix id="azure.skins.selection.focused"/>
+            </state>
+        </skinmixer>
+
+        <image id="azure.skins.back" img="azure.skins.back"/>
+        <frame id="azure.skins.decoration" img="azure.skins.decoration" left="32" right="32" top="40" bottom="50" nointerior="1"/>
+
+        <frame id="azure.skins.frame" img="azure.skins.frame" left="8" right="8" top="8" bottom="8"/>
+        <frame id="azure.skins.frame_edge" img="azure.skins.frame_edge" left="8" right="8" top="8" bottom="8" nointerior="1"/>
+        <frame id="azure.skins.frame_and_shadow" img="azure.skins.frame_and_shadow" left="24" right="64" top="24" bottom="64"/>
+
+        <table id="azure.skins.table" img="azure.skins.table" xcut="8,116,122" ycut="8,116,122"/>
+
+        <skinset id="azure.skins.slider_vertical.set" mapping="azure.skins.slider">
+            <bars img="azure.skins.slider_vertical" rows="1" columns="3" cut="32,96,96" orientation="vertical"/>
+            <bars img="azure.skins.grip_vertical" rows="1" columns="3" cut="40,72,90" orientation="vertical"/>
+        </skinset>
+        
+        <skinset id="azure.skins.slider_horizontal.set" mapping="azure.skins.slider">
+            <bars img="azure.skins.slider_horizontal" rows="3" columns="1" cut="32,96,96" orientation="horizontal"/>
+            <bars img="azure.skins.grip_horizontal" rows="3" columns="1" cut="40,72,90" orientation="horizontal"/>
+        </skinset>
+        
+        <skinset id="azure.skins.slider_vertical_and_shadow.set" mapping="azure.skins.slider_and_shadow">
+            <bar img="azure.skins.slider_vertical_and_shadow" cut="32,64,64" orientation="vertical"/>
+            <bars img="azure.skins.grip_vertical_and_shadow" cut="40,64,80" orientation="vertical"/>
+        </skinset>
+        
+        <bars id="azure.skins.grip_horizontal.set" img="azure.skins.grip_horizontal" mapping="azure.skins.grip" rows="3" columns="1" cut="40,72,90" orientation="horizontal"/>
+
+        <bar id="azure.skins.line_vertical" img="azure.skins.line_vertical" cut="32,96,96" orientation="vertical"/>
+        <bar id="azure.skins.line_horizontal" img="azure.skins.line_horizontal" cut="32,96,96" orientation="horizontal"/>
+    </skins>
+</xml>

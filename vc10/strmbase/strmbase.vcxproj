@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F5EDE846-A8CF-46EB-AF4E-59AD3A204B0C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../;../../strmbase/;$(DXSDK)/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UTGS_STATIC_MSVC10;WIN32;_DEBUG;_LIB</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)strmbase.lib</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm800
+ %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>../../;../../strmbase/;$(DXSDK)/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UTGS_STATIC_MSVC10;WIN32;NDEBUG;_LIB</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)strmbase.lib</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\strmbase\amextra.cpp" />
+    <ClCompile Include="..\..\strmbase\amfilter.cpp" />
+    <ClCompile Include="..\..\strmbase\amvideo.cpp" />
+    <ClCompile Include="..\..\strmbase\combase.cpp" />
+    <ClCompile Include="..\..\strmbase\cprop.cpp" />
+    <ClCompile Include="..\..\strmbase\ctlutil.cpp" />
+    <ClCompile Include="..\..\strmbase\ddmm.cpp" />
+    <ClCompile Include="..\..\strmbase\dllentry.cpp" />
+    <ClCompile Include="..\..\strmbase\dllsetup.cpp" />
+    <ClCompile Include="..\..\strmbase\mtype.cpp" />
+    <ClCompile Include="..\..\strmbase\outputq.cpp" />
+    <ClCompile Include="..\..\strmbase\pstream.cpp" />
+    <ClCompile Include="..\..\strmbase\pullpin.cpp" />
+    <ClCompile Include="..\..\strmbase\refclock.cpp" />
+    <ClCompile Include="..\..\strmbase\renbase.cpp" />
+    <ClCompile Include="..\..\strmbase\schedule.cpp" />
+    <ClCompile Include="..\..\strmbase\seekpt.cpp" />
+    <ClCompile Include="..\..\strmbase\source.cpp" />
+    <ClCompile Include="..\..\strmbase\strmctl.cpp" />
+    <ClCompile Include="..\..\strmbase\sysclock.cpp" />
+    <ClCompile Include="..\..\strmbase\transfrm.cpp" />
+    <ClCompile Include="..\..\strmbase\transip.cpp" />
+    <ClCompile Include="..\..\strmbase\videoctl.cpp" />
+    <ClCompile Include="..\..\strmbase\vtrans.cpp" />
+    <ClCompile Include="..\..\strmbase\winctrl.cpp" />
+    <ClCompile Include="..\..\strmbase\winutil.cpp" />
+    <ClCompile Include="..\..\strmbase\wxdebug.cpp" />
+    <ClCompile Include="..\..\strmbase\wxlist.cpp" />
+    <ClCompile Include="..\..\strmbase\wxutil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\strmbase\amextra.h" />
+    <ClInclude Include="..\..\strmbase\amfilter.h" />
+    <ClInclude Include="..\..\strmbase\cache.h" />
+    <ClInclude Include="..\..\strmbase\combase.h" />
+    <ClInclude Include="..\..\strmbase\cprop.h" />
+    <ClInclude Include="..\..\strmbase\ctlutil.h" />
+    <ClInclude Include="..\..\strmbase\ddmm.h" />
+    <ClInclude Include="..\..\strmbase\dllsetup.h" />
+    <ClInclude Include="..\..\strmbase\dsschedule.h" />
+    <ClInclude Include="..\..\strmbase\fourcc.h" />
+    <ClInclude Include="..\..\strmbase\measure.h" />
+    <ClInclude Include="..\..\strmbase\msgthrd.h" />
+    <ClInclude Include="..\..\strmbase\mtype.h" />
+    <ClInclude Include="..\..\strmbase\outputq.h" />
+    <ClInclude Include="..\..\strmbase\pstream.h" />
+    <ClInclude Include="..\..\strmbase\pullpin.h" />
+    <ClInclude Include="..\..\strmbase\refclock.h" />
+    <ClInclude Include="..\..\strmbase\reftime.h" />
+    <ClInclude Include="..\..\strmbase\renbase.h" />
+    <ClInclude Include="..\..\strmbase\seekpt.h" />
+    <ClInclude Include="..\..\strmbase\source.h" />
+    <ClInclude Include="..\..\strmbase\streams.h" />
+    <ClInclude Include="..\..\strmbase\strmctl.h" />
+    <ClInclude Include="..\..\strmbase\sysclock.h" />
+    <ClInclude Include="..\..\strmbase\transfrm.h" />
+    <ClInclude Include="..\..\strmbase\transip.h" />
+    <ClInclude Include="..\..\strmbase\videoctl.h" />
+    <ClInclude Include="..\..\strmbase\vtrans.h" />
+    <ClInclude Include="..\..\strmbase\winctrl.h" />
+    <ClInclude Include="..\..\strmbase\winutil.h" />
+    <ClInclude Include="..\..\strmbase\wxdebug.h" />
+    <ClInclude Include="..\..\strmbase\wxlist.h" />
+    <ClInclude Include="..\..\strmbase\wxutil.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

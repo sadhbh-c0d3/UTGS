@@ -1,0 +1,78 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: Fold"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <text id="output" align="left" autofill="1">Output:</text>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="String"><import id="String"/></let>            
+            <let id="List"><import id="List"/></let>            
+            <compile run="1">
+                <list id="List1">
+                    <string>First</string>
+                    <string>Second</string>
+                    <string>Third</string>
+                </list>
+
+                <cat id="out_text">
+                    <string>Fold1:</string>
+                    <fold iterator="i" accumulator="a">
+                        <empty id="a"/>
+                        <let id="list" select="List1"/>
+                        <function id="func">
+                            <cat>
+                                <get id="a"/>
+                                <get id="i"/>
+                                <string>&sp;</string>
+                            </cat>
+                        </function>
+                    </fold>
+                    <string>\255&nl;Fold2:</string>
+                    <fold>
+                        <iterator id="i"/>
+                        <accumulator id="a"><empty/></accumulator>
+                        <list select="List1"/>
+                        <cat>
+                            <get id="a"/>
+                            <get id="i"/>
+                            <string>&sp;</string>
+                        </cat>
+                    </fold>
+                </cat>
+
+                
+            </compile>
+            <gui-set-text target="gui.desktop.output"><get id="out_text"/></gui-set-text>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

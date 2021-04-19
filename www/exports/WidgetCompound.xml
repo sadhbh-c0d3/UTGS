@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Type: Widget:Compound.</title>
+    <description>
+        A widget that contains children. The HubWidget or A FrameWidget.
+    </description>
+    <block id="Compound">
+        <chunk id="DoRepaint">
+            <type-name>function( painter:class Useless::WidgetPainter ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Repaint all children widgets.
+            </description>
+        </chunk>
+    </block>
+</xml>

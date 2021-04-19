@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Built-In: String.</title>
+    <description>
+        A built-in library of routines operating on strings.
+    </description>
+    <block>
+        <chunk id="At">
+            <type-name>function( text:unicode-string, index:int ) -&gt; unicode-string</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="Cat">
+            <type-name>function( list:list, sepa:string ) -&gt; string</type-name>
+            <defined-symbols/>
+            <description>
+                Concatenate the list of strings with given sepa separator.
+            </description>
+        </chunk>
+        <chunk id="Length">
+            <type-name>function( text:unicode-string ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="SmartSplit">
+            <type-name>function( text:string, sepa:string, keep:list, chomp:bool ) -&gt; list</type-name>
+            <defined-symbols/>
+            <description>
+                Split string using sepa splitting token. The keep list contains patterns (like: [.*], (.*), ".*", {.*}) of strings
+                that shall not be splitted even if sepa occures inside of them. The chomp parameter
+                reduces white characters at the start and at the end of each new string.
+            </description>
+        </chunk>
+        <chunk id="find">
+            <type-name>function( text:unicode-string, pattern:unicode-string, pos:int ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="rfind">
+            <type-name>function( text:unicode-string, pattern:unicode-string, pos:int ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="substr">
+            <type-name>function( text:unicode-string, start:int, end:int ) -&gt; unicode-string</type-name>
+            <defined-symbols/>
+        </chunk>
+    </block>
+</xml>

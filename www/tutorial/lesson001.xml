@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="tutorial.xsl" type="text/xsl" version="1.0"?>
+
+<document>
+    <title>Useless GUI/KooLiXP Tutorial</title>
+    <sub-title>Easy Multimedia &amp; Games.</sub-title>
+
+    <chapters>
+        <toc>
+            <link>
+                <title><i>KooLiXP</i> Overview</title>
+                <href>../KooLiXPOverview.xml</href>
+            </link>
+            <link>
+                <title><i>UTGS</i> Overview</title>
+                <href>../utgs.xml</href>
+            </link>
+        </toc>
+        <chapter>
+            <title>Lesson 2 - Skins, Fonts &amp; Widgets</title>
+            <name>Example2</name>
+            <body>
+                <p>
+                    Presented code shows how to:
+                    <ll>
+                        <li>create images,</li>
+                        <li>create fonts,</li>
+                        <li>create skins,</li>
+                        <li>create widgets.</li>
+                    </ll>
+                </p>
+                <code lang="xml">
+                    <xml encoding="utf-8">
+                        <fixed-comment>
+KooLiXP (examples/tutorial/lesson002)
+Lesson 2.
+In addition to Lesson 1, we will create resources:
++   skins,
++   fonts,
++   widgets.
+                        </fixed-comment>
+                        <comment>
+                            In next lesson you will learn how to AVOID typing all of THOSE PARAMETERS like skin, font etc..!
+                        </comment>
+                        <system>
+                            <screen id="screen"
+                                title="Lesson 2 - Skins, Fonts &amp; Widgets"
+                                x="50"
+                                y="50"
+                                width="800"
+                                height="600"
+                                windowed="1"
+                                sys_cursor="1"
+                                />
+
+                            <soundcard id="soundcard"
+                                screen="screen"
+                                />
+
+                            <gui id="gui"
+                                screen="screen"
+                                />
+                        </system>
+
+                        <comment>create image resources</comment>
+                        <images>
+                            <fixed-comment>
+create an image resource:
++   src     := filename of image used for RGB pixels,
++   alpha   := filename of image used as ALPHA channel.
+
+What for 'alpha' image:
++   RGBA image, then alpha channel is extracted,
++   GREY image, then alpha channel is equal to grey values,
++   RGB image,  then alpha channel is equal to value of (0.75*R + 0.25*G + 0.125*B).
+                            </fixed-comment>
+                            <image id="frame1"
+                                src="frame.tga"
+                                alpha="frame.tga"
+                                />
+
+                            <comment>w/o 'alpha' attribute transparency channel will be ignored here</comment>
+                            <image id="frame2"
+                                src="frame.tga"
+                                />
+
+                            <image id="font_luxi_sans_14_shiny_gold"
+                                src="font_luxi_sans_14_shiny_gold.tga"
+                                alpha="font_luxi_sans_14_shiny_gold.tga"
+                                />
+
+                            <image id="font_luxi_sans_14_navy"
+                                src="font_luxi_sans_14_navy.tga"
+                                alpha="font_luxi_sans_14_navy.tga"
+                                />
+                        </images>
+
+                        <comment>create fonts</comment>
+                        <fonts>
+                            <fixed-comment>
+create non-coloured font.
++   img     := the id of image resource,
++   desc    := filename of font description file.
+                            </fixed-comment>
+                            <faced id="font_luxi_sans_14_shiny_gold"
+                                img="font_luxi_sans_14_shiny_gold"
+                                desc="font_luxi_sans_14.desc"
+                                />
+
+                            <faced id="font_luxi_sans_14_navy"
+                                img="font_luxi_sans_14_navy"
+                                desc="font_luxi_sans_14.desc"
+                                />
+                        </fonts>
+
+                        <comment>create skins</comment>
+                        <skins>
+                            <fixed-comment>
+create frame skin.
++   img                     := the id of image resource,
++   left,top,right,bottom   := margins.
+
+FrameSkin is painted from tiles.
+
++   4 frame corners are copied from source image areas:
+.   *   left    upper   :=  [0, 0, left, top]
+.   *   right   upper   :=  [ImageWidth-right, 0, right, top]
+.   *   left    lower   :=  [0, ImageHeight-bottom, left, bottom]
+.   *   right   lower   :=  [ImageWidth-right, ImageHeight-bottom, right, bottom]
+
++   4 borders are created via tiling, repeated copying of source image areas:
+.   *   top     := [left, 0, ImageWidth-(left+right), top]
+.   *   bottom  := [left, ImageHeight-bottom, ImageWidth-(left+right), bottom]
+.   *   left    := [0, top, left, ImageHeight-(top+bottom)]
+.   *   right   := [ImageWidth-right, top, right, ImageHeight-(top+bottom)]
+
++   cenral are is created via tiling, repeated copying of source image area:
+.   *       [left, top, ImageWidth-(left+right), ImageHeight-(top+bottom)]
+
+(*) area is defined as [ left-x, top-y, width, height ]
+                            </fixed-comment>
+                            <frame id="frame1"
+                                img="frame1"
+                                left="16"
+                                top="16"
+                                right="16"
+                                bottom="16"
+                                />
+
+                            <frame id="frame2"
+                                img="frame2"
+                                left="16"
+                                top="16"
+                                right="16"
+                                bottom="16"
+                                />
+                        </skins>
+
+                        <comment>create GUI resources</comment>
+                        <widgets>
+                            <fixed-comment>
+create widgets.
+You may put your widgets into default widget called 'desktop'.
+To do so we use 'parent' xml element.
++   id  :=  the id of widget into which we will place children.
+                            </fixed-comment>
+                            <parent id="gui.desktop">
+                                <fixed-comment>
+create frame
++   skin                    := the id of skin to be used,
++   left,top,right,bottom   := margins used for children placement,
+                            (by default skin ise querried for those parameters),
++   layout                  := the method of children placement,
+                            can be 'horizontal' or 'vertical',
++   autofill                := fill whole parent's area,
+                                </fixed-comment>
+                                <frame
+                                    skin="frame2"
+                                    left="4" top="4" right="4" bottom="4"
+                                    autofill="1"
+                                    layout="vertical"
+                                    >
+                                    <frame
+                                        skin="frame1"
+                                        left="4" top="4" right="4" bottom="4"
+                                        layout="horizontal"
+                                        >
+                                        <frame
+                                            skin="frame1"
+                                            layout="horizontal"
+                                            >
+                                            <fixed-comment>
+create aligned text.
++   font        := the id of font to be used,
++   align       := text alignment, can be 'left', 'right' or 'center'.
+                                            </fixed-comment>
+                                            <text
+                                                font="font_luxi_sans_14_navy"
+                                                align="right"
+                                                >
+                                                1-st text in upper frame.&amp;nl;
+                                                Notice, this text is multiline, and is aligned to right border.
+                                            </text>
+                                        </frame>
+                                        <frame
+                                            skin="frame1"
+                                            layout="horizontal"
+                                            >
+                                            <text
+                                                font="font_luxi_sans_14_navy"
+                                                align="left"
+                                                >
+                                                2-nd text in upper frame.&amp;nl;
+                                                Notice, this text is multiline too, but is aligned to left border.
+                                            </text>
+                                        </frame>
+                                    </frame>
+                                    <frame
+                                        skin="frame1"
+                                        left="4" top="4" right="4" bottom="4"
+                                        layout="horizontal"
+                                        >
+                                        <fixed-comment>
+create single line text (label like)
++   font       := the id of font to be used.
+                                        </fixed-comment>
+                                        <text
+                                            font="font_luxi_sans_14_shiny_gold"
+                                            >
+                                            Text in lower frame
+                                        </text>
+                                    </frame>
+                                </frame>
+                            </parent>
+                        </widgets>
+                    </xml>
+                </code>
+            </body>
+        </chapter>
+    </chapters>
+
+</document>

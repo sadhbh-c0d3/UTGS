@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Type: Painter.</title>
+    <description>
+        An object used to paint things over widgets.
+    </description>
+    <block>
+        <chunk id="FastBlit">
+            <type-name>function( Imag:class Useless::ImageBase, Canv:block={x,y,w,h}, Texc:block={x,y,w,h} ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Blit the Imag image to screen. The Imag image may be created using Toolkit:CreateImage or via Resources:GetImage.
+            </description>
+        </chunk>
+        <chunk id="FastDrawLine">
+            <type-name>function( vertices:class Useless::PointList, thickness:int, color:int ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Draw a poly-line. Use Toolkit:CreatePointList to initialize vertices.
+            </description>
+        </chunk>
+        <chunk id="FastDrawLine">
+            <type-name>function( x0:int, x1:int, y0:int, y1:int, thickness:int, color:string="0xAARRGGBB"|"black"|"white"|... ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Draw a line-segment.
+            </description>
+        </chunk>
+        <chunk id="FastDrawPolygon">
+            <type-name>function( vertices:class Useless::PointList, color:int) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Draw a polygon filled with color. Use Toolkit:CreatePointList to initialize vertices.
+            </description>
+        </chunk>
+        <chunk id="FastDrawRect">
+            <type-name>function( x:int, y:int, w:int, h:int, color:int ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Draw a rectangle bound.
+            </description>
+        </chunk>
+        <chunk id="FastFillRect">
+            <type-name>function( x:int, y:int, w:int, h:int, color:int ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Fill rectangle.
+            </description>
+        </chunk>
+        <chunk id="FastMultiBlit">
+            <type-name>function( Imag:class Useless::ImageBase, positions:class Useless::PointList, rects:class Useless::RectList) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Blit several parts, defined by rects, of Imag image, into several screen places, defined by positions.
+                The Imag image may be created using Toolkit:CreateImage or via Resources:GetImage.
+                Use Toolkit:CreatePointList to initialize positions.
+                Use Toolkit:CreateRectList to initialize rects.
+            </description>
+        </chunk>
+        <chunk id="Blit">
+            <type-name>function( img:string, where:string="x y w h" from:string="x y w h" ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                An old function, used to blit single image.
+            </description>
+        </chunk>
+        <chunk id="DrawLine">
+            <type-name>function( from:string="x y", to:string="x y", thickness:int, color:string="0xAARRGGBB"|"black"|"white"|... ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                An old function, used to draw line segment.
+            </description>
+        </chunk>
+        <chunk id="DrawPolygon">
+            <type-name>function( vertices:list=[{x,y}...], color:string="0xAARRGGBB"|"black"|"white"|... ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                An old function, used to draw filled polygon.
+            </description>
+        </chunk>
+        <chunk id="DrawRect">
+            <type-name>function( where:string="x y w h", color:string="0xAARRGGBB"|"black"|"white"|... ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                An old function, used to draw rectangle bounds.
+            </description>
+        </chunk>
+        <chunk id="FillRect">
+            <type-name>function( where:string="x y w h", color:string="0xAARRGGBB"|"black"|"white"|... ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                An old function, used to fill rectangle.
+            </description>
+        </chunk>
+        <chunk id="MultiBlit">
+            <type-name>function( img:string, positions:list=[{x,y}...], rects:list=[{x,y,w,h}...]) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                An old function, used to blit several porions of same image to several places on screen.
+            </description>
+        </chunk>
+        <chunk id="Clear">
+            <type-name>function( color:int ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Clear clipped area, fill it with color.
+            </description>
+        </chunk>
+        <chunk id="GetClipper">
+            <type-name>function( crop:class Useless::Rect ) -&gt; class Useless::RectList</type-name>
+            <defined-symbols/>
+            <description>
+                Get list of clipping rectangles.
+            </description>
+        </chunk>
+        <chunk id="GetOffset">
+            <type-name>function() -&gt; class Useless::Point&lt;int&gt;</type-name>
+            <defined-symbols/>
+            <description>
+                Get painter coordinate system offset.
+            </description>
+        </chunk>
+        <chunk id="Intersect">
+            <type-name>function( crop:class Useless::Rect ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set new clipping region to a region intersected with crop rectangle.
+            </description>
+        </chunk>
+        <chunk id="RepaintWidget">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Repaint widget to which this painter is attached.
+            </description>
+        </chunk>
+        <chunk id="SubCanvasPaint">
+            <type-name>function( func:function, offset:block={x,y}, alpha:int, blending:string, crop:block={x,y,w,h},
+                color:string="0xAARRGGBB"|"black"|"white"|... ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Invoke func painting function with new painter.
+                The blending parameter us one out of: "normal", "replace", "add", "multiply", "add-color", "multiply-color", "shadow".
+            </description>
+        </chunk>
+    </block>
+</xml>

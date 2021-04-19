@@ -1,0 +1,294 @@
+<xml>
+    <system>
+        <screen width="0" height="0" windowed="1" sys_cursor="1" title="An-Im-View"/>
+    </system>
+    <programms>
+        <fsm id="main">
+            <let id="screen">screen</let>
+            <let id="Toolkit"><import id="Toolkit"/></let>
+            <let id="Resources"><import id="Resources"/></let>
+            <let id="String"><import id="String"/></let>
+            <let id="List"><import id="List"/></let>
+            <let id="Math"><import id="Math"/></let>
+            <compile run="1">
+                <!--
+                <register>
+                    <let id="dict" select="__globals__"/>
+                    <string id="name">argv</string>
+                    <block id="value"/>
+                </register>
+                <register>
+                    <let id="dict" select="__globals__:argv"/>
+                    <string id="name">file</string>
+                    <string id="value">anim000.tga</string>
+                </register>
+                -->
+                <if>
+                    <not>
+                        <is-defined id="argv:file"/>
+                    </not>
+                    <error>
+                        <cat>
+                            <string>Animated Image View, copyright 2005, by Sadhbh Code (https://github.com/sadhbh-c0d3)</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>NOT ENOUGH PARAMETERS.</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>Parameters required are:</string>
+                            <string>&nl;</string>
+                            <string>file</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>Missing parameters are:</string>
+                            <string>&nl;</string>
+                            <apply select="String:Cat">
+                                <string id="sepa">,&sp;</string>
+                                <list id="list">
+                                    <if><not><is-defined id="argv:file"/></not><string>file</string></if>
+                                </list>
+                            </apply>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>The command line is one like:</string>
+                            <string>&nl;</string>
+                            <string>KooLiXP.exe animview.xlp -- file=file.png --</string>
+                            <string>&nl;</string>
+                        </cat>
+                    </error>
+                </if>
+                <function id="IsDigit" parameters="char">
+                    <not>
+                        <less>
+                            <compare>
+                                <apply select="String:find">
+                                    <string id="text">0123456789</string>
+                                    <let id="pattern" select="char"/>
+                                    <integer id="pos" value="0"/>
+                                </apply>
+                                <integer value="0"/>
+                            </compare>
+                        </less>
+                    </not>
+                </function>
+                <fold id="imgFileName" iterator="char" accumulator="accum">
+                    <block id="accum">
+                        <empty id="base"/>
+                        <empty id="extension"/>
+                        <empty id="numDigits"/>
+                    </block>
+                    <apply id="list" select="List:Reverse">
+                        <let id="list" select="argv:file:__sequence__"/>
+                    </apply>
+                    <function id="func">
+                        <choose>
+                            <when>
+                                <is-not-empty id="accum:base"/>
+                                <block>
+                                    <let id="numDigits" select="accum:numDigits"/>
+                                    <let id="extension" select="accum:extension"/>
+                                    <cat id="base">
+                                        <get id="char"/>
+                                        <get id="accum:base"/>
+                                    </cat>
+                                </block>
+                            </when>
+                            <when>
+                                <not><is-not-empty id="accum:numDigits"/></not> 
+                                <choose>
+                                    <when>
+                                        <not><equal><strcmp><string value="."/><get id="char"/></strcmp></equal></not>
+                                        <block>
+                                            <empty id="numDigits"/>
+                                            <empty id="base"/>
+                                            <cat id="extension">
+                                                <get id="char"/>
+                                                <get id="accum:extension"/>
+                                            </cat>
+                                        </block>
+                                    </when>
+                                    <otherwise>
+                                        <block>
+                                            <integer id="numDigits" value="0"/>
+                                            <empty id="base"/>
+                                            <let id="extension" select="accum:extension"/>
+                                        </block>
+                                    </otherwise>
+                                </choose>
+                            </when>
+                            <when>
+                                <apply select="IsDigit"/>
+                                <block>
+                                    <add id="numDigits">
+                                        <get id="accum:numDigits"/>
+                                        <integer value="1"/>
+                                    </add>
+                                    <let id="extension" select="accum:extension"/>
+                                    <empty id="base"/>
+                                </block>
+                            </when>
+                            <otherwise>
+                                <block>
+                                    <let id="numDigits" select="accum:numDigits"/>
+                                    <let id="extension" select="accum:extension"/>
+                                    <cat id="base">
+                                        <get id="char"/>
+                                        <get id="accum:base"/>
+                                    </cat>
+                                </block>
+                            </otherwise>
+                        </choose>
+                    </function>
+                </fold>
+
+                <if>
+                    <less>
+                        <compare>
+                            <get id="imgFileName:numDigits"/>
+                            <integer value="1"/>
+                        </compare>
+                    </less>
+                    <error>
+                        <cat>
+                            <string>Animated Image View, copyright 2005, by Sadhbh Code (https://github.com/sadhbh-c0d3)</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>NOT ENOUGH DIGITS IN FILENAME</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>Image filenames must be ended with n-digit (auto-detected), zero-padded frame numbers.</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>The image filenames might be like:</string>
+                            <string>&nl;</string>
+                            <string>image000.tga, image001.tga, image002.tga, and so on...</string>
+                            <string>&nl;</string>
+                        </cat>
+                    </error>
+                </if>
+
+                <apply id="images" select="List:Reverse">
+                    <fold id="list" iterator="iter" accumulator="accum">
+                        <empty id="accum"/>
+                        <range id="list">
+                            <fold id="count" iterator="n" accumulator="x">
+                                <integer id="x" value="1"/>
+                                <range id="list">
+                                    <let id="count" select="imgFileName:numDigits"/>
+                                </range>
+                                <function id="func">
+                                    <mul>
+                                        <get id="x"/>
+                                        <integer value="10"/>
+                                    </mul>
+                                </function>
+                            </fold>
+                        </range>
+                        <function id="func">
+                            <cat id="path">
+                                <get id="imgFileName:base"/>
+                                <fold iterator="digit" accumulator="zeros">
+                                    <empty id="zeros"/>
+                                    <range id="list">
+                                        <add id="count">
+                                            <get id="imgFileName:numDigits"/>
+                                            <minus>
+                                                <apply select="String:Length">
+                                                    <string id="text" select="iter"/>
+                                                </apply>
+                                            </minus>
+                                        </add>
+                                    </range>
+                                    <function id="func">
+                                        <cat>
+                                            <get id="zeros"/>
+                                            <string>0</string>
+                                        </cat>
+                                    </function>
+                                </fold>
+                                <get id="iter"/>
+                                <string value="."/>
+                                <get id="imgFileName:extension"/>
+                            </cat>
+                            <choose>
+                                <when>
+                                    <apply select="Toolkit:FileExists"/>
+                                    <listnode>
+                                        <apply id="head" select="Toolkit:CreateImage">
+                                            <string id="color+alpha" select="path"/>
+                                        </apply>
+                                        <let id="tail" select="accum"/>
+                                    </listnode>
+                                </when>
+                                <otherwise>
+                                    <get id="accum"/>
+                                </otherwise>
+                            </choose>
+                        </function>
+                    </fold>
+                </apply>
+
+                <let id="current" select="images"/>
+                <integer id="frameTime" value="50"/>
+                <integer id="nextFrameIn" select="frameTime"/>
+
+
+                <apply id="uiScreen" select="Resources:GetScreen">
+                    <string id="name">screen</string>
+                </apply>
+                <do>
+                    <apply id="imgWidth" select="images:1-st:GetWidth"/>
+                    <apply id="imgHeight" select="images:1-st:GetHeight"/>
+                    <float id="heightRatio"> #.(imgHeight) #.(imgWidth) div </float>
+                    <apply select="uiScreen:Resize">
+                        <apply id="w" select="Math:max">
+                            <let id="a" select="imgWidth"/>
+                            <integer id="b" value="240"/>
+                        </apply>
+                        <integer id="h">#.(w) #.(heightRatio) mul </integer>
+                    </apply>
+                </do>
+                <apply id="slot" select="uiScreen:OnIdle:Tie">
+                    <string id="parameters">timeTotal timeDelta</string>
+                    <function id="callback">
+                        <let id="image" select="current:head"/>
+                        <set id="nextFrameIn">
+                            <integer>#(nextFrameIn) #(timeDelta) sub</integer>
+                        </set>
+                        <choose>
+                            <when test="0 #(nextFrameIn) less">
+                            </when>
+                            <when>
+                                <is-not-empty id="current:tail"/>
+                                <set id="current" select="current:tail"/>
+                                <set id="nextFrameIn" select="frameTime"/>
+                            </when>
+                            <otherwise>
+                                <set id="current" select="images"/>
+                                <set id="nextFrameIn" select="frameTime"/>
+                            </otherwise>
+                        </choose>
+                        <apply id="painter" select="uiScreen:CreatePainter"/>
+                        <apply id="width" select="uiScreen:GetWidth"/>
+                        <apply id="height" select="uiScreen:GetHeight"/>
+                        <apply select="painter:FillRect">
+                            <string id="color">0xFFF080F0</string>
+                            <string id="where">0 0 #(width) #(height)</string>
+                        </apply>
+                        <apply select="painter:FastBlit">
+                            <let id="Imag" select="image"/>
+                            <block id="Canv">
+                                <integer id="x" value="0"/>
+                                <integer id="y" value="0"/>
+                                <let id="w" select="width"/>
+                                <let id="h" select="height"/>
+                            </block>
+                        </apply>
+                        <apply select="uiScreen:Swap"/>
+                    </function>
+                </apply>
+            </compile>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+</xml>

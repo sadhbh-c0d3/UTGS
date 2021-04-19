@@ -1,0 +1,116 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: BigRange"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <text id="output" align="left" autofill="1">Output:</text>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="String"><import id="String"/></let>            
+            <let id="List"><import id="List"/></let>            
+            <compile run="1">
+                <empty id="out_text"/>
+
+                <function id="OnAppIdle">
+                    <integer id="count" value="2500"/>
+                    <set id="out_text">
+                        <fold iterator="iter" accumulator="accum"> 
+                            <integer id="accum" value="0"/>
+                            <range id="list">
+                                <integer id="first" value="0"/>
+                                <let id="count" select="count"/>
+                            </range>
+                            <function id="func">
+                                <choose>
+                                    <when>
+                                        <and>
+                                            <less>
+                                                <compare>
+                                                    <integer value="50"/>
+                                                    <get id="iter"/>
+                                                </compare>
+                                            </less>
+                                            <less>
+                                                <compare>
+                                                    <get id="iter"/>
+                                                    <integer value="100"/>
+                                                </compare>
+                                            </less>
+                                            <less>
+                                                <compare>
+                                                    <integer value="10"/>
+                                                    <get id="accum"/>
+                                                </compare>
+                                            </less>
+                                            <less>
+                                                <compare>
+                                                    <get id="accum"/>
+                                                    <integer value="1000"/>
+                                                </compare>
+                                            </less>
+                                        </and>
+                                        <add>
+                                            <get id="accum"/>
+                                            <get id="iter"/>
+                                        </add>
+                                    </when>
+                                    <otherwise>
+                                        <get id="accum"/>
+                                    </otherwise>
+                                </choose>
+                            </function>
+                        </fold>
+                        <cat>
+                            <string>&nl;Frames/s:&ts;</string>
+                            <fmul>
+                                <float value="1000"/>
+                                <reciprocal select="timeDelta"/>
+                            </fmul>
+                            <string>&nl;Iterations/s:&ts;</string>
+                            <fmul>
+                                <get id="count"/>
+                                <float value="1000"/>
+                                <reciprocal select="timeDelta"/>
+                            </fmul>
+                        </cat>
+                    </set>
+                    <apply select="SetDisplay"/>
+                </function>
+
+
+            </compile>
+            <function id="SetDisplay">
+                <gui-set-text target="gui.desktop.output">$(out_text)</gui-set-text>
+            </function>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

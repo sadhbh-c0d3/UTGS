@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="tutorial.xsl" type="text/xsl" version="1.0"?>
+
+<document>
+    <title>Useless GUI/KooLiXP Tutorial</title>
+    <sub-title>Easy Multimedia &amp; Games.</sub-title>
+
+    <chapters>
+        <toc>
+            <link>
+                <title><i>KooLiXP</i> Overview</title>
+                <href>../KooLiXPOverview.xml</href>
+            </link>
+            <link>
+                <title><i>UTGS</i> Overview</title>
+                <href>../utgs.xml</href>
+            </link>
+        </toc>
+        <chapter>
+            <title>Lesson 1 - Creating Basic Resources</title>
+            <name>Example1</name>
+            <body>
+                <p>
+                    Presented code shows how to:
+                    <ll>
+                        <li>create screen,</li>
+                        <li>create soundcard,</li>
+                        <li>create root gui widget.</li>
+                    </ll>
+                </p>
+                <code lang="xml">
+                    <xml encoding="utf-8">
+                        <fixed-comment>
+KooLiXP (examples/tutorial/lesson001)
+Lesson 1.
+We will create basic resources:
++   windowed screen,
++   soundcard,
++   gui.
+                        </fixed-comment>
+                        <system>
+                            <fixed-comment>
+When using KooLiXP.exe we'll need resource named: 'screen'.
++   title           := the title shown in window titlebar and in task manager,
++   x,y             := position of a window,
++   width, height   := dimensions of a window,
++   bpp             := bits per pixel, used only if fullscreen,
++   windowed        := 0 means fullscreen, and 1 means window,
++   decorations     := 1 means window has standard titlebar and frame,
++   sys_cursor      := 0 means hide system mouse cursor.
+                            </fixed-comment>
+                            <screen id="screen"
+                                title="Lesson 1 - Creating Basic Resources"
+                                x="50"
+                                y="50"
+                                width="800"
+                                height="600"
+                                windowed="1"
+                                sys_cursor="1"
+                                />
+
+                            <fixed-comment>
+If you'd like to play some sounds, movies or ogg/vorbis streams, then you'll need soundcard.
++   screen          := the id of screen, required since
+                        operating system binds a sound device to the window.
+                            </fixed-comment>
+                            <soundcard id="soundcard"
+                                screen="screen"
+                                />
+
+                            <fixed-comment>
+If you'd like to use GUI gadgets, you'll need to create such resource.
++   screen          := the id of screen, where gui will paint.
+                            </fixed-comment>
+                            <gui id="gui"
+                                screen="screen"
+                                />
+                        </system>
+                    </xml>
+                </code>
+            </body>
+        </chapter>
+    </chapters>
+
+</document>

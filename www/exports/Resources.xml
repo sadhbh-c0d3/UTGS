@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Built-In: Resources.</title>
+    <description>
+        A built-in library of routines operating on xml resources.
+    </description>
+    <block>
+        <chunk id="CreateFromXMLString">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetImage">
+            <type-name>function( name:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetLayout">
+            <type-name>function( name:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetSample">
+            <type-name>function( name:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetScreen">
+            <type-name>function( name:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetWidget">
+            <type-name>function( name:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetWorkspace">
+            <type-name>function( name:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="KillResources">
+            <type-name>function( category:string, name:string, recursive:int ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+    </block>
+</xml>

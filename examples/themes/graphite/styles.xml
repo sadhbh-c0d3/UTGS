@@ -1,0 +1,208 @@
+<xml>
+    <include src="themes/graphite/skins/resources.xml"/>
+    <include src="themes/graphite/fonts/resources.xml"/>
+
+    <styles>
+        <style id="normal">
+            <slider
+                skin="graphite.skins.slider_horizontal.set"
+                size="16"
+                grip_size="128"
+                fixedheight="16"
+                />
+
+            <text
+                align="left"
+                font="graphite.fonts.font_luxi_sans_14_blood"
+                />
+
+            <list
+                font="graphite.fonts.font_luxi_sans_14.list"
+                skin="graphite.skins.list.set"
+                shift="20"
+                />
+
+            <frame
+                skin="graphite.skins.frame"
+                />
+
+            <scrollbar
+                skin="graphite.skins.slider_vertical.set"
+                size="32"
+                size_limit="48"
+                />
+
+            <button
+                skin="graphite.skins.button.set"
+                font="graphite.fonts.font_luxi_sans_14.button"
+                focusable="0"
+                />
+            
+            <textfield
+                width="100"
+                height="10"
+                font="graphite.fonts.font_luxi_sans_14.button"
+                skin="graphite.skins.list.set"
+                fixedheight="24"/>
+        </style>
+        
+        <style id="popup_inner">
+            <slider
+                skin="graphite.skins.slider_horizontal.set"
+                size="16"
+                grip_size="128"
+                fixedheight="16"
+                />
+
+            <text
+                align="left"
+                font="graphite.fonts.font_luxi_sans_14_black"
+                />
+
+            <list
+                font="graphite.fonts.font_luxi_sans_14.list"
+                skin="graphite.skins.list.set"
+                shift="20"
+                />
+
+            <frame
+                skin="graphite.skins.frame"
+                />
+
+            <scrollbar
+                skin="graphite.skins.slider_vertical.set"
+                size="32"
+                size_limit="48"
+                />
+
+            <button
+                skin="graphite.skins.button.set"
+                font="graphite.fonts.font_luxi_sans_14.button"
+                focusable="0"
+                />
+        </style>
+
+        
+        <style id="popup">
+            <popup
+                owner="gui"
+                titlebar_skin="graphite.skins.switch.set"
+                titlebar_font="graphite.fonts.font_luxi_sans_14.button"
+                modal="1"
+                />
+
+            <frame
+                skin="graphite.skins.frame_and_shadow"
+                left="8" right="16" top="8" bottom="16"
+                />
+        </style>
+
+        <style id="window_decorations">
+            <frame
+                autofill="1"
+                skin="graphite.skins.decoration"
+                left="0" right="0" top="0" bottom="0"
+                />
+            <button
+                skin="graphite.skins.empty.set"
+                font="graphite.fonts.font_luxi_sans_14.button"
+                focusable="0"
+                fixedheight="37"
+                />
+        </style>
+
+        <style id="horizontal_grip">
+            <button
+                skin="graphite.skins.grip_horizontal.set"
+                focusable="0"
+                fixedheight="10"
+                />
+        </style>
+
+        <style id="horizontal_line">
+            <image skin="graphite.skins.line_horizontal"
+                fixedheight="5"
+                />
+        </style>
+
+        <style id="back">
+            <frame
+                skin="graphite.skins.back"
+                left="4" right="4" top="4" bottom="4"
+                />
+        </style>
+
+        <style id="frame_edge">
+            <frame layout="vertical" skin="graphite.skins.frame_edge"
+                />
+        </style>
+
+        <style id="list">
+            <list
+                font="graphite.fonts.font_luxi_sans_14.list"
+                skin="graphite.skins.list.set"
+                shift="20"
+                />
+
+            <frame
+                skin="graphite.skins.frame"
+                />
+
+            <scrollbar
+                skin="graphite.skins.slider_vertical.set"
+                size="32"
+                size_limit="48"
+                />
+        </style>
+
+        <style id="dropdown_list">
+            <dropdown
+                title_skin="graphite.skins.switch.set"
+                title_font="graphite.fonts.font_luxi_sans_14.button"
+                title_distance="0,-8"
+                />
+            <list
+                font="graphite.fonts.font_luxi_sans_14.list"
+                skin="graphite.skins.list.set" shift="20"
+                />
+            <frame
+                skin="graphite.skins.frame_and_shadow"
+                left="8" right="16" top="8" bottom="16"
+                />
+            <scrollbar
+                skin="graphite.skins.slider_vertical_and_shadow.set"
+                size="32" size_limit="48"
+                />
+        </style>
+
+        <style id="dropdown_table">
+            <dropdown
+                title_skin="graphite.skins.switch.set"
+                title_font="graphite.fonts.font_luxi_sans_14.button"
+                title_distance="4,0"
+                />
+            <tablelist
+                skin="graphite.skins.table"
+                hilite_skin="graphite.skins.list.set"
+                />
+            <scrollbar
+                skin="graphite.skins.slider_vertical_and_shadow.set"
+                size="32"
+                size_limit="48"
+                />
+            <frame
+                skin="graphite.skins.frame_and_shadow"
+                left="8" right="16" top="8" bottom="16"
+                />
+        </style>
+
+        <style id="horizontal_slider">
+            <scrollbar
+                skin="graphite.skins.slider_horizontal.set"
+                size="16"
+                size_limit="32"
+                />
+        </style>
+
+    </styles>
+</xml>

@@ -1,0 +1,55 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: Printer"
+            width="320"
+            height="240"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <image img="img.png" autofill="1"/>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="Toolkit"><import id="Toolkit"/></let>
+            <compile run="1">
+                <do>
+                    <apply id="prn1" select="Toolkit:CreatePrinter"/>
+                    <apply id="doc1" select="prn1:CreateDocument">
+                        <string id="title">Unit Test: Printer</string>
+                    </apply>
+                    <apply id="page1" select="doc1:CreatePage"/>
+                    <apply select="page1:BlitImage">
+                        <apply id="Imag" select="Toolkit:CreateImage">
+                            <string id="color">img.png</string>
+                        </apply>
+                        <block id="Canv">
+                            <integer id="x">$(prn1:xLeft) $(prn1:inchOnPaperX) 1.0 mul add</integer>
+                            <integer id="y">$(prn1:yTop) $(prn1:inchOnPaperY) 1.0 mul add</integer>
+                            <integer id="w">$(prn1:sizeOnPaperX) $(prn1:inchOnPaperX) 2.0 mul sub</integer>
+                            <integer id="h">$(prn1:sizeOnPaperY) $(prn1:inchOnPaperY) 2.0 mul sub</integer>
+                        </block>
+                    </apply>
+                    <apply select="page1:Finish"/>
+                    <apply select="doc1:Print"/>
+                </do>
+            </compile>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

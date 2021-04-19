@@ -1,0 +1,43 @@
+<xml>
+    <filesystems>
+        <dir path="../themes" point="themes" priority="0"/>
+    </filesystems>
+
+    <include src="themes/azure/styles.xml"/>
+    
+    <database>
+        <table id="data1" fontset="azure.fonts.font_luxi_sans_14.list">
+            <head>
+                <text>No.</text>
+                <text>Name</text>
+            </head>
+            <body>
+                <row><text>1.</text><text>Option</text></row>
+            </body>
+        </table>
+    </database>
+    
+    <widgets>
+        <template class="TimeDisplay">
+            <text id="time" align="center" font="azure.fonts.font_luxi_sans_14_navy">00:00</text>
+        </template>
+    </widgets>
+
+    <include src="movie_player.xlp"/>
+
+    <programms>
+        <fsm id="main">
+            <do in="__globals__">
+                <let id="SkinName">azure</let>
+            </do>
+            <run file="movie_player_Common.xlp" object="UI"/>
+            <run file="movie_player_UI.xlp" object="UI"/>
+            <run file="movie_player_FileSelection.xlp"  object="main"/>
+            <run file="movie_player_NoMovieState.xlp"   object="main"/>
+            <run file="movie_player_PlayMovieState.xlp" object="main"/>
+            <run file="movie_player_CommandLine.xlp" object="main"/>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

@@ -1,0 +1,139 @@
+<xml>
+    <system>
+        <screen width="640" height="480" windowed="1" sys_cursor="1"/>
+    </system>
+    <programms>
+        <fsm id="main">
+            <let id="screen">screen</let>
+            <let id="Toolkit"><import id="Toolkit"/></let>
+            <let id="String"><import id="String"/></let>
+            <compile run="1">
+                <if>
+                    <not>
+                        <and>
+                            <is-defined id="argv:input"/>
+                            <is-defined id="argv:output"/>
+                            <is-defined id="argv:numTilesX"/>
+                            <is-defined id="argv:numTilesY"/>
+                        </and>
+                    </not>
+                    <error>
+                        <cat>
+                            <string>Image Tesselator, copyright 2005, by Sadhbh Code (https://github.com/sadhbh-c0d3)</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>NOT ENOUGH PARAMETERS.</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>Parameters required are:</string>
+                            <string>&nl;</string>
+                            <string>input, output, numTilesX, numTilesY</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>Missing parameters are:</string>
+                            <string>&nl;</string>
+                            <apply select="String:Cat">
+                                <string id="sepa">,&sp;</string>
+                                <list id="list">
+                                    <if><not><is-defined id="argv:input"/></not><string>input</string></if>
+                                    <if><not><is-defined id="argv:output"/></not><string>output</string></if>
+                                    <if><not><is-defined id="argv:numTilesX"/></not><string>numTilesX</string></if>
+                                    <if><not><is-defined id="argv:numTilesY"/></not><string>numTilesY</string></if>
+                                </list>
+                            </apply>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>The command line is one like:</string>
+                            <string>&nl;</string>
+                            <string>KooLiXP.exe tesselate.xlp -- numTilesX=16 numTilesY=4 input=input.tga output=output --</string>
+                            <string>&nl;</string>
+                        </cat>
+                    </error>
+                </if>
+                <integer id="numTilesX" select="argv:numTilesX"/>
+                <integer id="numTilesY" select="argv:numTilesY"/>
+                <apply id="imgSrc" select="Toolkit:CreateImage">
+                    <string id="color" select="argv:input"/>
+                </apply>
+                <integer  id="tileWidth">
+                    <fmul>
+                        <apply select="imgSrc:GetWidth"/>
+                        <reciprocal select="numTilesX"/>
+                    </fmul>
+                </integer>
+                <integer  id="tileHeight">
+                    <fmul>
+                        <apply select="imgSrc:GetHeight"/>
+                        <reciprocal select="numTilesY"/>
+                    </fmul>
+                </integer>
+                <apply id="imgOut" select="Toolkit:CreateImageBuffer">
+                    <let id="width" select="tileWidth"/>
+                    <let id="height" select="tileHeight"/>
+                </apply>
+                <do>
+                    <apply id="painterOut" select="imgOut:CreatePainter"/>
+                    <fold iterator="iy" accumulator="ac">
+                        <integer id="ac" value="0"/>
+                        <range id="list">
+                            <integer id="first" value="0"/>
+                            <integer id="count" select="numTilesY"/>
+                        </range>
+                        <function id="func">
+                            <fold iterator="ix" accumulator="ac">
+                                <range id="list">
+                                    <integer id="first" value="0"/>
+                                    <integer id="count" select="numTilesX"/>
+                                </range>
+                                <function id="func">
+                                    <apply select="painterOut:FastBlit">
+                                        <let id="Imag" select="imgSrc"/>
+                                        <block id="Canv">
+                                            <integer id="x" value="0"/>
+                                            <integer id="y" value="0"/>
+                                            <integer id="w" select="tileWidth"/>
+                                            <integer id="h" select="tileHeight"/>
+                                        </block>
+                                        <block id="Texc">
+                                            <mul id="x">
+                                                <get id="tileWidth"/>
+                                                <get id="ix"/>
+                                            </mul>
+                                            <mul id="y">
+                                                <get id="tileHeight"/>
+                                                <get id="iy"/>
+                                            </mul>
+                                            <integer id="w" select="tileWidth"/>
+                                            <integer id="h" select="tileHeight"/>
+                                        </block>
+                                    </apply>
+                                    <apply select="imgOut:WriteImage">
+                                        <cat id="file">
+                                            <string select="argv:output"/>
+                                            <if>
+                                                <less><compare><get id="ac"/><integer value="100"/></compare></less>
+                                                <string>0</string>
+                                            </if>
+                                            <if>
+                                                <less><compare><get id="ac"/><integer value="10"/></compare></less>
+                                                <string>0</string>
+                                            </if>
+                                            <get id="ac"/>
+                                            <string>.tga</string>
+                                        </cat>
+                                    </apply>
+                                    <add>
+                                        <get id="ac"/>
+                                        <integer value="1"/>
+                                    </add>
+                                </function>
+                            </fold>
+                        </function>
+                    </fold>
+                </do>
+                <apply select="__application__:Terminate"/>
+            </compile>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+</xml>

@@ -1,0 +1,214 @@
+<xml>
+    <compile run="1">
+        <function id="EnterPlayMovieState">
+            <apply select="EnterState">
+                <string id="name" value="PlayMovieState"/>
+            </apply>
+            <doin select="PlayMovieState">
+                <apply select="uiTitle:Caption:SetCaption">
+                    <let id="text" select="movie"/>
+                </apply>
+                <doin id="movMovie" blockResult="1">
+                    <apply select="Toolkit:CreateMovie2">
+                        <let id="file" select="movie"/>
+                        <string id="audio">Stream 01</string>
+                    </apply>
+                    <apply select="Play"/>
+                </doin>
+                <apply id="imgMovie" select="movMovie:GetImage"/>
+                <!--
+                <apply select="__application__:SetIdleDT">
+                    <integer id="timeDelta">1000.0 23.95 div floor</integer>
+                </apply>
+                -->
+                <apply select="uiMovieCtlFrame:SetVisible">
+                    <integer id="visible" value="1"/>
+                </apply>
+                <apply id="slotMovieRepaint" select="uiMovie:OnPaint:Tie">
+                    <string id="parameters">__painter__</string>
+                    <function id="callback">
+                        <apply select="__painter__:FillRect">
+                            <cat id="where">
+                                <string>0 0</string>
+                                <string>&sp;</string>
+                                <apply select="uiMovie:GetWidth"/>
+                                <string>&sp;</string>
+                                <apply select="uiMovie:GetHeight"/>
+                            </cat>
+                            <string id="color">black</string>
+                        </apply>
+                        <apply select="__painter__:FastBlit">
+                            <let id="Imag" select="imgMovie"/>
+                            <block id="Canv">
+                                <apply id="w" select="uiMovie:GetWidth"/>
+                                <fmul id="h">
+                                    <get id="w"/>
+                                    <apply select="imgMovie:GetHeight"/>
+                                    <reciprocal>
+                                        <apply select="imgMovie:GetWidth"/>
+                                    </reciprocal>
+                                </fmul>
+                                <integer id="x" value="0"/>
+                                <fmul id="y">
+                                    <fadd>
+                                        <apply select="uiMovie:GetHeight"/>
+                                        <fminus select="h"/>
+                                    </fadd>
+                                    <float value="0.5"/>
+                                </fmul>
+                            </block>
+                        </apply>
+                    </function>
+                </apply>
+                <apply id="slotSliderIdle" select="uiSlider:OnIdle:Tie">
+                    <function id="callback">
+                        <if>
+                            <not><apply select="uiSlider:HasInput"/></not>
+                            <apply id="time" select="movMovie:GetTime"/>
+                            <apply id="full" select="movMovie:GetDuration"/>
+                            <apply select="uiSlider:Enum:SetSelected">
+                                <integer id="no">$(time).0 $(full).0 div 3600.0 mul</integer>
+                            </apply>
+                            <apply select="uiTime:Text:SetText">
+                                <integer id="minutes">$(time) 60 div floor</integer>
+                                <integer id="seconds">$(time) $(time) 60 div floor 60 mul sub</integer>
+                                <cat id="text">
+                                    <if test="$(minutes) 10 less"><string value="0"/></if>
+                                    <get id="minutes"/>
+                                    <string value=":"/>
+                                    <if test="$(seconds) 10 less"><string value="0"/></if>
+                                    <get id="seconds"/>
+                                </cat>
+                            </apply>
+                        </if>
+                    </function>
+                </apply>
+                <apply id="slotSliderChange" select="uiSlider:Enum:OnChange:Tie">
+                    <function id="callback">
+                        <if>
+                            <apply select="uiSlider:HasInput"/>
+                            <apply id="no" select="uiSlider:Enum:GetSelected"/>
+                            <apply id="full" select="movMovie:GetDuration"/>
+                            <apply select="movMovie:Pause"/>
+                            <apply select="movMovie:SetTime">
+                                <float id="time">$(no).0 3600.0 div $(full).0 mul</float>
+                            </apply>
+                            <apply select="movMovie:Play"/>
+                        </if>
+                    </function>
+                </apply>
+                <apply id="slotDetailSliderIdle" select="uiDetailSlider:OnIdle:Tie">
+                    <function id="callback">
+                        <if>
+                            <not><apply select="uiDetailSlider:HasInput"/></not>
+                            <apply select="uiDetailSlider:Enum:SetSelected">
+                                <integer id="no" value="1800"/>
+                            </apply>
+                        </if>
+                    </function>
+                </apply>
+                <function id="SetMovieVolume">
+                    <apply select="movMovie:SetVolume">
+                        <fmul id="volume">
+                            <float value="40.0"/>
+                            <fadd>
+                                <apply select="Math:log">
+                                    <float id="a" value="10.0"/>
+                                    <fadd id="x">
+                                        <fmul>
+                                            <apply select="uiVolumeSlider:Enum:GetSelected"/>
+                                            <float value="0.1"/>
+                                        </fmul>
+                                        <float value="1.0"/>
+                                    </fadd>
+                                </apply>
+                                <float value="-1.0"/>
+                            </fadd>
+                        </fmul>
+                    </apply>
+                </function>
+                <apply id="slotVolumeSliderIdle" select="uiVolumeSlider:Enum:OnChange:Tie">
+                    <let id="callback" select="SetMovieVolume"/>
+                </apply>
+                <apply select="SetMovieVolume"/>
+                <do id="slotsDetailSlider">
+                    <function id="callback">
+                        <if>
+                            <apply select="uiDetailSlider:HasInput"/>
+                            <apply id="no" select="uiDetailSlider:Enum:GetSelected"/>
+                            <apply select="movMovie:Pause"/>
+                            <apply select="movMovie:SetTime">
+                                <apply id="time" select="Math:min">
+                                    <apply id="a" select="Math:max">
+                                        <fadd id="a">
+                                            <apply select="movMovie:GetTime"/>
+                                            <float>$(no).0 1800.0 sub 1800.0 div 30.0 mul</float>
+                                        </fadd>
+                                        <float id="b" value="0.0"/>
+                                    </apply>
+                                    <apply id="b" select="movMovie:GetDuration"/>                                
+                                </apply>
+                            </apply>
+                            <apply select="movMovie:Play"/>
+                        </if>
+                    </function>
+                    <list>
+                        <apply select="uiDetailSlider:Enum:OnConfirm:Tie"/>
+                        <apply select="uiDetailSlider:Active:OnClick:Tie"/>
+                    </list>
+                </do>
+                <apply id="slotShowMovieMenu" select="uiMovie:Active:OnClick1:Tie">
+                    <function id="callback">
+                        <apply select="uiWorkspace:ShowAtPointer">
+                            <let id="widget" select="uiMovieMenu"/>
+                        </apply>
+                    </function>
+                </apply>
+                <apply id="slotMovieMenuSelect" select="uiMovieMenu:Enum:OnConfirm:Tie">
+                    <function id="callback">
+                        <choose>
+                            <when test="$(first) 0 =">
+                                <apply select="movMovie:Play"/>
+                            </when>
+                            <when test="$(first) 1 =">
+                                <apply select="movMovie:Pause"/>
+                            </when>
+                            <when test="$(first) 2 =">
+                                <apply select="movMovie:Stop"/>
+                                <apply select="LeaveState"/>
+                                <apply select="EnterNoMovieState"/>
+                            </when>
+                            <when test="$(first) 3 =">
+                                <apply select="uiTitle:SetVisible">
+                                    <not id="visible">
+                                        <apply select="uiTitle:IsVisible"/>
+                                    </not>
+                                </apply>
+                            </when>
+                            <when test="$(first) 4 =">
+                                <apply select="uiMovieCtlFrame:SetVisible">
+                                    <not id="visible">
+                                        <apply select="uiMovieCtlFrame:IsVisible"/>
+                                    </not>
+                                </apply>
+                            </when>
+                            <when test="$(first) 5 =">
+                                <apply select="uiButtons:SetVisible">
+                                    <not id="visible">
+                                        <apply select="uiButtons:IsVisible"/>
+                                    </not>
+                                </apply>
+                            </when>
+                            <otherwise>
+                                <error>Selected non-existing option.</error>
+                            </otherwise>
+                        </choose>
+                        <apply select="uiMovieMenu:SetVisible">
+                            <integer id="visible" value="0"/>
+                        </apply>
+                    </function>
+                </apply>
+            </doin>
+        </function>
+    </compile>
+</xml>

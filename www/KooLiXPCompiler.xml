@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="utgs.xsl" type="text/xsl" version="1.0"?>
+
+<document>
+    <title>KooLiXP Language</title>
+    <sub-title>Reference Manual</sub-title>
+
+    <links>
+        <link name="Chunk">#Chunk</link>
+        <link name="Symbol">#Symbol</link>
+        <link name="Lookup">#Lookup</link>
+        <link name="Scope">#Scope</link>
+        <link name="Simplified Assignment Syntax">#Simplified Assignment Syntax</link>
+    </links>
+    
+    <chapters>
+        <toc>
+            <link>
+                <title><i>KooLiXP</i> - Language Overview</title>
+                <href>KooLiXPOverview.xml</href>
+            </link>
+            <link>
+                <title><i>KooLiXP</i> - Complex Example</title>
+                <href>KooLiXPComplexExample.xml</href>
+            </link>
+        </toc>
+        <chapter>
+            <title>A <i>Chunk</i></title>
+            <name>Chunk</name>
+            <body>
+                <p>
+                    A chunk represents: number, string, object, function, closure or any other <q>thing</q> in KooLiXP.
+                </p>
+                <p>
+                    In KooLiXP <b>every <i>Symbol</i> refers to some chunk</b>.
+                </p>
+                <p>
+                    A C++ corresponding type is <code lang="text">XMLProgram::IChunk</code>
+                    <ul>
+                        <li><n>operator &gt;&gt; ( int &amp; )</n><d>convert to integer,</d></li>
+                        <li><n>operator &gt;&gt; ( double &amp; )</n><d>convert to float,</d></li>
+                        <li><n>operator &gt;&gt; ( TextUtf8 &amp; )</n><d>convert to string.</d></li>
+                        <li><n>IChunk *  GetChunk( name )</n><d>get child with given name,</d></li>
+                        <li><n>void SetChunk( name, IChunk *)</n><d>set child with given name,</d></li>
+                        <li><n>bool IsLazy()</n><d>is it lazy chunk? (should execute to obtain its value)</d></li>
+                    </ul>
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>A <i>Symbol</i></title>
+            <name>Symbol</name>
+            <body>
+                <p>
+                    While <i>Chunk</i> represents some concrete <q>value</q>, a symbol exists only in concrete <i>Scope</i> or other <i>Chunk</i>.
+                </p>
+                <p>
+                    A symbol is an <b>association of a name with concrete <i>Chunk</i></b>.
+                </p>
+                <p>
+                    <b>Note:</b> One chunk may be used to define several symbols, since you may assign several names to same object.<br/>
+                    This is why objects are <b>reference-counted</b>.<br/>
+                    Since reference counting is used instead of garbage collection, KooLiXP has well known <b>problem of cyclic references</b>.<br/>
+                    However it is rather easy to cope with that manually. You know the places where it could happen, and you are able to make
+                    reference graph acyclic, by removing cyclic connections (In most cases you know which connections are cyclic).
+                    <tip>
+                        <code lang="xml">
+                            <compile run="1">
+                                <block id="MyObject">
+                                    <comment>Creating referece to self is cyclic.</comment>
+                                    <let id="self" select="__block__"/>
+                                </block>
+                                <comment>To fix this, assign an empty chunk to a variable keeping cyclic reference.</comment>
+                                <set id="MyObject:self">
+                                    <empty/>
+                                </set>
+                            </compile>
+                        </code>
+                    </tip>
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title><i>Lookup</i> for a symbol</title>
+            <name>Lookup</name>
+            <body>
+                <p>Lookup is done via searching for given symbol name in all scopes, starting from current <i>Scope</i>, and moving thru previous scopes.
+                </p>
+                <tip>
+                    <p>The pseudo-code bellow shows how does the lookup work:</p>
+                    <pre>
+Lookup( name, currentState )
+{
+    while( nil != currentState )
+    {
+        found = currentState._currentBlock.GetChunk( name );
+        if( nil != found )
+        {
+            return found;
+        }
+        currentState = currentState._prevState;
+    }
+    return nil;
+}
+                    </pre>
+                </tip>
+            </body>
+        </chapter>
+        <chapter>
+            <title><i>Scope</i> for a symbol</title>
+            <name>Scope</name>
+            <body>
+                <p>Scope is an object containing information about current context.
+                    A C++ corresponding type is <code lang="text">XMLProgram::ExecutionState</code>, where such fields are defined (names in <q/> are <i>KooLiXP</i> names):
+                    <ul>
+                        <li><n>_currentBlock, <q>__block__</q></n><d>block of symbols (here we lookup for a symbols like: constants, variables, functions or closures),</d></li>
+                        <li><n>_lastResult, <q>__result__</q></n><d>the invocation result of the most recent instruction,</d></li>
+                        <li><n>_prevState</n><d>the previous scope (where we lookup for a symbol if we couldn't find it here).</d></li>
+                        <li><n>_currentDict</n><d>an instruction dictionary (depends on context),</d></li>
+                        <li><n>IChunk * GetResult() const</n><d>C++ function used to obtain <i>_lastResult</i>.</d></li>
+                        <li><n>void SetResult( IChunk * )</n><d>C++ function used to set <i>_lastResult</i>
+                                (the previous result is released, and a new one is add-reffed).</d></li>
+                    </ul>
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title><i>Simplified Assignment Syntax</i></title>
+            <name>Simplified Assignment Syntax</name>
+            <body>
+                <p>
+                    Most of KooLiXP instructions support <q>id</q> attribute.
+                    When you set this attribute, the result of an instruction is automatically assigned to new symbol name in current <i>Scope</i>.
+                </p>
+                <p>
+                    Main rules:
+                    <ll>
+                        <li>Each instruction returns result (the only exceptions to this rule are <i>let</i>, <i>set</i> and <i>register</i> instructions).</li>
+                        <li>The result is passed to parent instruction, or</li>
+                        <li>the result is placed in <i>_currentBlock</i> under name
+                            taken from <q>id</q> attribute.</li>
+                    </ll>
+                </p>
+                <p>
+                    When you write an instruction with an <q>id</q> attribute, you define new symbol from value returned by this instruction.
+                </p>
+                <p>
+                    <b>Warning:</b> Simplified Assignment Syntax applies only to <b>in-compile</b> instructions. Outside of <code lang="xml"><compile/></code> you
+                    must use <i>let</i> instruction.
+                </p>
+                <p>
+                    <b>Note:</b> It is easy to make mistake, when you errorneously given <q>id</q> attribute. <b>last result won't be set</b>.
+                </p>
+                <p>
+                    <tip>
+                        <code lang="xml">
+                            <xml>
+                                <comment>Bellow are non-compile instructions:</comment>
+                                <let id="x">
+                                    <integer value="10"/>
+                                </let>
+                                <let id="d">
+                                    <float value="12.5"/>
+                                </let>
+                                <let id="h">
+                                    <call id="image:GetHeight"/>
+                                </let>
+                            </xml>
+                        </code>
+                        <p>A Simplified Assignment Syntax (allowed only in-compile).</p>
+                        <code lang="xml">
+                            <xml>
+                                <comment>Bellow are in-compile substitutes:</comment>
+                                <compile run="1">
+                                    <integer id="x" value="10"/>
+                                    <float id="d" value="12.5"/>
+                                    <apply id="h" select="image:GetHeight"/>
+                                </compile>
+                            </xml>
+                        </code>
+                    </tip>
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>let</i>&gt;</title>
+            <name>let</name>
+            <body>
+                <p>Define new symbol in current <i>Scope</i>. If that symbol name is already defined an error occures.
+                </p>
+                <tip>
+                    Get object returned as <b>last result</b> of inner code and assign it a name <q>VariableName</q> in <b>current scope</b>.<br/>
+                    Any symbol definitions inside of the inner code are done in <b>separate scope</b>.
+                    <p>
+                        <code lang="xml">
+                            <let id="VariableName">
+                                <comment>Code returning some object.</comment>
+                            </let>
+                        </code>
+                    </p>
+                </tip>
+                <tip>
+                    <i>Lookup</i> for <q>ObjectName</q> in <b>all scopes</b>.
+                    The new name <q>VariableName</q> in <b>current scope</b> is then assigned for that object.<br/>
+                    <p>
+                        <code lang="xml">
+                            <let id="VariableName" select="ObjectName"/>
+                        </code>
+                    </p>
+                </tip>
+                <tip>
+                    <i>Lookup</i> for <q>FunctionObjectName</q> in <b>all scopes</b>.
+                    The new name <q>VariableName</q> in <b>current scope</b> is then assigned for object that was the result of execution of found object.<br/>
+                    <p>
+                        <code lang="xml">
+                            <let id="VariableName" force="FunctionObjectName"/>
+                        </code>
+                    </p>
+                </tip>
+                <p><b>Note:</b> You shouldn't use &lt;<i>let</i>&gt; to define new symbol. Instead use the <i>Simplified Assignment Syntax</i>.
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>set</i>&gt;</title>
+            <name>set</name>
+            <body>
+                <p>Find existing symbol, and assign new object to it
+                </p>
+                <tip>
+                    <i>Lookup</i> for <q>VariableName</q> in <b>all scopes</b>.
+                    Get object returned as <b>last result</b> of inner code.
+                    This new object replaces old object in dictionary where symbol were found.<br/>
+                    Any symbol definitions inside of the inner code are done in <b>separate scope</b>.
+                    <p>
+                        <code lang="xml">
+                            <set id="VariableName">
+                                <comment>Code returning some object.</comment>
+                            </set>
+                        </code>
+                    </p>
+                </tip>
+                <tip>
+                    <i>Lookup</i> for <q>VariableName</q> in <b>all scopes</b>.
+                    <i>Lookup</i> for <q>ObjectName</q> in <b>all scopes</b>.
+                    Object found as <q>ObjectName</q> replaces old object in dictionary where <q>VariableName</q> symbol were found.<br/>
+                    The new name <q>VariableName</q> in <b>current scope</b> is then assigned for that object.<br/>
+                    <p>
+                        <code lang="xml">
+                            <set id="VariableName" select="ObjectName"/>
+                        </code>
+                    </p>
+                </tip>
+                <tip>
+                    <i>Lookup</i> for <q>VariableName</q> in <b>all scopes</b>.
+                    <i>Lookup</i> for <q>FunctionObjectName</q> in <b>all scopes</b>.
+                    Object being the result of execution of function found as <q>ObjectName</q> replaces old object
+                    in dictionary where <q>VariableName</q> symbol were found.<br/>
+                    <p>
+                        <code lang="xml">
+                            <set id="VariableName" force="FunctionObjectName"/>
+                        </code>
+                    </p>
+                </tip>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>get</i>&gt;</title>
+            <name>get</name>
+            <body>
+                <p>Find existing symbol.
+                </p>
+                <tip>
+                    <i>Lookup</i> for <q>ObjectName</q> in <b>all scopes</b>.
+                    Found object is assigned to <b>last result</b> of <b>current scope</b>.<br/>
+                    <p>
+                        <code lang="xml">
+                            <get id="ObjectName"/>
+                        </code>
+                    </p>
+                </tip>
+                <p><b>Note:</b> Instruction &lt;<i>get</i>&gt; cannot use <i>Simplified Assignment Syntax</i>, since an <q>id</q> attribute would be in conflict.
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>lookup</i>&gt;</title>
+            <name>lookup</name>
+            <body>
+                <p>Find symbol in object. Symbol name is <b>run-time</b>.
+                </p>
+                <tip>
+                    <i>Lookup</i> for <q>MemberName</q> in <b>symbol dictionary</b> named <q>ObjectName</q>.
+                    Found object is assigned to <b>last result</b> of <b>current scope</b>.<br/>
+                    <p>
+                        <code lang="xml">
+                            <lookup>
+                                <let id="dict" select="ObjectName"/>
+                                <let id="name" select="MemberName"/>
+                            </lookup>
+                        </code>
+                    </p>
+                </tip>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>register</i>&gt;</title>
+            <name>register</name>
+            <body>
+                <p>Define new symbol in object. Symbol name is <b>run-time</b>.
+                </p>
+                <tip>
+                    Add new item to symbol dictionary.
+                    <p>
+                        <code lang="xml">
+                            <register>
+                                <let id="dict" select="ObjectName"/>
+                                <let id="name" select="MemberName"/>
+                                <let id="value" select="ValueName"/>
+                            </register>
+                        </code>
+                    </p>
+                </tip>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>is-not-empty</i>&gt;</title>
+            <name>is-not-empty</name>
+            <body>
+                <p>Test if object assigned to symbol name is not empty.
+                </p>
+                <tip>
+                    <p>
+                        <code lang="xml">
+                            <is-not-empty id="SymbolName"/>
+                        </code>
+                    </p>
+                </tip>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>is-defined</i>&gt;</title>
+            <name>is-defined</name>
+            <body>
+                <p>Test if symbol name is defined.
+                </p>
+                <tip>
+                    <p>
+                        <code lang="xml">
+                            <is-defined id="SymbolName"/>
+                        </code>
+                    </p>
+                </tip>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>error</i>&gt;</title>
+            <name>error</name>
+            <body>
+                <p>Throw error message.
+                </p>
+                <tip>
+                    <p>
+                        <code lang="xml">
+                            <error>This text will appear in error information dialog and application log.</error>
+                        </code>
+                    </p>
+                </tip>
+                <tip>
+                    <p>
+                        <code lang="xml">
+                            <error>
+                                <comment>Code returning some object, which will be converted to string and displayed as error message.</comment>
+                            </error>
+                        </code>
+                    </p>
+                </tip>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>function</i>&gt;</title>
+            <name>function</name>
+            <body>
+                <p>Define new function.
+                </p>
+                <tip>
+                    <p>
+                        <code lang="xml">
+                            <function id="FunctionName" parameters="Param1 Param2 Param3 ...">
+                                <comment>instructions...</comment>
+                                <comment>last instruction result is used as a result of this function.</comment>
+                            </function>
+                        </code>
+                    </p>
+                </tip>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>apply</i>&gt;</title>
+            <name>apply</name>
+            <body>
+                <p>Apply a function.
+                </p>
+                <p>
+                    Main rules:
+                    <ll>
+                        <li>New execution <i>Scope</i> is always created.</li>
+                        <li>User may execute his own code inside of an execution scope, providing this way parameters to a function.</li>
+                        <li>Execution scope is linked with scope where <code lang="xml"><apply/></code> occures, providing function
+                            an access to all currently accessible <i>Symbol</i>s.</li>
+                    </ll>
+                </p>
+                <tip>
+                    <p>
+                        <code lang="xml">
+                            <apply select="FunctionName">
+                                <comment>instructions preparing execution scope such as:</comment>
+                                <let id="Param1" select="Param1Value"/>
+                                <let id="Param2" select="Param2Value"/>
+                            </apply>
+                        </code>
+                    </p>
+                </tip>
+                <p><b>Note:</b> Function has an access to each symbol that may be found in current or in any previous scope.
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Instruction: &lt;<i>curry</i>&gt;</title>
+            <name>curry</name>
+            <body>
+                <p>Postpone function application with some given parameters.
+                </p>
+                <tip>
+                    <p>Create <q>CurriedFunction</q>.</p>
+                    <code lang="xml">
+                        <curry id="CurriedFunction" select="FunctionName">
+                            <comment>this execution scope is curried with function.</comment>
+                            <let id="Param2" select="Param2Value"/>
+                        </curry>
+                    </code>
+                    <p>Invoke <q>CurriedFunction</q>.</p>
+                    <code lang="xml">
+                        <apply select="CurriedFunction">
+                            <comment>instructions preparing execution scope which is linked with curried scope and current scope.</comment>
+                            <let id="Param1" select="Param1Value"/>
+                        </apply>
+                    </code>
+                </tip>
+            </body>
+        </chapter>
+    </chapters>
+</document>

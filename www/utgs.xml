@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="utgs.xsl" type="text/xsl" version="1.0"?>
+
+<document>
+    <title>UTGS - Library of Libraries</title>
+    <sub-title>All Documentation</sub-title>
+
+    <chapters>
+        <toc>
+            <link>
+                <title><i>Useless</i> - Library Overview</title>
+                <href>UselessOverview.xml</href>
+            </link>
+            <link>
+                <title><i>KooLiXP</i> - Language Overview</title>
+                <href>KooLiXPOverview.xml</href>
+            </link>
+            <link>
+                <title><i>KooLiXP</i> - Language Reference Manual</title>
+                <href>KooLiXPCompiler.xml</href>
+            </link>
+        </toc>
+        <chapter>
+            <title>Preface</title>
+            <name>Preface</name>
+            <body>
+                <p>
+                    <image src="koolas.png"/>
+                </p>
+                <p>
+                    Hi. I am Sadhbh Code, M.Sc. of Computer Science.
+                    I've been Lead Programer involved in sevral commercial game projects, for 5 years.
+                    The work presented here is derived from these projects.
+                    The components of this library were used commercialy in a wide variety of game types,
+                    such as: tycoon management, 3rd person advanture, or pack of mini-games for kids.
+                </p>
+                <p>
+                    <b>On 11-th May 2005</b>, I got the <b>clerical permission</b>, signed by my boss, to place these components into <b>public domain</b>.
+                    After then, I was looking for free <i>Subversion</i> host server.
+                    If you have access to this project, it means I have found one <code lang="text">;-)</code>
+                </p>
+                <p>
+                    Project Components:
+                    <ul>
+                        <li><n>Useless</n><d>utility &amp; multimedia library.</d></li>
+                        <li><n>KooLib</n><d>utility &amp; KooLiXP library.</d></li>
+                        <li><n>Dynamo</n><d>dynamic module loading w/ KooLiXP bound.</d></li>
+                        <li><n>strmbase</n><d>public Microsoft Direct Show base classes.</d></li>
+                        <li><n>KooLiXP</n><d>executable program linked against all libraries.</d></li>
+                        <li><n>vc7.0</n><d>Microsoft Visual C++ 7.0 projects.</d></li>
+                        <li><n>vc7.1</n><d>Microsoft Visual C++ 7.1 projects.</d></li>
+                        <li><n>gcc</n><d>gcc build &amp; clean scripts.</d></li>
+                        <li><n>examples</n><d>examples of usage.</d></li>
+                        <li><n>www</n><d>This documentation.</d></li>
+                    </ul>
+                </p>
+                <p>
+                    Virtues:
+                    <ll>
+                        <li> BSD License,</li>
+                        <li> X-platform project via multiple layers of abstraction,</li>
+                        <li> Scripting language, easy to learn, with many bindings to components of the library,</li>
+                        <li> Extensible thru external modules loaded at run-time,</li>
+                        <li> Tested against comercial game projects,</li>
+                    </ll>
+                </p>
+                <p>
+                    Features:
+                    <ll>
+                        <li> Encryption Capable Virtual Filesystem,</li>
+                        <li> GUI User Interface Library,</li>
+                        <li> XML Resource Library,</li>
+                        <li> C++ Utility Templates such as functors, signals, associative containers,</li>
+                        <li> DirectShow streaming thru OpenGL textures synchronized with GUI rendering,</li>
+                    </ll>
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>About <i>KooLiXP</i> Language</title>
+            <name>AbountKooLiXP</name>
+            <body>
+                <p>
+                    The <i>KooLiXP</i> language is functional like LISP, and object oriented like Python.
+                    It looks similar to XSL Transform language, since an XML syntax have been choosed as its form.
+                    This is high-level language, where you don't bother how to do a thing, you'd rather think what
+                    thing is to be done. It is is realy easy to learn declarative language.
+                </p>
+                <p>
+                    The major features of <i>KooLiXP</i> are:
+                    <ll>
+                        <li>built-in, <b>just-in-time compiler</b>, which provides ability to create compiled functions from selected parts of code,</li>
+                        <li>function <b>currying</b>, which provides ability to in-place creation of function objects with bound selected function and given parameters,</li>
+                        <li>infinite <b>streams</b>, when you create listnode with a listnode generator function in a <q>tail</q>,</li>
+                        <li>built-in operations such as: <b><i>map</i>, <i>fold</i>, <i>zip</i>, <i>range</i>, <i>seek</i>, <i>head</i></b> providing
+                            easy and fast iteration algorithms,</li>
+                        <li><b>runtime in-place objects</b>, when you create an object and initial values of its members without having defined any class,</li>
+                        <li>import built-in library <b>bindings</b>,</li>
+                        <li>control over <b>loading at runtime</b> of user supplied dynamic libraries (win32 DLL or linux SO). </li>
+                    </ll>
+                </p>
+                <p>
+                    <link>
+                        <title>See Language Overview...</title>
+                        <href>KooLiXPOverview.xml</href>
+                    </link>
+                </p>
+                <p>
+                    <link>
+                        <title>See Language Reference Manual...</title>
+                        <href>KooLiXPCompiler.xml</href>
+                    </link>
+                </p>
+                <p>
+                    <link>
+                        <title>See Complex Example ...</title>
+                        <href>KooLiXPComplexExample.xml</href>
+                    </link>
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>About <i>Useless</i> Library</title>
+            <name>AboutUseless</name>
+            <body>
+                <p>
+                    <i>Useless</i> is a library providing solutions usefull in many aspects of creating a game.
+                    It introduces abstract <i>File</i>, <i>Image</i>, <i>Sound</i>, <i>Movie</i> and <i>GUI</i> components.
+                </p>
+                <p>
+                    There can be seen few layers in <i>Useless</i> module:
+                    <ll>
+                        <li>System Interface - provides system windows and events translation to window-level signals,</li>
+                        <li>Hardware Abstraction - hardware acceleration for graphics, sound and other multimedia,</li>
+                        <li>Images Abstraction - mechanisms to load pixmaps from files onto hardware surfaces,</li>
+                        <li>Sounds Abstraction - mechanisms to load samples from files into hardware buffers,</li>
+                        <li>GUI - Graphical User Interface - widgets, skins and fonts,</li>
+                        <li>XML Resources - creation of items from other layers, based on scipts.</li>
+                    </ll>
+                </p>
+                <p>
+                    <link>
+                        <title>See Library Overview...</title>
+                        <href>UselessOverview.xml</href>
+                    </link>
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Thanx</title>
+            <name>Thanx</name>
+            <body>
+                <p>
+                    I'd like to send big thanx to my boss, who gave me a legal right to place all this stuff into a public domain.
+                </p>
+                <p>
+                    I'd also like to thank my good colegue from company, with whom I've discussed several library topics.
+                </p>
+                <p>
+                    Big thanx for all those people who have beta-tested this software in many projects.
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Finale</title>
+            <name>Finale</name>
+            <body>
+                <p>
+                    Use this library for whatever you want.
+                </p>
+                <p>
+                    I'd like to know if you like this project, what good or bad things you see, what would you have changed.
+                    I'd like to know if it is usefull or useless in your opinion.
+                </p>
+                <p>
+                    I would be pleased if you don't forget to send me a note to https://github.com/sadhbh-c0d3.
+                </p>
+            </body>
+        </chapter>
+    </chapters>
+
+</document>

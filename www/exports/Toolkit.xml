@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Built-In: Toolkit.</title>
+    <description>
+        A built-in library of routines exported from Useless namespace.
+    </description>
+    <block>
+        <chunk id="CirclePoint">
+            <type-name>function( i:float, n:float, start:float, quaterArea:class Useless::Rect ) -&gt; class Useless::Point&lt;int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateChannel">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateImage">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateImageBuffer">
+            <type-name>function( width:int, height:int ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateMovie">
+            <type-name>function( file:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateMovie2">
+            <type-name>function( file:string, audio:unicode-string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateOggVorbis">
+            <type-name>function( file:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreatePointList">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreatePrinter">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateRectList">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateSample">
+            <type-name>function( file:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateScreen">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="CreateVideo">
+            <type-name>function( file:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="FileExists">
+            <type-name>function( path:string ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="FromXMLString">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetColorByName">
+            <type-name>function( name:string ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetKeyCode">
+            <type-name>function( name:string ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="GetKeyName">
+            <type-name>function( code:int ) -&gt; string</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="IsDir">
+            <type-name>function( path:string ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="ListFiles">
+            <type-name>function( path:string ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="MakeRGB">
+            <type-name>function( red:int, green:int, blue:int ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="MakeRGBA">
+            <type-name>function( red:int, green:int, blue:int, alpha:int ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="ReadFile">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="ToXMLString">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="WriteFile">
+            <type-name>function( Node, State ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+    </block>
+</xml>

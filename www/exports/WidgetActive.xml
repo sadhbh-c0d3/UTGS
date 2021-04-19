@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Type: Widget:Active.</title>
+    <description>
+        Any widget that translates input messages from mouse and keyboard.
+    </description>
+    <block>
+        <chunk id="IsActive">
+            <type-name>function() -&gt; bool</type-name>
+            <defined-symbols/>
+        </chunk>
+        <signal id="OffChar">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OffKeyPress">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OffPress, OffPress1, OffPress2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OffPress1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OffPress2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OffWheel">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnActivate">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnCatch">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnCatch1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnCatch2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnChar">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnClick">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnClick1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnClick2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDoubleClick">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDoubleClick1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDoubleClick2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDrag">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDrag1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDrag2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDrop">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDrop1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnDrop2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnKeyPress">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnKeyRelease">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnMoveIn">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnMoveIn1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnMoveIn2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnMoveOut">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnMoveOut1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnMoveOut2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnMoveOutside">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnMoveOver">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnPress">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnPress1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnPress2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnRelease">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnRelease1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnRelease2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="OnWheel">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <chunk id="SetActive">
+            <type-name>function( active:bool ) -&gt; void</type-name>
+            <defined-symbols/>
+        </chunk>
+        <signal id="WhileDrag">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="WhileDrag1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="WhileDrag2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="WhileHold">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="WhileHold1">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="WhileHold2">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="WhileKey">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="WhileMoving">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+        <signal id="WhileOffKey">
+            <type-name>signal()</type-name>
+            <description>
+            </description>
+        </signal>
+    </block>
+</xml>

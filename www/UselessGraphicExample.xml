@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="utgs.xsl" type="text/xsl" version="1.0"?>
+
+<document>
+    <title>Useless.Graphic</title>
+    <sub-title>Examples</sub-title>
+
+    <links>
+        <link name=""></link>
+    </links>
+
+
+    <chapters>
+        <toc>
+            <link>
+                <title><i>Useless</i> - Library Overview</title>
+                <href>UselessOverview.xml</href>
+            </link>
+        </toc>
+        <chapter>
+            <title>Graphic example in C++</title>
+            <name>GraphicExampleCXX</name>
+            <body>
+                <p>
+                    Following example creates 800 x 600 window, loads two images "sky.tga" and "cloud.tga", and
+                    blits these images to window, and eventually displays new window content by swapping back buffer with front buffer.
+                </p>
+                <p>
+                    <code lang="cpp">
+                        <s>using namespace Useless</s>;<br/>
+                        <s>SPointer&lt; Screen &gt; myScreen</s> <o>=</o> <s>CreateScreen</s><o>(</o><v>"Your Window Title"</v><o>)</o>;<br/>
+                        <br/>
+                        // Let's say we'll open windowed version.<br/>
+                        <s>myScreen->OpenWindowed</s><o>(</o> <v>800</v>, <v>600</v> <o>)</o>;<br/>
+                        <s>Image imgSky</s><o>(</o><v>"sky.tga"</v><o>)</o>;<br/>
+                        <s>Image imgCloud</s><o>(</o><v>"cloud.tga"</v><o>)</o>;<br/>
+                        <s>ImageBuffer myOffscreenBuffer</s><o>(</o><v>640</v>,<v>480</v><o>)</o>;<br/>
+                        <br/>
+                        // Before we blit anything to myOffscreenBuffer we must assign it a hardware resource.<br/>
+                        // IGraphics.Cooperate method creates hardware surface (it also loads pixels in case of Image objects).<br/>
+                        <s>myOffscreenBuffer.Cooperate</s><o>(</o><o>*</o><s>myScreen->GetSurface()</s><o>)</o>;<br/>
+                        <br/>
+                        // We would like to stretch image to cover whole myOffscreenBuffer area.<br/>
+                        // So, now we set image dimensions on target surface.<br/>
+                        <s>imgSky.SetDestWidth</s><o>(</o> <s>myOffscreenBuffer.GetWidth</s> <o>())</o>;<br/>
+                        <s>imgSky.SetDestHeight</s><o>(</o> <s>myOffscreenBuffer.GetHeight</s> <o>())</o>;<br/>
+                        <br/>
+                        // Sky is ready to blit, do it!<br/>
+                        // IGraphics.BlitTo will invoke IGraphics.Cooperate, and if this is first blit, a new hardware resource<br/>
+                        // will be created, and pixels from image file will be loaded.<br/>
+                        <s>imgSky.BlitTo</s><o>(</o> <v>0</v>, <v>0</v>, <s>myOffscreenBuffer</s> <o>)</o>;<br/>
+                        <br/>
+                        // Now, let's blit our cloud at left-upper corrner.<br/>
+                        // Our cloud won't be stretched, we'll use original dimensions, so SetDestWidth, SetDestHeight is not invoked here.<br/>
+                        <s>imgCloud.BlitTo</s><o>(</o> <v>0</v>, <v>0</v>, <s>myOffscreenBuffer</s> <o>)</o>;<br/>
+                        <br/>
+                        // Our window has different dimensions, so stretch...<br/>
+                        <s>myOffscreenBuffer.SetDestWidth</s><o>(</o> <s>myScreen->GetWidth</s><o>())</o>;<br/>
+                        <s>myOffscreenBuffer.SetDestHeight</s><o>(</o> <s>myScreen->GetHeight</s><o>())</o>;<br/>
+                        <br/>
+                        // Now our offscreen buffer is complete to be presented on screen, do it!<br/>
+                        <s>myOffscreenBuffer.BlitTo</s><o>(</o> <v>0</v>, <v>0</v>, <o>*</o><s>myScreen</s><o>)</o>;<br/>
+                        <br/>
+                        // Screen is doublebuffered, so we need to swap them.<br/>
+                        <s>myScreen->Swap</s><o>()</o>;<br/>
+                    </code>
+                </p>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Graphic example in <i>KooLiXP</i></title>
+            <name>GraphicExampleKooLiXP</name>
+            <body>
+                <p>
+                    Obviously C++ example was very simple. Code would complicate if someone wanted to compose these two images with GUI.
+                    Following example is written in <i>KooLiXP</i> language wich allows you to define GUI resources together with
+                    program code in a single XML file.
+                </p>
+                <p>
+                    <code lang="xml">
+                        <xml>
+                            <system>
+                                <comment>Define screen resource to be 800 x 600</comment>
+                                <screen id="screen" width="800" height="600" title="The Example"/>
+                            </system>
+
+                            <programms>
+                                <comment>Define exampleProgram.</comment>
+                                <comment>Defined program needs to be executed in some context.</comment>
+                                <fsm id="exampleProgram">
+
+                                    <comment>Import modules that we'll use here.</comment>
+                                    <let id="Toolkit"><let id="screen">screen</let><import id="Toolkit"/></let>
+                                    <let id="Resources"><import id="Resources"/></let>
+
+                                    <comment>Tell XML processor to compile enclosed code.</comment>
+                                    <comment>Normally &lt;compile&gt; element creates function, which you'd need to call.</comment>
+                                    <comment>The run parameter set to 1 inserts call command for us.</comment>
+                                    <compile run="1">
+
+                                        <comment>I use "Toolkit:CreateImage" method to load images.</comment>
+                                        <comment>The id="imgSky" creates local variable named "imgSky".</comment>
+                                        <comment>This variable will contain result of method call</comment>
+                                        <comment>In our case variables "imgSky" and "imgCloug" will be images.</comment>
+                                        <apply id="imgSky" select="Toolkit:CreateImage">
+                                            <comment>Following element creates variable named "color+alpha" that will hold "sky.tga" string.</comment>
+                                            <comment>The scope in which variable is defined is parameter list for method call.</comment>
+                                            <comment>It means that we pass to "Toolkit:CreateImage" method a parameter</comment>
+                                            <comment>named "color+alpha" that is a string "sky.tga".</comment>
+                                            <string id="color+alpha">sky.tga</string>
+                                        </apply>
+                                        <apply id="imgCloud" select="Toolkit:CreateImage">
+                                            <string id="color+alpha">cloud.tga</string>
+                                        </apply>
+
+                                        <comment>Ask for screen.</comment>
+                                        <apply id="myScreen" select="Resources:GetScreen">
+                                            <string id="name">screen</string>
+                                        </apply>
+                                        <comment>Create our offscreen buffer (just for an example).</comment>
+                                        <apply id="myOffscreenBuffer" select="Toolkit:CreateImageBuffer">
+                                            <integer id="width" value="640"/>
+                                            <integer id="height" value="480"/>
+                                        </apply>
+                                        <comment>Using painter in same scope as its target plane causes crash. So we use separate scope using &lt;do&gt;.</comment>
+                                        <comment>BUG: This is probably because variables are disposed in random order (C++: map::~map() is used).</comment>
+                                        <do>
+                                            <comment>Create painter with myOffscreenBuffer as paint target.</comment>
+                                            <apply id="painter" select="myOffscreenBuffer:CreatePainter"/>
+                                            <comment>Use its FastBlit method to blit an image on target.</comment>
+                                            <apply select="painter:FastBlit">
+                                                <comment>&lt;let&gt; creates variable referencing same object as other variable.</comment>
+                                                <comment>In this case "Imag" variable will point to image in "imgSky" variable.</comment>
+                                                <comment>The "FastBlit" method will use "Imag" as source image parameter.</comment>
+                                                <let id="Imag" select="imgSky"/>
+                                                <comment>&lt;block&gt; creates a scope that can be assigned to variable.</comment>
+                                                <comment>In this case "Canv" variable will point to scope containing "x", "y", "w", "h" variables.</comment>
+                                                <comment>One can use "Canv:x" to access "x" variable within "Canv" scope.</comment>
+                                                <comment>The "FastBlist" method will use "Canv" as rectangle on target canvas.</comment>
+                                                <block id="Canv">
+                                                    <comment>Following elements define "x" and "y" integer vabiables.</comment>
+                                                    <integer id="x" value="0"/>
+                                                    <integer id="y" value="0"/>
+                                                    <comment>The "w" and "h" variables each is defined as a result of method call.</comment>
+                                                    <comment>This will make sky image cover whole image buffer area.</comment>
+                                                    <apply id="w" select="myOffscreenBuffer:GetWidth"/>
+                                                    <apply id="h" select="myOffscreenBuffer:GetHeight"/>
+                                                </block>
+                                            </apply>
+                                            <comment>Here we blit cloud.</comment>
+                                            <apply select="painter:FastBlit">
+                                                <let id="Imag" select="imgSky"/>
+                                                <block id="Canv">
+                                                    <integer id="x" value="0"/>
+                                                    <integer id="y" value="0"/>
+                                                    <comment>The cloud will cover only some portion of the screen.</comment>
+                                                    <apply id="w" select="imgCloud:GetWidth"/>
+                                                    <apply id="h" select="imgCloud:GetHeight"/>
+                                                </block>
+                                            </apply>
+                                        </do>
+                                        <comment>At this point we have "myOffscreenBuffer" variable containing image buffer</comment>
+                                        <comment>with cloud on they sky. Now we need to blit this buffer onto screen whenever</comment>
+                                        <comment>it is required (i.e. window is resized)</comment>
+                                        <comment>To do that we attach callback function to "OnPaint" signal of the screen.</comment>
+                                        <apply id="slotPaint" select="myScreen:OnPaint:Tie">
+                                            <comment>&lt;function&gt; element creates callable object.</comment>
+                                            <comment>Here this callable is assigned to variable named "callback".</comment>
+                                            <function id="callback">
+                                                <comment>The code within &lt;function&gt; declaration has no reference to the scope</comment>
+                                                <comment>where it was defined. All variables used here are local to function, or</comment>
+                                                <comment>local to its parameter list, or are global (defined in &lt;fsm&gt; scope).</comment>
+                                                <comment>Global variables used in this function are: "myScreen" and "myOffscreenBuffer".</comment>
+                                                <apply id="painter" select="myScreen:CreatePainter"/>
+                                                <comment>Here we blit buffer from "myOffscreenBuffer" onto screen from "myScreen".</comment>
+                                                <apply select="painter:FastBlit">
+                                                    <let id="Imag" select="myOffscreenBuffer"/>
+                                                    <block id="Canv">
+                                                        <integer id="x" value="0"/>
+                                                        <integer id="y" value="0"/>
+                                                        <apply id="w" select="myScreen:GetWidth"/>
+                                                        <apply id="h" select="myScreen:GetHeight"/>
+                                                    </block>
+                                                </apply>
+                                                <comment>Eventually we swap buffers.</comment>
+                                                <comment>In this example it is required, but normally (when you have &lt;gui&gt; </comment>
+                                                <comment>element defined) you don't do that.</comment>
+                                                <apply select="myScreen:Swap"/>
+                                            </function>
+                                        </apply>
+                                        <comment>The object returned by "Tie" method is callable, and calling it</comment>
+                                        <comment>we only call our callback function. The binding remains active</comment>
+                                        <comment>as long as this callable is not disposed (here "slotPaint" variable</comment>
+                                        <comment>is the only owner of this callable, disposing it removes binding).</comment>
+                                        <apply select="slotPaint"/>
+                                    </compile>
+                                </fsm>
+
+                                <comment>Run exampleProgram within context of object1.</comment>
+                                <comment>The object1 will be created, since it doesn't exisint yet.</comment>
+                                <run fsm="exampleProgram" object="object1"/>
+                            </programms>
+                        </xml>
+                    </code>
+                </p>
+            </body>
+        </chapter>
+    </chapters>
+</document>
+

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="xml">
+      <UniqueIdentifier>{53becad7-90d4-466d-b154-09b32a89ebb8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\koolib\xml\XMLChunksMethod.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLChunksProgram.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLFactory.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLFactoryUtil.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLKompiler.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLModuleBuiltIn.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLProgram.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\DynamicModule.h" />
+    <ClInclude Include="..\..\koolib\Fader.h" />
+    <ClInclude Include="..\..\koolib\FastAllocator.h" />
+    <ClInclude Include="..\..\koolib\FourCC.h" />
+    <ClInclude Include="..\..\koolib\FreeListManager.h" />
+    <ClInclude Include="..\..\koolib\HyperObject.h" />
+    <ClInclude Include="..\..\koolib\Isometry.h" />
+    <ClInclude Include="..\..\koolib\KLRepeat.h" />
+    <ClInclude Include="..\..\koolib\MVC.h" />
+    <ClInclude Include="..\..\koolib\Numbers.h" />
+    <ClInclude Include="..\..\koolib\Random.h" />
+    <ClInclude Include="..\..\koolib\StdUtil.h" />
+    <ClInclude Include="..\..\koolib\SymbolDict.h" />
+    <ClInclude Include="..\..\koolib\TemplateConfig.h" />
+    <ClInclude Include="..\..\koolib\TextUTF8.h" />
+    <ClInclude Include="..\..\koolib\dynamic_cast_call.h" />
+    <ClInclude Include="..\..\koolib\xml\XMLChunksGUI.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLChunksUseless.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLModuleDynamo.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\koolib\xml\XMLModuleUseless.h">
+      <Filter>xml</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\koolib\xml\XMLChunksProgram.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLFSMObject.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLFactory.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLKompiler.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLModuleBuiltIn.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLModuleKompiler.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\HyperObject.cpp" />
+    <ClCompile Include="..\..\koolib\Numbers.cpp" />
+    <ClCompile Include="..\..\koolib\SymbolDict.cpp" />
+    <ClCompile Include="..\..\koolib\TextUTF8.cpp" />
+    <ClCompile Include="..\..\koolib\xml\XMLChunksGUI.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLChunksGUIa.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLChunksUseless.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLChunksUselessMedia.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLChunksUselessPainter.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLChunksUselessPch.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLChunksUselessWidget.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLModuleDynamo.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLModuleSimpleIPC.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\koolib\xml\XMLModuleUseless.cpp">
+      <Filter>xml</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

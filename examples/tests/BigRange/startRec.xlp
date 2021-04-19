@@ -1,0 +1,94 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: BigRange"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <text id="output" align="left" autofill="1">Output:</text>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="String"><import id="String"/></let>            
+            <let id="List"><import id="List"/></let>            
+            <compile run="1">
+                <empty id="out_text"/>
+
+                <function id="OnAppIdle">
+                    <integer id="count" value="500"/>
+                    <function id="Recursive">
+                        <choose>
+                            <when>
+                                <less>
+                                    <compare>
+                                        <integer value="0"/>
+                                        <get id="n"/>
+                                    </compare>
+                                </less>
+                                <apply select="Recursive">
+                                    <add id="n">
+                                        <get id="n"/>
+                                        <integer value="-1"/>
+                                    </add>
+                                </apply>
+                            </when>
+                            <otherwise>
+                                <empty/>
+                            </otherwise>
+                        </choose>
+                    </function>
+                    <apply select="Recursive">
+                        <let id="n" select="count"/>
+                    </apply>
+                    <set id="out_text">
+                        <cat>
+                            <string>&nl;Frames/s:&ts;</string>
+                            <fmul>
+                                <float value="1000"/>
+                                <reciprocal select="timeDelta"/>
+                            </fmul>
+                            <string>&nl;Iterations/s:&ts;</string>
+                            <fmul>
+                                <get id="count"/>
+                                <float value="1000"/>
+                                <reciprocal select="timeDelta"/>
+                            </fmul>
+                        </cat>
+                    </set>
+                    <apply select="SetDisplay"/>
+                </function>
+
+
+            </compile>
+            <function id="SetDisplay">
+                <gui-set-text target="gui.desktop.output">$(out_text)</gui-set-text>
+            </function>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

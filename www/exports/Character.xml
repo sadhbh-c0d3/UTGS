@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Built-In: Character.</title>
+    <description>
+        A built-in library of character convertion routines.
+    </description>
+    <block>
+        <string id="CR">
+            <description>Carige return character "\r".</description>
+        </string>
+        <chunk id="FromInteger">
+            <type-name>function( index:int ) -&gt; unicode-string</type-name>
+            <defined-symbols/>
+            <description>Convert integer to character.</description>
+        </chunk>
+        <string id="NL">
+            <description>New-Line character "\n".</description>
+        </string>
+        <string id="SP">
+            <description>Single Space character " ".</description>
+        </string>
+        <string id="TS">
+            <description>Tab-Space character "\t".</description>
+        </string>
+        <chunk id="ToInteger">
+            <type-name>function( char:unicode-string ) -&gt; int</type-name>
+            <defined-symbols/>
+            <description>Convert character to integer.</description>
+        </chunk>
+    </block>
+</xml>

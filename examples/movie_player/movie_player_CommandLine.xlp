@@ -1,0 +1,15 @@
+<xml>
+    <compile run="1">
+        <choose>
+            <when>
+                <is-defined id="argv:movie"/>
+                <apply select="EnterPlayMovieState">
+                    <let id="movie" select="argv:movie"/>
+                </apply>
+            </when>
+            <otherwise>
+                <apply select="EnterNoMovieState"/>
+            </otherwise>
+        </choose>
+    </compile>
+</xml>

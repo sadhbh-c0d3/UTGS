@@ -1,0 +1,209 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: SmartSplit"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <text id="output" align="left" autofill="1">Output:</text>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="String"><import id="String"/></let>            
+            <let id="List"><import id="List"/></let>            
+            <compile run="1">
+                
+                <list id="keep">
+                    <string>[.*]</string>
+                    <string>'.*'</string>
+                </list>
+                <integer id="chomp" value="1"/>
+                <string id="text"> foo  bar[x='the string'] '[the idea]' icon [[brackets]] go</string>
+
+                <cat id="out_text">
+                    <string>&nl;Original Text:&ts;</string>
+                    <get id="text"/>
+                    <string>&nl;SmartSplit "&sp;":&ts;</string>
+                    <apply select="String:Cat">
+                        <apply id="list" select="String:SmartSplit">
+                            <string id="sepa">&sp;</string>
+                        </apply>
+                        <string id="sepa">,&sp;</string>
+                    </apply>
+                    <string>&nl;SmartSplit "[":&ts;</string>
+                    <apply select="String:Cat">
+                        <apply id="list" select="String:SmartSplit">
+                            <string id="sepa">[</string>
+                        </apply>
+                        <string id="sepa">,&sp;</string>
+                    </apply>
+                    <string>&nl;SmartSplit "'":&ts;</string>
+                    <apply select="String:Cat">
+                        <apply id="list" select="String:SmartSplit">
+                            <string id="sepa">'</string>
+                        </apply>
+                        <string id="sepa">,&sp;</string>
+                    </apply>
+                </cat>
+
+                <function id="XPath" parameters="root xpath">
+                    <function id="work" parameters="list elist accum">
+                        <choose>
+                            <when>
+                                <is-not-empty id="elist"/>
+                                <apply id="eatt" select="String:SmartSplit">
+                                    <let id="text" select="elist:head"/>
+                                    <string id="sepa">[</string>
+                                </apply>
+                                <choose id="attrsel">
+                                    <when>
+                                        <is-not-empty id="eatt:tail"/>
+                                        <apply select="String:SmartSplit">
+                                            <let id="text" select="eatt:tail:head"/>
+                                            <string id="sepa">=</string>
+                                        </apply>
+                                    </when>
+                                    <otherwise>
+                                        <empty/>
+                                    </otherwise>
+                                </choose>
+                                <fold iterator="iter" accumulator="accum">
+                                    <let id="list" select="list"/>
+                                    <function id="func">
+                                        <choose>
+                                            <when>
+                                                <or>
+                                                    <not><equal><strcmp><get id="iter:name"/><get id="eatt:head"/></strcmp></equal></not>
+                                                    <and>
+                                                        <is-not-empty id="attrsel"/>
+                                                        <not>
+                                                            <do>
+                                                                <lookup id="value">
+                                                                    <let id="dict" select="iter:attributes"/>
+                                                                    <let id="name" select="attrsel:1-st"/>
+                                                                </lookup>
+                                                                <choose>
+                                                                    <when>
+                                                                        <not><is-defined id="value"/></not>
+                                                                        <integer value="0"/>
+                                                                    </when>
+                                                                    <otherwise>
+                                                                        <equal><strcmp><get id="value"/><get id="attrsel:2-nd"/></strcmp></equal>
+                                                                    </otherwise>
+                                                                </choose>
+                                                            </do>
+                                                        </not>
+                                                    </and>
+                                                </or>
+                                                <get id="accum"/>
+                                            </when>
+                                            <when>
+                                                <not><is-not-empty id="elist:tail"/></not>
+                                                <listnode>
+                                                    <let id="head" select="iter"/>
+                                                    <let id="tail" select="accum"/>
+                                                </listnode>
+                                            </when>
+                                            <when>
+                                                <is-defined id="iter:children"/>
+                                                <apply select="work">
+                                                    <let id="list" select="iter:children"/>
+                                                    <let id="elist" select="elist:tail"/>
+                                                </apply>
+                                            </when>
+                                            <otherwise>
+                                                <get id="accum"/>
+                                            </otherwise>
+                                        </choose>
+                                    </function>
+                                </fold>                    
+                            </when>
+                            <otherwise>
+                                <get id="accum"/>
+                            </otherwise>
+                        </choose>
+                    </function>
+                    <apply select="List:Reverse">
+                        <apply id="list" select="work">
+                            <let id="list" select="root:children"/>
+                            <apply id="elist" select="String:SmartSplit">
+                                <string id="sepa">/</string>
+                                <let id="text" select="xpath"/>
+                            </apply>
+                            <empty id="accum"/>
+                        </apply>
+                    </apply>
+                </function>
+
+                <copy id="data">
+                    <entities>
+                        <player type="human">Mark1</player>
+                        <player>Mark2</player>
+                        <enemy>Kanji1</enemy>
+                        <enemy>Kanji2</enemy>
+                        <player type="human">Mark3</player>
+                        <player>Mark4</player>
+                        <enemy>Kanji3</enemy>
+                        <enemy>Kanji4</enemy>
+                    </entities>
+                    <items>
+                        <pickup>Medipack1</pickup>
+                        <pickup>Medipack2</pickup>
+                        <health>10</health>
+                        <health>20</health>
+                        <pickup>Medipack3</pickup>
+                        <health>30</health>
+                    </items>
+                </copy>
+
+                <apply id="out_text1" select="String:Cat">
+                    <map id="list" iterator="iter">
+                        <apply id="list" select="XPath">
+                            <string id="xpath">entities/player[type=human]</string>
+                            <let id="root" select="data"/>
+                        </apply>
+                        <function id="func">
+                            <get id="iter:value"/>
+                        </function>
+                    </map>
+                    <string id="sepa">,&sp;</string>
+                </apply>
+
+                
+            </compile>
+            <gui-set-text target="gui.desktop.output">
+                <cat>
+                    <get id="out_text"/>
+                    <string>&nl;XPath:&ts;</string>
+                    <get id="out_text1"/>
+                </cat>
+            </gui-set-text>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

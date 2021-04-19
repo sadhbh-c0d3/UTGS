@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Type: Widget.</title>
+    <description>
+        Any particular widget.
+    </description>
+    <block>
+        <chunk id="BeAlwaysDirty">
+            <type-name>function( always:bool ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Method sets a flag, which forces the widget to be dirty after each paint.
+                <p>
+                    Use this flag, if you know that the widget should be repainted every display sync frame.
+                    Normally only dirty widgets are painted during display sync frame.
+                </p>
+                <note>
+                    Every movie or relatime rendered widgets should set this flag.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="DoInputReset">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Method resets the state of an input capture flags.
+                It checks if this widget has a focus, and if true it releases it.
+                It checks if this widget has captured mouse, and if true it releases it.
+                It checks if this widget was eager to obtain any mouse notifications (even if mouse was outside widget's boundary),
+                and if true it abandons it.
+                <note>
+                    Method is being called when the widget is being hidden or destroyed.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="FocusIntercept">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Capture the mouse pointer.
+            </description>
+        </chunk>
+        <chunk id="FocusRelease">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Release the mouse pointer.
+            </description>
+        </chunk>
+        <chunk id="GetAbsolutePos">
+            <type-name>function( relativePos:class Useless::Point&lt;int&gt; ) -&gt; class Useless::Point&lt;int</type-name>
+            <defined-symbols/>
+            <description>
+                Get absolute position of a point in a widget's coordinate system, relative to upper-left corrner of a window (or screen in fullscreen mode).
+            </description>
+        </chunk>
+        <chunk id="GetAbsoluteRect">
+            <type-name>function( relativeRect:class Useless::Rect ) -&gt; class Useless::Rect</type-name>
+            <defined-symbols/>
+            <description>
+                Get absolute rectangle of a rectangle in a widget's coordinate system, relative to upper-left corrner of a window (or screen in fullscreen mode).
+            </description>
+        </chunk>
+        <chunk id="GetBoundingRect">
+            <type-name>function() -&gt; class Useless::Rect</type-name>
+            <defined-symbols/>
+            <description>
+                Get the boundary of a widget in coordinates relative to its parent position.
+            </description>
+        </chunk>
+        <chunk id="GetHeight">
+            <type-name>function() -&gt; int</type-name>
+            <defined-symbols/>
+            <description>
+                Get height of a widget.
+            </description>
+        </chunk>
+        <chunk id="GetOpacity">
+            <type-name>function() -&gt; int</type-name>
+            <defined-symbols/>
+            <description>
+                Get opacity of a widget (opaque is 255, transparent is 0).
+            </description>
+        </chunk>
+        <chunk id="GetPosition">
+            <type-name>function() -&gt; class Useless::Point&lt;int&gt;</type-name>
+            <defined-symbols/>
+            <description>
+                Get position of a widget in coordinates relative to its parent position.
+            </description>
+        </chunk>
+        <chunk id="GetRelativePos">
+            <type-name>function( absolutePos:class Useless::Point&lt;int&gt; ) -&gt; class Useless::Point&lt;int&gt;</type-name>
+            <defined-symbols/>
+            <description>
+                Convert absolute position to point in a widget's coordinate system.
+            </description>
+        </chunk>
+        <chunk id="GetRelativeRect">
+            <type-name>function( absoluteRect:class Useless::Rect ) -&gt; class Useless::Rect</type-name>
+            <defined-symbols/>
+            <description>
+                Convert absolute rectangle to rectangle in a widget's coordinate system.
+            </description>
+        </chunk>
+        <chunk id="GetWidth">
+            <type-name>function() -&gt; int</type-name>
+            <defined-symbols/>
+            <description>
+                Get width of a widget.
+            </description>
+        </chunk>
+        <chunk id="HasFocus">
+            <type-name>function() -&gt; bool</type-name>
+            <defined-symbols/>
+            <description>
+                Tells if a widget has keyboard focus.
+            </description>
+        </chunk>
+        <chunk id="HasInput">
+            <type-name>function() -&gt; bool</type-name>
+            <defined-symbols/>
+            <description>
+                Tells if a widget has captured mouse input.
+            </description>
+        </chunk>
+        <chunk id="InputDecEager">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                It decreses the eager to obtain any mouse notifications (even if mouse was outside widget's boundary).
+                <note>
+                    The eager is an integer counted value. When it reaches 0, widget won't obtain any mouse input,
+                    when pointer position was outside of a widget's boundary.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="InputIncEager">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                It increases the eager to obtain any mouse notifications (even if mouse was outside widget's boundary).
+                <note>
+                    The eager is an integer counted value. When it's greater than 0, widget obtains each mouse input,
+                    even if pointer position was outside of a widget's boundary.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="InputIntercept">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Capture mouse input.
+            </description>
+        </chunk>
+        <chunk id="InputIsEager">
+            <type-name>function() -&gt; bool</type-name>
+            <defined-symbols/>
+            <description>
+                Tells if a widget is eager to obtain any mouse notifications (even if mouse was outside widget's boundary).
+            </description>
+        </chunk>
+        <chunk id="InputRelease">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Release captured mouse input.
+            </description>
+        </chunk>
+        <chunk id="IsAlwaysDirty">
+            <type-name>function() -&gt; bool</type-name>
+            <defined-symbols/>
+            <description>
+                Tells a flag, which forces the widget to be dirty after each paint.
+            </description>
+        </chunk>
+        <chunk id="IsOnTop">
+            <type-name>function() -&gt; bool</type-name>
+            <defined-symbols/>
+            <description>
+                Tells if a widget is presented on top of other widgets residing in its parent's container.
+            </description>
+        </chunk>
+        <chunk id="IsPhantom">
+            <type-name>function() -&gt; bool</type-name>
+            <defined-symbols/>
+            <description>
+                Tells if a mouse input may reach other widgets under this widget, which reside in this widget's parent's container.
+            </description>
+        </chunk>
+        <chunk id="IsVisible">
+            <type-name>function() -&gt; bool</type-name>
+            <defined-symbols/>
+            <description>
+                Tells if visible flag is set.
+                <note>
+                    Visible flag doesn't guarantee a widget to be visible.
+                    Widget is really visible only if its parent, and parent of its parent, and all further parents are on also visible.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="Resize">
+            <type-name>function( w:int, h:int ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Change size of a widget.
+                <note>
+                    Changing size, changes bounding rectangle.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="SetBoundingRect">
+            <type-name>function( bound:class Useless::Rect ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set bounding rectangle of a widget.
+            </description>
+        </chunk>
+        <chunk id="SetDirty">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set dirty flag, which makes this widget being repainted at next display sync frame.
+            </description>
+        </chunk>
+        <chunk id="SetOnTop">
+            <type-name>function( ontop:bool ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Move widget on top in its parent container.
+            </description>
+        </chunk>
+        <chunk id="SetOpacity">
+            <type-name>function( opacity:int ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set opacity of a widget (opaque is 255, transparent is 0).
+            </description>
+        </chunk>
+        <chunk id="SetPhantom">
+            <type-name>function( phantom:bool ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                If set to true, mouse input may reach other widgets under this widget, which reside in this widget's parent's container.
+            </description>
+        </chunk>
+        <chunk id="SetPosition">
+            <type-name>function( pos:class Useless::Point&lt;int&gt; ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set position of a widget.
+                <note>
+                    Changing position, changes bounding rectangle.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="SetVisible">
+            <type-name>function( visible:bool ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set visibility flag.
+                <note>
+                    Visible flag doesn't guarantee a widget to be visible.
+                    Widget is really visible only if its parent, and parent of its parent, and all further parents are on also visible.
+                </note>
+            </description>
+        </chunk>
+        <signal id="OnFocus">
+            <type-name>signal()</type-name>
+            <description>
+                Called when widget is gaining keyboard focus.
+            </description>
+        </signal>
+        <signal id="OffFocus">
+            <type-name>signal()</type-name>
+            <description>
+                Called when widget is loosing keyboard focus.
+            </description>
+        </signal>
+        <signal id="OnActorMove">
+            <type-name>signal( actor:class Useless::Rect )</type-name>
+            <description>
+                <parameters>
+                    <param><n>actor</n><d>The rectangle which should be visible.</d></param>
+                </parameters>
+                <note>
+                    Calling this signal would scroll underlaying widget contents to show given rectangle inside
+                    client area of an underlaying widget.
+                </note>
+            </description>
+        </signal>
+        <signal id="OnIdle">
+            <type-name>signal( time, timeDelta )</type-name>
+            <description>
+                Called periodically when widget is visible.
+                <parameters>
+                    <param><n>time</n><d>Time in miliseconds since app was started.</d></param>
+                    <param><n>timeDelta</n><d>Time in miliseconds since last OnIdle event.</d></param>
+                </parameters>
+            </description>
+        </signal>
+        <signal id="OnPaint">
+            <type-name>signal( __painter__ )</type-name>
+            <description>
+                <parameters>
+                    <param><n>__painter__</n><d>An object which may be used to paint.</d></param>
+                </parameters>
+                <warning>
+                    When you connect to <a>OnPaint</a> of any compound widget (hub,frame),
+                    in order to paint all children widgets you must call <a>__painter__:RepaintWidget</a> method
+                    probably before you do any painting.
+                </warning>
+            </description>
+        </signal>
+        <signal id="OnReposition">
+            <type-name>signal( point )</type-name>
+            <description>
+                Called when the position of a widget is changed.
+                <parameters>
+                    <param><n>point</n><d>New position of a widget, relative to its parent.</d></param>
+                </parameters>
+            </description>
+        </signal>
+        <signal id="OnResize">
+            <type-name>signal( bound )</type-name>
+            <description>
+                Called when the bounding rectangle of a widget has changed.
+                <parameters>
+                    <param><n>bound</n><d>New bounding rectangle of a widget, relative to its parent.</d></param>
+                </parameters>
+            </description>
+        </signal>
+        <signal id="OnVisible">
+            <type-name>signal( visible )</type-name>
+            <description>
+                Called when the visibility of a widget is changed.
+                <parameters>
+                    <param><n>visible</n><d>Boolean, true if the widget is visible, false if hidden.</d></param>
+                </parameters>
+            </description>
+        </signal>
+    </block>
+</xml>

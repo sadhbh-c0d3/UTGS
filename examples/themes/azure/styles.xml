@@ -1,0 +1,150 @@
+<xml>
+    <include src="themes/azure/skins/resources.xml"/>
+    <include src="themes/azure/fonts/resources.xml"/>
+
+    <styles>
+        <style id="normal">
+            <slider
+                skin="azure.skins.slider_horizontal.set"
+                size="16"
+                grip_size="128"
+                fixedheight="16"
+                />
+
+            <text
+                align="left"
+                font="azure.fonts.font_luxi_sans_14_navy"
+                />
+
+            <list
+                font="azure.fonts.font_luxi_sans_14.list"
+                skin="azure.skins.list.set"
+                shift="20"
+                />
+
+            <frame
+                skin="azure.skins.frame"
+                />
+
+            <scrollbar
+                skin="azure.skins.slider_vertical.set"
+                size="32"
+                size_limit="48"
+                />
+
+            <button
+                skin="azure.skins.button.set"
+                font="azure.fonts.font_luxi_sans_14.button"
+                focusable="0"
+                />
+        </style>
+
+        <style id="window_decorations">
+            <frame
+                autofill="1"
+                skin="azure.skins.decoration"
+                left="0" right="0" top="0" bottom="0"
+                />
+            <button
+                skin="azure.skins.empty.set"
+                font="azure.fonts.font_luxi_sans_14.button"
+                focusable="0"
+                fixedheight="37"
+                />
+        </style>
+
+        <style id="horizontal_grip">
+            <button
+                skin="azure.skins.grip_horizontal.set"
+                focusable="0"
+                fixedheight="10"
+                />
+        </style>
+
+        <style id="horizontal_line">
+            <image skin="azure.skins.line_horizontal"
+                fixedheight="5"
+                />
+        </style>
+
+        <style id="back">
+            <frame
+                skin="azure.skins.back"
+                left="4" right="4" top="4" bottom="4"
+                />
+        </style>
+
+        <style id="frame_edge">
+            <frame layout="vertical" skin="azure.skins.frame_edge"
+                />
+        </style>
+
+        <style id="list">
+            <list
+                font="azure.fonts.font_luxi_sans_14.list"
+                skin="azure.skins.list.set"
+                shift="20"
+                />
+
+            <frame
+                skin="azure.skins.frame"
+                />
+
+            <scrollbar
+                skin="azure.skins.slider_vertical.set"
+                size="32"
+                size_limit="48"
+                />
+        </style>
+
+        <style id="dropdown_list">
+            <dropdown
+                title_skin="azure.skins.switch.set"
+                title_font="azure.fonts.font_luxi_sans_14.button"
+                title_distance="0,-8"
+                />
+            <list
+                font="azure.fonts.font_luxi_sans_14.list"
+                skin="azure.skins.list.set" shift="20"
+                />
+            <frame
+                skin="azure.skins.frame_and_shadow"
+                left="8" right="16" top="8" bottom="16"
+                />
+            <scrollbar
+                skin="azure.skins.slider_vertical_and_shadow.set"
+                size="32" size_limit="48"
+                />
+        </style>
+
+        <style id="dropdown_table">
+            <dropdown
+                title_skin="azure.skins.switch.set"
+                title_font="azure.fonts.font_luxi_sans_14.button"
+                title_distance="4,0"
+                />
+            <tablelist
+                skin="azure.skins.table"
+                hilite_skin="azure.skins.list.set"
+                />
+            <scrollbar
+                skin="azure.skins.slider_vertical_and_shadow.set"
+                size="32"
+                size_limit="48"
+                />
+            <frame
+                skin="azure.skins.frame_and_shadow"
+                left="8" right="16" top="8" bottom="16"
+                />
+        </style>
+
+        <style id="horizontal_slider">
+            <scrollbar
+                skin="azure.skins.slider_horizontal.set"
+                size="16"
+                size_limit="32"
+                />
+        </style>
+
+    </styles>
+</xml>

@@ -1,0 +1,2681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Useless">
+      <UniqueIdentifier>{cd0ec9c4-ff88-4782-9b29-630588bbfbbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Error">
+      <UniqueIdentifier>{f6087d62-b165-42c5-8c24-b787c74e5f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\File">
+      <UniqueIdentifier>{d23bf5e4-e713-4e75-9b5e-260a7d728587}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\File\detail">
+      <UniqueIdentifier>{8041ac08-fd25-482f-b74e-20df5b01976f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Functional">
+      <UniqueIdentifier>{0770f7b8-6347-48db-8247-7c8a8391f800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic">
+      <UniqueIdentifier>{5eb55bab-f758-4b68-89b9-d521f36ede60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\detail">
+      <UniqueIdentifier>{d8b31450-8366-4aed-88ec-9ade6798d33d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Device">
+      <UniqueIdentifier>{19d9d254-63f1-44ad-9738-7fbdc92e4ee5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Device\GL">
+      <UniqueIdentifier>{cc223b05-0366-4097-a123-05d0af4b5644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Device\GL\wGL">
+      <UniqueIdentifier>{6f1b6df3-1599-4006-9392-fe215940bed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Device\GL\wGL\factory">
+      <UniqueIdentifier>{a771218b-605b-456c-aa92-ef02f390cb6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Device\FileIO">
+      <UniqueIdentifier>{d0665ad8-081b-44a4-a2c3-a7ab3ba2db96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Device\winGDI">
+      <UniqueIdentifier>{8387e8fd-0ade-4025-a811-a2afe541e1dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Pixel">
+      <UniqueIdentifier>{cba6d775-321d-4d6d-bcbf-b97f211d1668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Planes">
+      <UniqueIdentifier>{d574878d-6e97-414a-910b-31e714de07eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Transfer">
+      <UniqueIdentifier>{3f4ed9be-d792-443a-a3ad-91b07d1eafb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI">
+      <UniqueIdentifier>{07980207-0836-4633-9cf3-014919059c7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI\Display">
+      <UniqueIdentifier>{a4fb6ef7-6bbd-4ae2-9568-c867f33bdd00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI\Logic">
+      <UniqueIdentifier>{c08c54b0-fa30-438f-8242-972c778ef29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI\Misc">
+      <UniqueIdentifier>{c7f8786a-065e-4144-a913-c5a7a0b76682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI\Relations">
+      <UniqueIdentifier>{1517fe09-7646-4642-95d9-5f032bd100c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI\Skins">
+      <UniqueIdentifier>{35f70519-6f7b-4286-839d-7d61f08f8920}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI\Text">
+      <UniqueIdentifier>{1969fa67-9410-43de-acd7-90e80c820cb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI\Widgets">
+      <UniqueIdentifier>{dda8954b-a5cb-4d4e-9cda-c8d73ebcbe60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\GUI\Widgets\detail">
+      <UniqueIdentifier>{bc63de67-97de-408f-9196-b28e9b86d147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Movie">
+      <UniqueIdentifier>{31ed41d1-8933-4356-a1ea-811569037c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Movie\Ogg">
+      <UniqueIdentifier>{da623078-463b-4dc4-983a-f5e1182744b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Movie\DShow">
+      <UniqueIdentifier>{2a891bde-272e-484d-9962-cda75cec8e9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Movie\DShow\detail">
+      <UniqueIdentifier>{ca61f010-6dee-4504-8a09-0323fb82eb82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Sound">
+      <UniqueIdentifier>{bcb21978-b8dd-4523-adbd-abe346618d53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Sound\detail">
+      <UniqueIdentifier>{65d9e176-25cc-4bd2-b140-5f5e9264198f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Sound\Device">
+      <UniqueIdentifier>{903dba3b-2485-4ef9-9403-fd2d961632d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Sound\Device\DSound">
+      <UniqueIdentifier>{4ddba416-8fb9-4539-9219-39a857c2c7c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Sound\FileIO">
+      <UniqueIdentifier>{8b2e4384-e9b7-49c8-8201-2f8c99a24b60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\System">
+      <UniqueIdentifier>{dd49c92a-2222-4b3c-b13f-0b1b4296b697}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\System\w32">
+      <UniqueIdentifier>{5897705f-7e17-4d97-b22d-6e6f9a509fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\System\w32\DirectX">
+      <UniqueIdentifier>{2c4cc7b4-490e-4532-a466-a26df04bb815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\System\factory">
+      <UniqueIdentifier>{ae610163-57ba-4c87-b47c-1f75613efde6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Util">
+      <UniqueIdentifier>{5c34a654-0eca-4516-b20a-d9164b9de40f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Util\Storage">
+      <UniqueIdentifier>{c0be861f-5e16-41e6-ba29-62fe059112ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\XML">
+      <UniqueIdentifier>{cb0c2da1-529b-4b1a-9cd3-4ad6b32f63ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\XML\Resources">
+      <UniqueIdentifier>{e951ac45-2dc4-4235-8643-beb019e0603b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\XML\Resources\Source Files">
+      <UniqueIdentifier>{1aef0f5b-0b28-445b-a4ff-c4671934fb06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\XML\Resources\Header Files">
+      <UniqueIdentifier>{889efb27-b7bb-48fa-b499-04efc675b6de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\Device\winGDI\factory">
+      <UniqueIdentifier>{af1476ed-3f76-4500-8439-8c2529ccff6e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Useless\ErrorConfig.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Errors1.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\HatcheryConfig.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\LocaleConfig.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\PlatformConfig.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\ResourcesPch.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\TemplateConfig.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\UselessLib.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\UselessPch.h">
+      <Filter>Useless</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Error\AppError.h">
+      <Filter>Useless\Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Error\AssertError.h">
+      <Filter>Useless\Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Error\Error.h">
+      <Filter>Useless\Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Error\ErrorMessage.h">
+      <Filter>Useless\Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Error\IOError.h">
+      <Filter>Useless\Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Error\Quit.h">
+      <Filter>Useless\Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\BlockCipher.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\CryptoIFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\CryptoOFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\FileName.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\Hatchery.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\IFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\IFileStream.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\IFileSystem.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\MemIFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\MemOFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\OFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\OFileStream.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\StdIFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\StdIFileSystem.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\StdOFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\SubIFile.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\SubIFileSystem.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\VIFS.h">
+      <Filter>Useless\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\detail\IFileStreamBuffer.h">
+      <Filter>Useless\File\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\File\detail\OFileStreamBuffer.h">
+      <Filter>Useless\File\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\CompositePredicate.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\ConditionalFunctor.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\ConditionalSignal.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\DelayedExecutor.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\DutyList.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\EquationHolder.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\Expression.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\Functor.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\Holder.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\MethodPool.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\MultiMethod.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\PackedFunctor.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\PseudoFunctor.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\Signal.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\SignalEvent.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\SignalHelp.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\SignalScope.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\SignalSwitch.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\SmallComposite.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Functional\VirtualFunctionObject.h">
+      <Filter>Useless\Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\ClipList.h">
+      <Filter>Useless\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Linear.h">
+      <Filter>Useless\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes.h">
+      <Filter>Useless\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Point.h">
+      <Filter>Useless\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Rect.h">
+      <Filter>Useless\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\RectList.h">
+      <Filter>Useless\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\UniDir.h">
+      <Filter>Useless\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\BMPStructure.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\ImageDesc.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\ImageLoaderRegistrator.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\ImageSaverRegistrator.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\ImageTypes.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\MemorySurface.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\PixelBuffer.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\SpecializedSurfacePainter.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\SurfaceStructs.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\detail\TGAStructure.h">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\CreateScreen.h">
+      <Filter>Useless\Graphic\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\GVM_Context.h">
+      <Filter>Useless\Graphic\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\GVM_Message.h">
+      <Filter>Useless\Graphic\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Screen.h">
+      <Filter>Useless\Graphic\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Surface.h">
+      <Filter>Useless\Graphic\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\SurfaceExtFun.h">
+      <Filter>Useless\Graphic\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\GLContextSurface.h">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\GL\GLImageTesselator.h">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\GLResourcePool.h">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\GLSurfacePainter.h">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\GL\GLTexture.h">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\GLTextureSurface.h">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\GL\GLTextureSurfaceAllocator.h">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\GL\GVM_GLContext.h">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLExtensions.h">
+      <Filter>Useless\Graphic\Device\GL\wGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLScreen.h">
+      <Filter>Useless\Graphic\Device\GL\wGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLSurface.h">
+      <Filter>Useless\Graphic\Device\GL\wGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\wGL\factory\CreateWGLScreen.h">
+      <Filter>Useless\Graphic\Device\GL\wGL\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\BMPLoader.h">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\BMPSaver.h">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageFactory.h">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageLoader.h">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageSaver.h">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\PNGLoader.h">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\TGALoader.h">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\TGASaver.h">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDIPrinter.h">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\CopyPixels.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\Dither.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\DrawLine.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\Edge.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\Pixel.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\PixelPointer.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\PixelPtr.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\PixelShaders.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\PixelTypes.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\Poly.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\ScanLine.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\ThickLine.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\ThinLine.h">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\AdvImageBuffer.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\Animation.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\BufferedImage.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\IGraphics.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\Image.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\ImageBase.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\ImageBuffer.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\ImageToFile.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\MaskedColor.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\MemSurface.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\OGraphics.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\Painter.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\SurfacePainter.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Planes\TransparentImage.h">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\GenericTransfer.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\IGfxFilter.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\IGfxReader.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\MemOGfx.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\NopGfxFilter.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\OGfxBuffer.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\OGfxFilter.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\PixelTransfer.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\SurfaceReader.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\SurfaceWriter.h">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\DebugGUI.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Form.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\GUIMaster.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\PopupCycler.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Types.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\WidgetEnvironment.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\WidgetInterfaces.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Workspace.h">
+      <Filter>Useless\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\DisplayMan.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\HintMan.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\Hints.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\ImageCursor.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\MouseCursor.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\NullHints.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\OffscreenMan.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\ScreenMan.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\ScreenShooter.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\SkinnedHints.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\TablePainter.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Display\WidgetPainter.h">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\ButtonLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\DraggerLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\HiliteLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\KeyButtonLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\ListLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\LogicWidget.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\MarkLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\MultiItemLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\NumericEditLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\RadioLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\SwitchLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\TabLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\TextEditLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Logic\TriggerLogic.h">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\DT_Inspector.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\DT_Painter.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\DT_StateChanger.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\DataFilter.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\DataStream.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\DataTypes.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\DisplayState.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\FontSelector.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\KeyPredicates.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\Layout.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\Paylist.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\SkinSelector.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Misc\WidgetCycler.h">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\AdvScrollRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\AppearRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\ComboRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\FillRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\GroupRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\MultiTabRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\PlaceRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\Relation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\ResizeRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Relations\ScrollRelation.h">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\AlphaFont.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\ArraySkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\BarSkinner.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\CaptionSkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\FacedFont.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\FontSkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\FrameSkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\ImageDicer.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\ImageDotTracer.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\ImageSkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\NullSkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\ParametricSkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\SizerSkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\Skin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\SkinMan.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\SkinMixer.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\SkinSet.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\TableSkin.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Skins\Tiler.h">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\Font.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\FontPainter.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\FontSet.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\LineWrapper.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\LineWrapper_inline.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\NamedFontSet.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\PreformatedText.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\Text.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\TextInfo.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\VerticalText.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\WordSelector.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Text\WordStatus.h">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ActiveAreaWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ActiveWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\AdvListWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\AdvScrollbarWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\AdvTableSystemWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\AdvTextWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\BridgeWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ButtonWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionButton.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionHilite.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionMark.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionRadio.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionSwitch.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionTab.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionTrigger.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CompoundWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ContentWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CreditsWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DataConnector.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DataTableWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DraggerWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DropDown.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DualTextWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\EnumWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FacedWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FontChanger.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FontWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FormWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FrameWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\GraphWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\HiliteWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\HubWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\IconButton.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\IconWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ImageWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\InFrameWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\InterceptorWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ListMenu.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ListWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ListedTextItems.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\LoomWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\MarkWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\MenuWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\NullWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\NumericField.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\Popup.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\PopupWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ProgressBar.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ProgressWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\RadioWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\RollerWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ScrollbarWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ScrolledWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SizerWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SkinManagedWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SliderWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SmallHint.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SwitchWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TabWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableListWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableListedItems.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableListedWidgets.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableMenu.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableSystemWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TemplateWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextBarWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextButtonWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextEditWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextField.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TriggerWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\Widget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\WidgetIterator.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\WidgetRequest.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\WidgetTableWidget.h">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Gui\Widgets\detail\Belt.h">
+      <Filter>Useless\GUI\Widgets\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\Audio.h">
+      <Filter>Useless\Movie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\Video.h">
+      <Filter>Useless\Movie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\Ogg\OggVorbisDecoder.h">
+      <Filter>Useless\Movie\Ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\DShow\CAudioRender.h">
+      <Filter>Useless\Movie\DShow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\DShow\CSurfaceRender.h">
+      <Filter>Useless\Movie\DShow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\DShow\DSMedia.h">
+      <Filter>Useless\Movie\DShow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\DShow\detail\asyncio.h">
+      <Filter>Useless\Movie\DShow\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\DShow\detail\asyncrdr.h">
+      <Filter>Useless\Movie\DShow\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\DShow\detail\filestrm.h">
+      <Filter>Useless\Movie\DShow\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Movie\DShow\detail\memstrm.h">
+      <Filter>Useless\Movie\DShow\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\BasicSample.h">
+      <Filter>Useless\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Channel.h">
+      <Filter>Useless\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\MultiChannel.h">
+      <Filter>Useless\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Note.h">
+      <Filter>Useless\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Sample.h">
+      <Filter>Useless\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\SampleFile.h">
+      <Filter>Useless\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\SampleStream.h">
+      <Filter>Useless\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\SampleType.h">
+      <Filter>Useless\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\detail\CoolTypes.h">
+      <Filter>Useless\Sound\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\detail\SoundCreatorRegistrator.h">
+      <Filter>Useless\Sound\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\detail\WaveHeader.h">
+      <Filter>Useless\Sound\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\SampleData.h">
+      <Filter>Useless\Sound\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\SoundCard.h">
+      <Filter>Useless\Sound\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\SoundStructs.h">
+      <Filter>Useless\Sound\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSampleData.h">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.h">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSStructs.h">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\FileIO\SampleWriter.h">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\FileIO\SoundFactory.h">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\FileIO\SoundInterface.h">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\FileIO\WaveLoader.h">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\FileIO\WaveSaver.h">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\Application.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\Assert.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\DbgOut.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\KeyCodes.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\MMX.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\Timer.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\TypeInfo.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\Types.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\Window.h">
+      <Filter>Useless\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\Application.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\Assert.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\BetterAssert.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\COMInitializer.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\COMObject.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\DbgOut.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\ErrorDialog.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\KeyCodes.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\MMX.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\Timer.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\Types.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\Window.h">
+      <Filter>Useless\System\w32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\DirectX\DDrawWindow.h">
+      <Filter>Useless\System\w32\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\DirectX\DirectInput.h">
+      <Filter>Useless\System\w32\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\DirectX\Keyboard.h">
+      <Filter>Useless\System\w32\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\w32\DirectX\Mouse.h">
+      <Filter>Useless\System\w32\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\factory\CreateBase.h">
+      <Filter>Useless\System\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\factory\CreateMovie.h">
+      <Filter>Useless\System\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\factory\CreateScreen.h">
+      <Filter>Useless\System\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\System\factory\CreateSound.h">
+      <Filter>Useless\System\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\CPT.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\CTC.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\CommonReference.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\CopyingFactory.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\CtorWrapper.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Garbage.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\GarbageCollector.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\IOStruct.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\LangSelector.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\LibC.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\LiveVariable.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\LocaleIO.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\LockObj.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Math.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\New.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\ParmList.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\PreInitializer.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\ReferenceCounter.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\SPointer.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\SafePtr.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Shares.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Singleton.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\SingletonKiller.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\StackAlloc.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\StaticAttr.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\StaticCheck.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\TemplateDefines.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\VariableLink.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\VariableUpdater.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\VirtualValue.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Visitor.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\XMLTag.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\lexy_less.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\std_traits.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\stl_addon.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\str_conv.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\AssocVector.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\AutoVector.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\BitVector-inline.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\BitVector.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\DependencyTree.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\Independent.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\ListOfUniques.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\MemBlock.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\PointerStorage.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\SortedVector.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\StupidVector.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\VectorIterator.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\VectorTraits.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\assoc_vector.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Storage\cell_division_vector.h">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\XMLParser.h">
+      <Filter>Useless\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateBinders.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateConnections.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateDatabase.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateFilesystems.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateFonts.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateFromXML.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateGUIResources.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateHints.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateSignalEvents.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateSkins.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateSounds.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateStyle.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateSystem.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateText.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateWidgets.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\GUIBinder.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\Resources.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Xml\Resources\SignalMap.h">
+      <Filter>Useless\XML\Resources\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDIScreen.h">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDISurface.h">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDISurfacePainter.h">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDITransfer.h">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDIScreen.h">
+      <Filter>Useless\Graphic\Device\winGDI\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Crypto.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\Socket.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Util\UTF8.h">
+      <Filter>Useless\Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Useless\ResourcesPch.cpp">
+      <Filter>Useless</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\UselessPch.cpp">
+      <Filter>Useless</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Error\AppError.cpp">
+      <Filter>Useless\Error</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Error\AssertError.cpp">
+      <Filter>Useless\Error</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Error\Error.cpp">
+      <Filter>Useless\Error</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Error\ErrorMessage.cpp">
+      <Filter>Useless\Error</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Error\IOError.cpp">
+      <Filter>Useless\Error</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\CryptoIFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\CryptoOFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\FileName.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\HatchedIFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\Hatchery.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\HatcheryBuilder.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\IFSAutoMounterInit.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\IFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\IFileStream.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\IFileSystem.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\MemIFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\MemOFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\OFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\OFileStream.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\StdIFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\StdIFileSystem.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\StdOFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\SubIFile.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\SubIFileSystem.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\VIFS.cpp">
+      <Filter>Useless\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\detail\IFileStreamBuffer.cpp">
+      <Filter>Useless\File\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\File\detail\OFileStreamBuffer.cpp">
+      <Filter>Useless\File\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\CompositePredicate.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\ConditionalFunctor.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\ConditionalSignal.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\DelayedExecutor.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\DutyList.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\EquationHolder.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\Functor.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\Holder.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\MethodPool.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\MultiMethod.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\PackedFunctor.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\PseudoFunctor.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\Signal.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\SignalSwitch.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\SmallComposite.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Functional\VirtualFunctionObject.cpp">
+      <Filter>Useless\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\ClipList.cpp">
+      <Filter>Useless\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Point.cpp">
+      <Filter>Useless\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Rect.cpp">
+      <Filter>Useless\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\RectList.cpp">
+      <Filter>Useless\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageDesc.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageFactory.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageFormat.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageLoaderRegistrator.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageSaverRegistrator.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageTypes.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\MemorySurface.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\PixelBuffer.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\SpecializedSurfacePainter.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\detail\SurfaceStructs.cpp">
+      <Filter>Useless\Graphic\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\CreateScreen.cpp">
+      <Filter>Useless\Graphic\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\Surface.cpp">
+      <Filter>Useless\Graphic\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\GLContextSurface.cpp">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\GLImageTesselator.cpp">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\GLResourcePool.cpp">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\GLTexture.cpp">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\GLTextureSurface.cpp">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\GLTextureSurfaceAllocator.cpp">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\GVM_GLContext.cpp">
+      <Filter>Useless\Graphic\Device\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLExtensions.cpp">
+      <Filter>Useless\Graphic\Device\GL\wGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLScreen.cpp">
+      <Filter>Useless\Graphic\Device\GL\wGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLSurface.cpp">
+      <Filter>Useless\Graphic\Device\GL\wGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\wGL\factory\CreateWGLScreen.cpp">
+      <Filter>Useless\Graphic\Device\GL\wGL\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\BMPLoader.cpp">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\BMPSaver.cpp">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\ImageLoader.cpp">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\ImageSaver.cpp">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\PNGLoader.cpp">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\TGALoader.cpp">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\TGASaver.cpp">
+      <Filter>Useless\Graphic\Device\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDIPrinter.cpp">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Pixel\DrawLine.cpp">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Pixel\Pixel.cpp">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Pixel\PixelShaders.cpp">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Pixel\ScanLine.cpp">
+      <Filter>Useless\Graphic\Pixel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\AdvImageBuffer.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\Animation.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\BufferedImage.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\IGraphics.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\Image.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\ImageBase.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\ImageBuffer.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\ImageToFile.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\MaskedColor.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\MemSurface.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\OGraphics.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\Painter.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Planes\TransparentImage.cpp">
+      <Filter>Useless\Graphic\Planes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\GenericTransfer.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\IGfxFilter.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\IGfxReader.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\MemOGfx.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\NopGfxFilter.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\OGfxBuffer.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\OGfxFilter.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\SurfaceReader.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\SurfaceWriter.cpp">
+      <Filter>Useless\Graphic\Transfer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\GUIMaster.cpp">
+      <Filter>Useless\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\PopupCycler.cpp">
+      <Filter>Useless\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\WidgetEnvironment.cpp">
+      <Filter>Useless\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\WidgetInterfaces.cpp">
+      <Filter>Useless\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets.cpp">
+      <Filter>Useless\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Workspace.cpp">
+      <Filter>Useless\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\DisplayMan.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\HintMan.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\Hints.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\ImageCursor.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\MouseCursor.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\NullHints.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\OffscreenMan.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\ScreenMan.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\ScreenShooter.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\SkinnedHints.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\TablePainter.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\WidgetPainter.cpp">
+      <Filter>Useless\GUI\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\ButtonLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\DraggerLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\HiliteLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\KeyButtonLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\ListLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\LogicWidget.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\MarkLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\NumericEditLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\RadioLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\SwitchLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\TabLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\TextEditLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\TriggerLogic.cpp">
+      <Filter>Useless\GUI\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\DT_SingleRow.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\DataStream.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\DisplayState.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\FontSelector.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\KeyPredicates.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\Layout.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\Paylist.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\SkinSelector.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\WidgetCycler.cpp">
+      <Filter>Useless\GUI\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\AdvScrollRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\AppearRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\ComboRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\FillRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\GroupRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\MultiTabRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\PlaceRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\Relation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\ResizeRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\ScrollRelation.cpp">
+      <Filter>Useless\GUI\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\AlphaFont.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ArraySkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\BarSkinner.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\CaptionSkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\FacedFont.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\FontSkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\FrameSkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ImageDicer.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ImageDotTracer.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ImageSkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\NullSkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ParametricSkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\SizerSkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\Skin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\SkinMan.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\SkinMixer.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\SkinSet.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\TableSkin.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\Tiler.cpp">
+      <Filter>Useless\GUI\Skins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\Font.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\FontPainter.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\FontSet.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\LineWrapper.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\NamedFontSet.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\PreformatedText.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\Text.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\VerticalText.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\WordSelector.cpp">
+      <Filter>Useless\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ActiveAreaWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ActiveWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\AdvListWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\AdvScrollbarWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\AdvTableSystemWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\AdvTextWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\BridgeWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ButtonWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionButton.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionHilite.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionMark.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionRadio.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionSwitch.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionTab.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionTrigger.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CompoundWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ContentWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CreditsWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DataConnector.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DataTableWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DraggerWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DropDown.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DualTextWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\EnumWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\FacedWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\FormWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\FrameWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\GraphWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\HiliteWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\HubWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\IconButton.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\IconWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ImageWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\InFrameWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\InterceptorWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ListMenu.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ListWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ListedTextItems.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\LoomWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\MarkWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\MenuWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\NullWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\NumericField.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\Popup.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\PopupWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ProgressBar.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\RadioWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\RollerWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ScrollbarWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ScrolledWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SizerWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SkinManagedWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SliderWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SmallHint.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SwitchWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TabWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableListWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableListedItems.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableListedWidgets.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableMenu.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableSystemWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TemplateWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextBarWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextButtonWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextEditWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextField.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TriggerWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\Widget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\WidgetTableWidget.cpp">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Movie\Ogg\OggVorbisDecoder.cpp">
+      <Filter>Useless\Movie\Ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Movie\DShow\CAudioRender.cpp">
+      <Filter>Useless\Movie\DShow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Movie\DShow\CSurfaceRender.cpp">
+      <Filter>Useless\Movie\DShow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Movie\DShow\DSMedia.cpp">
+      <Filter>Useless\Movie\DShow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Movie\DShow\detail\asyncio.cpp">
+      <Filter>Useless\Movie\DShow\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Movie\DShow\detail\asyncrdr.cpp">
+      <Filter>Useless\Movie\DShow\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\BasicSample.cpp">
+      <Filter>Useless\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Channel.cpp">
+      <Filter>Useless\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\MultiChannel.cpp">
+      <Filter>Useless\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Note.cpp">
+      <Filter>Useless\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Sample.cpp">
+      <Filter>Useless\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\SampleFile.cpp">
+      <Filter>Useless\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\SampleType.cpp">
+      <Filter>Useless\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\SampleData.cpp">
+      <Filter>Useless\Sound\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\SoundCard.cpp">
+      <Filter>Useless\Sound\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\SoundStructs.cpp">
+      <Filter>Useless\Sound\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSampleData.cpp">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.cpp">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSStructs.cpp">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\FileIO\SampleWriter.cpp">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\FileIO\SoundFactory.cpp">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\FileIO\WaveLoader.cpp">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\FileIO\WaveSaver.cpp">
+      <Filter>Useless\Sound\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\AppConstants.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\AppExit.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\Application.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\BetterAssert.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\COMInitializer.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\DbgOut.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\ErrorDialog.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\KeyCodes.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\MMX.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\Timer.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\Types.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\WinMain.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\Window.cpp">
+      <Filter>Useless\System\w32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\DirectX\DDrawWindow.cpp">
+      <Filter>Useless\System\w32\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\DirectX\DirectInput.cpp">
+      <Filter>Useless\System\w32\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\DirectX\Keyboard.cpp">
+      <Filter>Useless\System\w32\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\w32\DirectX\Mouse.cpp">
+      <Filter>Useless\System\w32\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\System\factory\CreateBase.cpp">
+      <Filter>Useless\System\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\CommonReference.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\CopyingFactory.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Garbage.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\GarbageCollector.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\IOStruct.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\LangSelector.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\LiveVariable.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\LockObj.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Math.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\New.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\ParmList.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\PreInitializer.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\ReferenceCounter.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\SPointer.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Shares.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Singleton.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\SingletonKiller.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\StackAlloc.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\StaticCheck.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\VariableLink.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\VariableUpdater.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Storage\AssocVector.cpp">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Storage\AutoVector.cpp">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Storage\BitVector.cpp">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Storage\MemBlock.cpp">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Storage\PointerStorage.cpp">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Storage\SortedVector.cpp">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Storage\StupidVector.cpp">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Storage\VectorIterator.cpp">
+      <Filter>Useless\Util\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\XMLParser.cpp">
+      <Filter>Useless\XML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateActiveArea.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateAlphaFont.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateAnimation.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateBarSkins.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateBinders.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateButtonWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateConnections.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateCredits.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateDatabase.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateDropDown.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFacedFont.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFilesystems.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFontSet.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFrameSkin.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFrameWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFromXML.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateGUI.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateGraphWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateHLText.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateHints.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImage.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImageCursor.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImageDicer.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImageSkin.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImageWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateLayoutGap.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateListWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateLoomWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateMapping.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateNullSkin.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateParametricSkin.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreatePlaySoundEvent.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreatePopup.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateProgressBar.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateRollerWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateScreen.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateScrollbar.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateScrolledWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSizer.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSizerSkin.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSkinMixer.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSkinSet.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSlider.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSounds.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateStyle.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSysOutput.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\XML\Resources\CreateTableSkin.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateTableView.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateTemplateWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateText.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateTextField.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateTextWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateWidgetTableWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\GUIBinder.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\InstantiateTemplateWidget.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\Resources.cpp">
+      <Filter>Useless\XML\Resources\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDIScreen.cpp">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDISurface.cpp">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDITransfer.cpp">
+      <Filter>Useless\Graphic\Device\winGDI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDIScreen.cpp">
+      <Filter>Useless\Graphic\Device\winGDI\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Crypto.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\Socket.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Util\UTF8.cpp">
+      <Filter>Useless\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\wGL\factory\CreateWGLScreenByLib.cpp">
+      <Filter>Useless\Graphic\Device\GL\wGL\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\wGL\factory\CreateWGLSurfaceByLib.cpp">
+      <Filter>Useless\Graphic\Device\GL\wGL\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDIScreenByLib.cpp">
+      <Filter>Useless\Graphic\Device\winGDI\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDISurfaceByLib.cpp">
+      <Filter>Useless\Graphic\Device\winGDI\factory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Useless\Gui\Logic\ListLogic.inl">
+      <Filter>Useless\GUI\Logic</Filter>
+    </None>
+    <None Include="..\..\Useless\Gui\Widgets\CaptionWidget.inl">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Useless\Gui\Widgets\DropDown.inl">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Useless\Gui\Widgets\FacedWidget.inl">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Useless\Gui\Widgets\ImageWidget.inl">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Useless\Gui\Widgets\ListMenu.inl">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Useless\Gui\Widgets\ListWidget.inl">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Useless\Gui\Widgets\ListedTextItems.inl">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Useless\Gui\Widgets\TableMenu.inl">
+      <Filter>Useless\GUI\Widgets</Filter>
+    </None>
+  </ItemGroup>
+</Project>

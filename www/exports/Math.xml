@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Built-In: Math.</title>
+    <description>
+        A built-in library of math routines.
+    </description>
+    <block>
+        <float id="2PI">6.28319</float>
+        <float id="PI">3.14159</float>
+        <float id="PI2">1.5708</float>
+        <float id="PI4">0.785398</float>
+        <chunk id="abs">
+            <type-name>function( x:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="acos">
+            <type-name>function( x:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="asin">
+            <type-name>function( x:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="atan2">
+            <type-name>function( x:float, y:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="ceil">
+            <type-name>function( x:float ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="cos">
+            <type-name>function( x:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="exp">
+            <type-name>function( a:float, x:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="floor">
+            <type-name>function( x:float ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="fmax">
+            <type-name>function( a:float, b:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="fmin">
+            <type-name>function( a:float, b:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="log">
+            <type-name>function( a:float, x:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="max">
+            <type-name>function( a:int, b:int ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="min">
+            <type-name>function( a:int, b:int ) -&gt; int</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="mod">
+            <type-name>function( x:float, n:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="sign">
+            <type-name>function( x:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+        <chunk id="sin">
+            <type-name>function( x:float ) -&gt; float</type-name>
+            <defined-symbols/>
+        </chunk>
+    </block>
+</xml>

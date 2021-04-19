@@ -1,0 +1,69 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: Serialize"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <text id="output" align="left" autofill="1">Output:</text>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="String"><import id="String"/></let>            
+            <let id="List"><import id="List"/></let>
+            <let id="Toolkit"><import id="Toolkit"/></let>
+            <let id="Kompiler"><import id="Kompiler"/></let>
+            <run file="../../../KLibs/Serialize.xlp" object="main"/>
+            <compile run="1">
+                <apply select="WriteObject">
+                    <string id="file">data1.xml</string>
+                    <block id="object">
+                        <integer id="x" value="0"/>
+                        <integer id="y" value="1"/>
+                        <block id="other">
+                            <integer id="u" value="0"/>
+                            <integer id="v" value="1"/>
+                        </block>
+                    </block>
+                </apply>
+                <apply id="out_text" select="Toolkit:ToXMLString">
+                    <apply id="root" select="Serialize">
+                        <integer id="maxLevel" value="0"/>
+                        <apply id="object" select="ReadObject">
+                            <string id="file">data1.xml</string>
+                        </apply>
+                    </apply>
+                </apply>
+                <nocompile run="1">
+                    <gui-set-text target="gui.desktop.output"><get id="out_text"/></gui-set-text>
+                </nocompile>
+            </compile>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

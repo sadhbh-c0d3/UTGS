@@ -1,0 +1,36 @@
+<xml>
+    <system>
+        <screen windowed="1" title="Unit Test: Font"/>
+        <gui id="gui" screen="screen"/>
+    </system>
+
+    <images>
+        <image id="font"
+            src="font_luxi_sans_14_white.tga"
+            alpha="font_luxi_sans_14_white.tga"/>
+    </images>
+    
+    <fonts>
+        <faced id="opaque"
+            img="font"
+            desc="font_luxi_sans_14.desc"/>
+        
+        <alpha id="mask"
+            src="font_luxi_sans_14_white.tga"
+            desc="font_luxi_sans_14.desc"/>
+    </fonts>
+
+    <skins>
+        <parametric border_type="NONE" body_color="0xFF000000"/>
+    </skins>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame skin="parametric" autofill="1" layout="vertical">
+                <text align="center" font="opaque">Hello World!!!</text>
+                <text align="center" font="mask">&tag;[c:0xFFFF0000]H&tag;[c:0xFF00FF00]ello &tag;[c:0xFFFFFF00]W&tag;[c:0xFF00FF00]orld&tag;[c:0xFF0000FF]!!!</text>
+            </frame>
+        </parent>
+    </widgets>
+    
+</xml>

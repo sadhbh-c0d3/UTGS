@@ -1,0 +1,43 @@
+<xml encoding="utf-8">
+    <!-- KooLiXP (examples/tutorial/lesson001)
+    Lesson 1.
+    We will create basic resources:
+    +   windowed screen,
+    +   soundcard,
+    +   gui.
+    -->
+    <system>
+        <!-- When using KooLiXP.exe we'll need resource named: 'screen'.
+        +   title           := the title shown in window titlebar and in task manager,
+        +   x,y             := position of a window,
+        +   width, height   := dimensions of a window,
+        +   bpp             := bits per pixel, used only if fullscreen,
+        +   windowed        := 0 means fullscreen, and 1 means window,
+        +   decorations     := 1 means window has standard titlebar and frame,
+        +   sys_cursor      := 0 means hide system mouse cursor.
+        -->
+        <screen id="screen"
+            title="Lesson 1 - Creating Basic Resources"
+            x="50"
+            y="50"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <!-- If you'd like to play some sounds, movies or ogg/vorbis streams, then you'll need soundcard.
+        +   screen          := the id of screen, required since operating system binds a sound device to the window.
+        -->
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <!-- If you'd like to use GUI gadgets, you'll need to create such resource.
+        +   screen          := the id of screen, where gui will paint.
+        -->
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+</xml>

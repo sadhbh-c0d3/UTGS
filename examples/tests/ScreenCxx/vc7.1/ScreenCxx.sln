@@ -1,0 +1,102 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScreenCxx", "ScreenCxx.vcproj", "{1BEA61A5-A781-47B1-845D-E8613B70DBC2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695} = {4AC5D735-5CC7-4E9B-8332-5E4E629F3695}
+		{30E10563-960A-11D7-9FE9-525400E2CF85} = {30E10563-960A-11D7-9FE9-525400E2CF85}
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70} = {4EC8CB95-3447-4F50-8FB1-464BAD919B70}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Useless", "..\..\..\..\vc7.1\Useless\Useless.vcproj", "{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "strmbase", "..\..\..\..\vc7.1\strmbase\strmbase.vcproj", "{4EC8CB95-3447-4F50-8FB1-464BAD919B70}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libboost_wserialization", "..\..\..\..\..\boost_1_32_0\libs\serialization\vc7ide\LibraryW.vcproj", "{30E10563-960A-11D7-9FE9-525400E2CF85}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug runtime-dynamic = Debug runtime-dynamic
+		Debug runtime-static = Debug runtime-static
+		Debug runtime-static threading-multi = Debug runtime-static threading-multi
+		Release = Release
+		Release runtime-dynamic = Release runtime-dynamic
+		Release runtime-static = Release runtime-static
+		Release runtime-static threading-multi = Release runtime-static threading-multi
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Debug.ActiveCfg = Debug|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Debug.Build.0 = Debug|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Debug runtime-dynamic.ActiveCfg = Debug|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Debug runtime-dynamic.Build.0 = Debug|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Debug runtime-static.ActiveCfg = Debug|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Debug runtime-static.Build.0 = Debug|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Debug runtime-static threading-multi.ActiveCfg = Debug|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Debug runtime-static threading-multi.Build.0 = Debug|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Release.ActiveCfg = Release|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Release.Build.0 = Release|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Release runtime-dynamic.ActiveCfg = Release|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Release runtime-dynamic.Build.0 = Release|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Release runtime-static.ActiveCfg = Release|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Release runtime-static.Build.0 = Release|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Release runtime-static threading-multi.ActiveCfg = Release|Win32
+		{1BEA61A5-A781-47B1-845D-E8613B70DBC2}.Release runtime-static threading-multi.Build.0 = Release|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Debug.ActiveCfg = Debug|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Debug.Build.0 = Debug|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Debug runtime-dynamic.ActiveCfg = Debug|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Debug runtime-dynamic.Build.0 = Debug|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Debug runtime-static.ActiveCfg = Debug|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Debug runtime-static.Build.0 = Debug|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Debug runtime-static threading-multi.ActiveCfg = Debug|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Debug runtime-static threading-multi.Build.0 = Debug|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Release.ActiveCfg = Release|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Release.Build.0 = Release|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Release runtime-dynamic.ActiveCfg = Release|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Release runtime-dynamic.Build.0 = Release|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Release runtime-static.ActiveCfg = Release|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Release runtime-static.Build.0 = Release|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Release runtime-static threading-multi.ActiveCfg = Release|Win32
+		{4AC5D735-5CC7-4E9B-8332-5E4E629F3695}.Release runtime-static threading-multi.Build.0 = Release|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Debug.ActiveCfg = Debug|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Debug.Build.0 = Debug|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Debug runtime-dynamic.ActiveCfg = Debug|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Debug runtime-dynamic.Build.0 = Debug|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Debug runtime-static.ActiveCfg = Debug|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Debug runtime-static.Build.0 = Debug|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Debug runtime-static threading-multi.ActiveCfg = Debug|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Debug runtime-static threading-multi.Build.0 = Debug|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Release.ActiveCfg = Release|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Release.Build.0 = Release|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Release runtime-dynamic.ActiveCfg = Release|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Release runtime-dynamic.Build.0 = Release|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Release runtime-static.ActiveCfg = Release|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Release runtime-static.Build.0 = Release|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Release runtime-static threading-multi.ActiveCfg = Release|Win32
+		{4EC8CB95-3447-4F50-8FB1-464BAD919B70}.Release runtime-static threading-multi.Build.0 = Release|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Debug.ActiveCfg = Debug runtime-static|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Debug.Build.0 = Debug runtime-static|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Debug runtime-dynamic.ActiveCfg = Debug runtime-dynamic|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Debug runtime-dynamic.Build.0 = Debug runtime-dynamic|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Debug runtime-static.ActiveCfg = Debug runtime-static|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Debug runtime-static.Build.0 = Debug runtime-static|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Debug runtime-static threading-multi.ActiveCfg = Debug runtime-static threading-multi|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Debug runtime-static threading-multi.Build.0 = Debug runtime-static threading-multi|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Release.ActiveCfg = Release runtime-static threading-multi|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Release.Build.0 = Release runtime-static threading-multi|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Release runtime-dynamic.ActiveCfg = Release runtime-dynamic|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Release runtime-dynamic.Build.0 = Release runtime-dynamic|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Release runtime-static.ActiveCfg = Release runtime-static|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Release runtime-static.Build.0 = Release runtime-static|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Release runtime-static threading-multi.ActiveCfg = Release runtime-static threading-multi|Win32
+		{30E10563-960A-11D7-9FE9-525400E2CF85}.Release runtime-static threading-multi.Build.0 = Release runtime-static threading-multi|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Type: Widget:TextField.</title>
+    <description>
+        An editable box of text.
+    </description>
+    <block id="TextField">
+        <signal id="OnCarMove">
+            <type-name>signal( position:int )</type-name>
+            <description>
+                Called when carrige position has changed.
+            </description>
+        </signal>
+        <signal id="OnConfirm">
+            <type-name>signal( text:unicode-string )</type-name>
+            <description>
+                Called when user pressed ENTER key.
+            </description>
+        </signal>
+        <signal id="OnTextChange">
+            <type-name>signal( text:unicode-string )</type-name>
+            <description>
+                Called each time text is changed via SetText or via user input.
+            </description>
+        </signal>
+        <chunk id="GetText">
+            <type-name>function() -&gt; unicode-string</type-name>
+            <defined-symbols/>
+            <description>
+                Get text.
+            </description>
+        </chunk>
+        <chunk id="SetText">
+            <type-name>function( text:unicode-string ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set text.
+            </description>
+        </chunk>
+    </block>
+</xml>

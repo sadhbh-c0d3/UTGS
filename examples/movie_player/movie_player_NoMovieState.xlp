@@ -1,0 +1,38 @@
+<xml>
+    <compile run="1">
+        <function id="EnterNoMovieState">
+            <apply select="EnterState">
+                <string id="name" value="NoMovieState"/>
+            </apply>
+            <doin select="NoMovieState">
+                <apply id="slotMovieRepaint" select="uiMovie:OnPaint:Tie">
+                    <string id="parameters">__painter__</string>
+                    <function id="callback">
+                        <!--
+                        <apply select="__painter__:FillRect">
+                            <cat id="where">
+                                <string>0 0</string>
+                                <string>&sp;</string>
+                                <apply select="uiMovie:GetWidth"/>
+                                <string>&sp;</string>
+                                <apply select="uiMovie:GetHeight"/>
+                            </cat>
+                            <string id="color">blue</string>
+                        </apply>
+                        -->
+                        <apply select="__painter__:Blit">
+                            <string id="img">$(SkinName).skins.back</string>
+                            <cat id="where">
+                                <string>0 0</string>
+                                <string>&sp;</string>
+                                <apply select="uiMovie:GetWidth"/>
+                                <string>&sp;</string>
+                                <apply select="uiMovie:GetHeight"/>
+                            </cat>
+                        </apply>
+                    </function>
+                </apply>
+            </doin>
+        </function>
+    </compile>
+</xml>

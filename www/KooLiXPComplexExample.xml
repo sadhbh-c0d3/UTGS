@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="utgs.xsl" type="text/xsl" version="1.0"?>
+
+<document>
+    <title>KooLiXP - Complex Example</title>
+    <sub-title>Fun with Multimedia &amp; Games.</sub-title>
+
+    <chapters>
+        <toc>
+            <link>
+                <title><i>KooLiXP</i> - Language Overview</title>
+                <href>KooLiXPOverview.xml</href>
+            </link>
+        </toc>
+        <chapter>
+            <title><i>KooLiXP</i> Complex Example</title>
+            <name>Example1</name>
+            <body>
+                <p>
+                    In code presented below, I've tried to explain main idea of <i>KooLiXP</i>.
+                    Presented code shows how to:
+                    <ll>
+                        <li>mount virtual filesystems,</li>
+                        <li>include additional sources,</li>
+                        <li>create system components such as screen, soundcard and GUI,</li>
+                        <li>compose GUI layout,</li>
+                        <li>define behavior of our program, using xml <i>KooLiXP</i>,</li>
+                        <li>define new symbols (also known as variables, constants, functions, objects),</li>
+                        <li>import built-in symbols,</li>
+                        <li>call or curry functions,</li>
+                        <li>use event signals.</li>
+                    </ll>
+                </p>
+                <code lang="xml">
+                    <xml encoding="utf-8">
+                        <comment>Mount filesystems.</comment>
+                        <filesystems>
+                            <comment>Some default themes for widgets.</comment>
+                            <comment>Note, system variable $(KOOL_THEMES) is used here.</comment>
+                            <dir path="$(KOOL_THEMES)" point="themes" priority="-1000"/>
+                        </filesystems>
+                        <comment>Must include this file, to get those themes.</comment>
+                        <include src="themes/blue/resources.xml"/>
+                        <comment>Create system resources.</comment>
+                        <system>
+                            <comment>Create screen.</comment>
+                            <screen id="screen1" w="800" h="600" bpp="32" refresh="80"/>
+                            <comment>Create root GUI element bound to screen.</comment>
+                            <comment>Resources 'gui1', 'gui1.desktop', 'gui1.menus', 'gui1.popups' will be automatically added.</comment>
+                            <gui id="gui1" screen="screen1"/>
+                            <comment>Create soundcard.</comment>
+                            <soundcard id="soundcard1" screen="screen1"/>
+                        </system>
+                        <comment>Now, let as create some GUI elements.</comment>
+                        <widgets>
+                            <comment>We will add some widgets to desktop layer.</comment>
+                            <parent id="gui1.desktop">
+                                <comment>Starting with rectangular frame. It will keep child widgets in vertical layout.</comment>
+                                <frame id="main" layout="vertical">
+                                    <comment>First child will be some image, with layout weight =7/8 (7 + 1 = 8).</comment>
+                                    <image img="Hello.tga" weight="7"/>
+                                    <comment>Second child will be invisible rectangular frame, with layout weight =1/8, and
+                                        maximum size constrain =40 pixels.</comment>
+                                    <hub layout="horizontal" weight="1" maxsize="40">
+                                        <comment>Inside layouted widgets, we are allowed to add gaps (empty spaces)</comment>
+                                        <comment>This gap has weight =1/4 (1 + 2 + 1 = 4).</comment>
+                                        <gap size="1"/>
+                                        <comment>Just a button, with weight =2/4, and minimum size constrain =60 pixels.</comment>
+                                        <comment>The auto-name of this button is: 'gui1.desktop.main.ok'</comment>
+                                        <button id="ok" weight="2" minsize="60">OK</button>
+                                        <comment>Another gap, with weight =1/4.</comment>
+                                        <gap size="1"/>
+                                    </hub>
+                                </frame>
+                            </parent>
+                        </widgets>
+                        <comment>From now on, we have defined our GUI.</comment>
+                        <comment>Let as define some behavior of our program.</comment>
+                        <programms>
+                            <comment>The code of LiXP program is defined inside 'fsm' element.</comment>
+                            <fsm id="fsm1">
+                                <comment>Import built-in 'Math' module as 'Math'.</comment>
+                                <comment>It provides such functions: sin(x), cos(x), asin(x), acos(x), atan2(y,x),
+                                    fmin(a,b), fmax(a,b), min(a,b), max(a,b), ceil(x), floor(x), mod(x,n).</comment>
+                                <let id="Math"><import id="Math"/></let>
+                                <comment>Import built-in 'Random' module as 'Random'.</comment>
+                                <comment>It provides such functions: SampleRange(first,last), Sample(list), Shuffle(list).</comment>
+                                <let id="Random"><import id="Random"/></let>
+                                <comment>Import built-in 'List' module as 'List'.</comment>
+                                <comment>It provides such functions: Size(list), At(list,index), Sort(list), Reverse(list), Last(list).</comment>
+                                <let id="List"><import id="List"/></let>
+                                <comment>Import built-in 'Character' module as 'Character'.</comment>
+                                <comment>It provides such functions: ToInteger(char), FromInteger(index).</comment>
+                                <comment>It provides such symbols: SP=0x20, NL=\n CR=\r, TS=\t.</comment>
+                                <let id="Character"><import id="Character"/></let>
+                                <comment>Import built-in 'Toolkit' module as 'Toolkit'.</comment>
+                                <comment>It provides such functions: GetColorByName(name), MakeRGB(red,green,blue), MakeRGBA(red,green,blue,alpha),
+                                    CreatePointList(*), CreateRectList(*), CreateScreen(*), CreateImage(*), CreateSample(file), CreateChannel(*),
+                                    CreateOggVorbis(file), CreateVideo(file), CreateMovie(file),
+                                    ReadFile(*), WriteFile(*), ToXMLString(*), FromXMLString(*).
+                                </comment>
+                                <let id="Toolkit"><import id="Toolkit"/></let>
+                                <comment>Import built-in 'Resources' module as 'Resources'</comment>
+                                <comment>It provides such functions: GetScreen(name), GetImage(name), GetSample(name), GetWidget(name),
+                                    CreateFromXMLString(*), KillResources(category,name,recursive).
+                                </comment>
+                                <let id="Resources"><import id="Resources"/></let>
+                                <comment>We will use compiled code syntax. Compiler checks validity before code execution.</comment>
+                                <comment>Element 'compile' doesn't start new block.</comment>
+                                <compile run="1">
+                                    <comment>Apply method of 'Resources' named 'GetWidget'.</comment>
+                                    <comment>Define symbol 'uiOK' in current block from returned value.</comment>
+                                    <apply id="uiOK" select="Resources:GetWidget">
+                                        <comment>Define symbol 'name' inside function execution block. Treat this as passing function parameter.</comment>
+                                        <string id="name" value="gui1.desktop.main.ok"/>
+                                    </apply>
+                                    <comment>Apply method of 'uiOK:Active:OnClick' named 'Tie'.</comment>
+                                    <comment>Define symbol 'slotOK' in current block from returned value.</comment>
+                                    <comment>Note: 'OnClick' is a signal object, and 'Tie' method
+                                        appends passed 'calback' object to list of functions invoked when click event occures.</comment>
+                                    <comment>Note: Since here current block is current fsm state of our virtual machine,
+                                        then all symbols defined in it will remain until change of fsm state.</comment>
+                                    <comment>Note: If state is changed, symbol 'slotOK' is dropped, and click won't invoke 'callback' anymore.</comment>
+                                    <apply id="slotOK" select="uiOK:Active:OnClick:Tie">
+                                        <comment>Element 'curry' creates new function object, which
+                                            calls given function with some parameters remembered in this object.</comment>
+                                        <curry id="callback" select="__application__:Terminate"/>
+                                    </apply>
+                                </compile>
+                            </fsm>
+                            <comment>Execute the code defined above, as 'fsm1', on virtual machine named 'object1'</comment>
+                            <run fsm="fsm1" object="object1"/>
+                        </programms>
+                    </xml>
+                </code>
+            </body>
+        </chapter>
+    </chapters>
+
+</document>

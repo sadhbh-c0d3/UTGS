@@ -1,0 +1,90 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: Map"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <text id="output" align="left" autofill="1">Output:</text>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="String"><import id="String"/></let>            
+            <let id="List"><import id="List"/></let>            
+            <compile run="1">
+                <list id="People">
+                    <block>
+                        <string id="name">Nick</string>
+                        <integer id="age" value="12"/>
+                    </block>
+                    <block>
+                        <string id="name">Kate</string>
+                        <integer id="age" value="14"/>
+                    </block>
+                </list>
+                <cat  id="out_text">
+                    <string>Map1:</string>
+                    <apply select="String:Cat">
+                        <string id="sepa">&sp;</string>
+                        
+                        <map id="list" iterator="i"> 
+                            <let id="list" select="People"/>
+                            <function id="func">
+                                <cat>
+                                    <get id="i:name"/>
+                                    <string>=</string>
+                                    <get id="i:age"/>
+                                </cat>
+                            </function>
+                        </map>
+                        
+                    </apply>
+                    <string>&nl;Map2:</string>
+                    <apply select="String:Cat">
+                        <string id="sepa">&sp;</string>
+                        
+                        <map id="list"> 
+                            <iterator id="i"/>
+                            <list select="People"/>
+                            <cat>
+                                <get id="i:name"/>
+                                <string>=</string>
+                                <get id="i:age"/>
+                            </cat>
+                        </map>
+                        
+                    </apply>
+                </cat>
+
+                
+            </compile>
+            <gui-set-text target="gui.desktop.output"><get id="out_text"/></gui-set-text>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

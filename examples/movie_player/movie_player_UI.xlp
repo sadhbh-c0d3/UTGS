@@ -1,0 +1,113 @@
+<xml>
+    <compile run="1">
+        <apply select="uiMovieCtlFrame:SetVisible">
+            <integer id="visible" value="0"/>
+        </apply>
+
+        <apply id="slotFull" select="uiFull:Active:OnClick:Tie">
+            <function id="callback">
+                <apply select="uiLowerFrame:SetVisible">
+                    <integer id="visible" value="1"/>
+                </apply>
+                <apply select="uiSeparator:SetVisible">
+                    <integer id="visible" value="1"/>
+                </apply>
+            </function>
+        </apply>
+        <apply id="slotCompact" select="uiCompact:Active:OnClick:Tie">
+            <function id="callback">
+                <apply select="uiLowerFrame:SetVisible">
+                    <integer id="visible" value="0"/>
+                </apply>
+                <apply select="uiSeparator:SetVisible">
+                    <integer id="visible" value="0"/>
+                </apply>
+            </function>
+        </apply>
+        <apply id="slotMove" select="uiTitle:Active:OnDrag:Tie">
+            <function id="callback">
+                <do>
+                    <apply id="absPos" select="GetAbsCursorPos"/>
+                    <apply select="uiScreen:Reposition">
+                        <integer id="x">$(absPos:x) $(third:x) sub 32.0 div 0.5 add floor 32 mul</integer>
+                        <integer id="y">$(absPos:y) $(third:y) sub 32.0 div 0.5 add floor 32 mul</integer>
+                    </apply>
+                </do>
+            </function>
+        </apply>
+        <apply id="slotResize" select="uiResize:Active:OnDrag:Tie">
+            <function id="callback">
+                <do>
+                    <apply id="buttonWidth" select="uiResize:GetWidth"/>
+                    <apply id="buttonHeight" select="uiResize:GetHeight"/>
+                    <apply id="absPos" select="GetAbsCursorPos"/>
+                    <apply id="wndRect" select="uiScreen:GetWindowRect"/>
+                    <block id="cor">
+                        <integer id="x">$(wndRect:x) $(wndRect:w) add</integer>
+                        <integer id="y">$(wndRect:y) $(wndRect:h) add</integer>
+                    </block>
+                    <block id="cur">
+                        <integer id="x">$(absPos:x) $(buttonWidth) $(third:x) sub add</integer>
+                        <integer id="y">$(absPos:y) $(buttonHeight) $(third:y) sub add</integer>
+                    </block>
+                    <block id="delta">
+                        <integer id="x">$(cur:x) $(cor:x) sub</integer>
+                        <integer id="y">$(cur:y) $(cor:y) sub</integer>
+                    </block>
+                    <block id="newSize">
+                        <integer id="x">$(wndRect:w) $(delta:x) add</integer>
+                        <integer id="y">$(wndRect:h) $(delta:y) add</integer>
+                    </block>
+                    <apply select="uiScreen:Resize">
+                        <integer id="w">$(newSize:x) 32.0 div 0.5 add floor 32 mul 384 max</integer>
+                        <integer id="h">$(newSize:y) 32.0 div 0.5 add floor 32 mul 384 max</integer>
+                    </apply>
+                </do>
+            </function>
+        </apply>
+        <apply id="slotResizeHeight" select="uiResizeHeight:Active:OnDrag:Tie">
+            <function id="callback">
+                <do>
+                    <apply id="buttonHeight" select="uiResizeHeight:GetHeight"/>
+                    <apply id="absPos" select="GetAbsCursorPos"/>
+                    <apply id="wndRect" select="uiScreen:GetWindowRect"/>
+                    <block id="cor">
+                        <integer id="y">$(wndRect:y) $(wndRect:h) add</integer>
+                    </block>
+                    <block id="cur">
+                        <integer id="y">$(absPos:y) $(buttonHeight) $(third:y) sub add</integer>
+                    </block>
+                    <block id="delta">
+                        <integer id="y">$(cur:y) $(cor:y) sub</integer>
+                    </block>
+                    <block id="newSize">
+                        <integer id="y">$(wndRect:h) $(delta:y) add</integer>
+                    </block>
+                    <apply select="uiScreen:Resize">
+                        <integer id="w">$(wndRect:w)</integer>
+                        <integer id="h">$(newSize:y) 32.0 div 0.5 add floor 32 mul 384 max</integer>
+                    </apply>
+                </do>
+            </function>
+        </apply>
+        <apply id="slotSeparatorDrag" select="uiSeparator:Active:OnDrag:Tie">
+            <function id="callback">
+                <apply id="scrRect" select="uiScreen:GetWindowRect"/>
+                <apply id="absPos" select="uiSeparator:GetAbsolutePos">
+                    <let id="relativePos" select="first"/>
+                </apply>
+                <integer id="w1">$(absPos:y) 64 sub</integer>
+                <integer id="w2">$(scrRect:h) $(absPos:y) sub 64 sub</integer>
+                <apply select="uiMainLayout:SetWeight">
+                    <let id="widget" select="uiMovie"/>
+                    <integer id="weight">$(w1) 32 div floor 32 mul 1 max</integer>
+                </apply>
+                <apply select="uiMainLayout:SetWeight">
+                    <let id="widget" select="uiLowerFrame"/>
+                    <integer id="weight">$(w2) 32 div floor 32 mul 1 max</integer>
+                </apply>
+                <apply select="uiMainLayout:Fill"/>
+            </function>
+        </apply>
+    </compile>
+</xml>

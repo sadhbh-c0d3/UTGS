@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <title>KooLiXP Built-In's</title>
+    </head>
+    <body background="../utgs-bg.jpg">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%" height="64" bgcolor="#3c8fdc" background="../utgslogobg.jpg">
+            <tr valign="top">
+                <td width="128px">
+                    <table width="128px">
+                    </table>
+                </td>
+                <td valign="middle" width="99%">
+                    <img src="../utgslogo.png"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" bgcolor="black">
+                    <table height="2px">
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table width="80%" align="center" cellspacing="0" cellpadding="0" >
+            <tr height="10px"/>
+            <tr height="2px">
+                <td bgcolor="black"/>
+            </tr>
+            <tr>
+                <td>
+                    <table cellpadding="10" width="100%" background="../utgs-bg2.jpg">
+                        <tr>
+                            <td>
+                                <h1>KooLiXP Built-In's</h1>
+                                <p>
+                                    <a href="../KooLiXPOverview.xml">KooLiXP</a>
+                                    language gives its programmers an access to features of
+                                    <a href="../UselessOverview.xml">Useless</a>
+                                    library classes and methods via exported
+                                    <a href="../KooLiXPCompiler.xml#Symbol">symbols</a>.
+                                    Exported symbols must be imported into current
+                                    <a href="../KooLiXPCompiler.xml#Scope">scope</a>
+                                    of your program using
+                                    <code><font color="darkcyan">&lt;import id="ImporteeName"&gt;</font></code>
+                                    sentence.
+                                    To use exported symbols first load module via <code><font color="darkcyan">&lt;import/&gt;</font></code>,
+                                    and then keep returned object in your variable via <code><font color="darkcyan">&lt;let&gt;</font></code>.
+                                </p>
+                                <h2>An example of import</h2>
+                                <font color="darkcyan">
+                                    <pre>
+    &lt;let id="math"&gt;
+        &lt;import id="<a href="Math.xml">Math</a>"&gt;
+    &lt;/let&gt;
+    &lt;apply id="cos30" select="math:<a href="Math.xml#chunk_cos">cos</a>"&gt;
+        &lt;fmul id="x"&gt;
+            &lt;float value="30"/&gt;
+            &lt;reciprocal&gt;
+                &lt;float value="180"/&gt;
+            &lt;/reciprocal&gt;
+            &lt;get id="math:<a href="Math.xml#float_PI">PI</a>"/&gt;
+        &lt;/fmul&gt;
+    &lt;/apply&gt;
+                                    </pre>
+                                </font>
+                                <table height="50px">
+                                </table>
+                                <hr/>
+                                <h2>Modules</h2>
+                                Modules are loaded using <code><font color="darkcyan">&lt;import/&gt;</font></code>.
+                                Below is the list of all available modules:
+                                <ul>
+                                    <li><a href="Character.xml">Character</a></li>
+                                    <li><a href="Math.xml">Math</a></li>
+                                    <li><a href="List.xml">List</a></li>
+                                    <li><a href="String.xml">String</a></li>
+                                    <li><a href="Resources.xml">Resources</a></li>
+                                    <li><a href="Toolkit.xml">Toolkit</a></li>
+                                </ul>
+                                <table height="50px">
+                                </table>
+                                <hr/>
+                                <h2>Types</h2>
+                                Below is the list of exported types. Many of them are undocumented.
+                                <ul>
+                                    <li>class <a href="Signal.xml">Signal</a></li>
+                                    <li>class <a href="Painter.xml">Painter</a></li>
+                                    <li>class <a href="Widget.xml">Widget</a>
+                                    <ul>
+                                        <li><a href="WidgetActive.xml">:Active</a> (class ActiveWidget)</li>
+                                        <li><a href="WidgetCompound.xml">:Compound</a> (class CompoundWidget)</li>
+                                        <li><a href="WidgetList.xml">:List</a> (class ListWidget)</li>
+                                        <li><a href="WidgetText.xml">:Text</a> (class BaseTextWidget, class AdvTextBase)</li>
+                                        <li><a href="WidgetTextField.xml">:TextField</a> (class TextField)</li>
+                                        <li>:Credits (class CreditsWidget)</li>
+                                        <li>:Enum (class EnumWidget)</li>
+                                        <li>:FontPainter (class FontPainter)</li>
+                                        <li>:Caption (class CaptionWidget)</li>
+                                        <li>:Progress (class ProgressWidget)</li>
+                                        <li>:ScoreRoller (class ScoreRoller)</li>
+                                        <li>:Loom (class LoomWidget)</li>
+                                        <li>:Image (class ImageWidget)</li>
+                                    </ul></li>
+                                    <li>class Skin</li>
+                                    <li>class Font</li>
+                                    <li>class StupidVector&lt;int&gt;</li>
+                                    <li>class NormalPixel</li>
+                                    <li>class FontPainter::Carrige</li>
+                                    <li>class FontPainter::Status</li>
+                                    <li>class FontPainter::Lines</li>
+                                    <li>class FontPainter::Words</li>
+                                    <li>class TextInfo::Word</li>
+                                    <li>class TextInfo::Row</li>
+                                    <li>class ImageBase</li>
+                                    <li>class Channel</li>
+                                    <li>class DSMedia</li>
+                                    <li>class OggVorbisDecoder</li>
+                                    <li>class GDIPrinter</li>
+                                    <li>class GDIDocument</li>
+                                    <li>class GDIPage</li>
+                                    <li>class PointList</li>
+                                    <li>class RectList</li>
+                                    <li>class Screen</li>
+                                    <li>class Sample</li>
+                                    <li>class WidgetPainter</li>
+                                    <li>class TextUTF8</li>
+                                    <li>class std::basic_string&lt;char&gt;</li>
+                                    <li>class Rect</li>
+                                    <li>class Point&lt;int&gt;</li>
+                                </ul>
+                                <table height="50px">
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr height="2px">
+                <td bgcolor="black"/>
+            </tr>
+        </table>
+    </body>
+</html>

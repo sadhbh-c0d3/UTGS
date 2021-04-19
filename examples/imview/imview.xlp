@@ -1,0 +1,91 @@
+<xml>
+    <system>
+        <screen width="0" height="0" windowed="1" sys_cursor="1" title="Im-View"/>
+    </system>
+    <programms>
+        <fsm id="main">
+            <let id="screen">screen</let>
+            <let id="Toolkit"><import id="Toolkit"/></let>
+            <let id="Resources"><import id="Resources"/></let>
+            <let id="String"><import id="String"/></let>
+            <let id="Math"><import id="Math"/></let>
+            <compile run="1">
+                <if>
+                    <not>
+                        <is-defined id="argv:file"/>
+                    </not>
+                    <error>
+                        <cat>
+                            <string>Image View, copyright 2005, by Sadhbh Code (https://github.com/sadhbh-c0d3)</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>NOT ENOUGH PARAMETERS.</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>Parameters required are:</string>
+                            <string>&nl;</string>
+                            <string>file</string>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>Missing parameters are:</string>
+                            <string>&nl;</string>
+                            <apply select="String:Cat">
+                                <string id="sepa">,&sp;</string>
+                                <list id="list">
+                                    <if><not><is-defined id="argv:file"/></not><string>file</string></if>
+                                </list>
+                            </apply>
+                            <string>&nl;</string>
+                            <string>&nl;</string>
+                            <string>The command line is one like:</string>
+                            <string>&nl;</string>
+                            <string>KooLiXP.exe imview.xlp -- file=file.png --</string>
+                            <string>&nl;</string>
+                        </cat>
+                    </error>
+                </if>
+                <apply id="image" select="Toolkit:CreateImage">
+                    <string id="color+alpha" select="argv:file"/>
+                </apply>
+                <apply id="uiScreen" select="Resources:GetScreen">
+                    <string id="name">screen</string>
+                </apply>
+                <do>
+                    <apply id="imgWidth" select="image:GetWidth"/>
+                    <apply id="imgHeight" select="image:GetHeight"/>
+                    <float id="heightRatio"> #.(imgHeight) #.(imgWidth) div </float>
+                    <apply select="uiScreen:Resize">
+                        <apply id="w" select="Math:max">
+                            <let id="a" select="imgWidth"/>
+                            <integer id="b" value="240"/>
+                        </apply>
+                        <integer id="h">#.(w) #.(heightRatio) mul </integer>
+                    </apply>
+                </do>
+                <apply id="slotPaint" select="uiScreen:OnPaint:Tie">
+                    <function id="callback">
+                        <apply id="painter" select="uiScreen:CreatePainter"/>
+                        <apply id="width" select="uiScreen:GetWidth"/>
+                        <apply id="height" select="uiScreen:GetHeight"/>
+                        <apply select="painter:FillRect">
+                            <string id="color">0xFFF080F0</string>
+                            <string id="where">0 0 #(width) #(height)</string>
+                        </apply>
+                        <apply select="painter:FastBlit">
+                            <let id="Imag" select="image"/>
+                            <block id="Canv">
+                                <integer id="x" value="0"/>
+                                <integer id="y" value="0"/>
+                                <let id="w" select="width"/>
+                                <let id="h" select="height"/>
+                            </block>
+                        </apply>
+                        <apply select="uiScreen:Swap"/>
+                    </function>
+                </apply>
+                <apply select="slotPaint"/>
+            </compile>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+</xml>

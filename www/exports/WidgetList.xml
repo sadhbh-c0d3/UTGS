@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Type: Widget:List.</title>
+    <description>
+        A widget that manages ListWidget.
+        The ListWidget (simple list w/o background), An AdvListWidget (list with frame and scrollbar),
+        or DropDownList (drop-down menu based on AdvListWidget).
+    </description>
+    <block id="List">
+        <chunk id="ClearEntries">
+            <type-name>function() -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Clear list from any enries.
+            </description>
+        </chunk>
+        <chunk id="GetItemNo">
+            <type-name>function( text:unicode-string ) -&gt; int</type-name>
+            <defined-symbols/>
+            <description>
+                Find item index by item's text.
+                <parameters>
+                    <param><n>text</n><d>text by which item is found</d></param>
+                </parameters>
+            </description>
+        </chunk>
+        <chunk id="GetNumEntries">
+            <type-name>function() -&gt; int</type-name>
+            <defined-symbols/>
+            <description>
+                Get number of items.
+            </description>
+        </chunk>
+        <chunk id="GetText">
+            <type-name>function( no:int ) -&gt; unicode-string</type-name>
+            <defined-symbols/>
+            <description>
+                Get text of an item at <a>no</a> index.
+                <parameters>
+                    <param><n>no</n><d>a zero based index of an item</d></param>
+                </parameters>
+            </description>
+        </chunk>
+        <chunk id="GetUserFlagForItem">
+            <type-name>function( no:int, flagNo:int ) -&gt; bool</type-name>
+            <defined-symbols/>
+            <description>
+                Get user paint flag.
+                <parameters>
+                    <param><n>no</n><d>item index</d></param>
+                    <param><n>flagNo</n><d>custom flag number in range 0..28</d></param>
+                </parameters>
+                <note>
+                    Normally items have flags <a>1</a>:highliten, <a>2</a>:selected, <a>4</a>:disabled, <a>8</a>:focussed.
+                    User may use next bits (16,32,...) to set custom style (for example red).
+                    Such custom style should be included when choosing skinset for a list.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="Insert">
+            <type-name>function( text:unicode-string ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Insert new item having given text at the end.
+                <parameters>
+                    <param><n>text</n><d>text of a new item</d></param>
+                </parameters>
+            </description>
+        </chunk>
+        <chunk id="SetText">
+            <type-name>function( find:unicode-string, set:unicode-string ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set <a>set</a> text of an item having <a>find</a> text.
+                <parameters>
+                    <param><n>find</n><d>text by which item is found</d></param>
+                    <param><n>set</n><d>text to set to</d></param>
+                </parameters>
+            </description>
+        </chunk>
+        <chunk id="SetUserFlagForItem">
+            <type-name>function( no:int, flagNo:int, value:bool ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                Set user paint flag.
+                <parameters>
+                    <param><n>no</n><d>item index</d></param>
+                    <param><n>flagNo</n><d>custom flag number in range 0..28</d></param>
+                    <param><n>value</n><d>flag value, which is true or false</d></param>
+                </parameters>
+                <note>
+                    Normally items have flags <a>1</a>:highliten, <a>2</a>:selected, <a>4</a>:disabled, <a>8</a>:focussed.
+                    User may use next bits (16,32,...) to set custom style (for example red).
+                    Such custom style should be included when choosing skinset for a list.
+                </note>
+            </description>
+        </chunk>
+    </block>
+</xml>

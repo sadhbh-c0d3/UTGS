@@ -1,0 +1,97 @@
+<xml>
+    <gui-event signal="onclick" source="gui.desktop.buttons.quit">
+        <call id="__application__:Terminate"/>
+    </gui-event>
+
+    <do in="__globals__">
+        <let id="Math"><import id="Math"/></let>
+        <let id="List"><import id="List"/></let>
+        <let id="String"><import id="String"/></let>
+        <let id="Toolkit">
+            <let id="screen">screen</let>
+            <let id="soundcard">soundcard</let>
+            <import id="Toolkit"/>
+        </let>
+        <let id="Resources"><import id="Resources"/></let>
+    </do>
+
+    <compile run="1">
+        <doin select="__globals__">
+            <apply id="uiScreen" select="Resources:GetScreen">
+                <string id="name" value="screen"/>
+            </apply>
+            <apply id="uiWorkspace" select="Resources:GetWorkspace">
+                <string id="name" value="gui"/>
+            </apply>
+            <apply id="uiTitle" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.title"/>
+            </apply>
+            <apply id="uiButtons" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.buttons"/>
+            </apply>
+            <apply id="uiTime" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.buttons.time"/>
+            </apply>
+            <apply id="uiFull" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.buttons.full"/>
+            </apply>
+            <apply id="uiCompact" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.buttons.compact"/>
+            </apply>
+            <apply id="uiMovieCtlFrame" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.frame[0]"/>
+            </apply>
+            <apply id="uiLowerFrame" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.frame[3]"/>
+            </apply>
+            <apply id="uiInnerFrame" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.frame[2]"/>
+            </apply>
+            <apply id="uiSeparator" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.separator"/>
+            </apply>
+            <apply id="uiResizeHeight" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.buttons.resizeHeight"/>
+            </apply>
+            <apply id="uiResize" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.buttons.resize"/>
+            </apply>
+            <apply id="uiSlider" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.slider[0]"/>
+            </apply>
+            <apply id="uiDetailSlider" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.slider[1]"/>
+            </apply>
+            <apply id="uiVolumeSlider" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.slider[2]"/>
+            </apply>
+            <apply id="uiMovie" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.movie"/>
+            </apply>
+            <apply id="uiMovieMenu" select="Resources:GetWidget">
+                <string id="name" value="gui.menus.movie"/>
+            </apply>
+            <apply id="uiList1" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.dropdown[0]"/>
+            </apply>
+            <apply id="uiList" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.list[1]"/>
+            </apply>
+            <apply id="uiTable" select="Resources:GetWidget">
+                <string id="name" value="gui.desktop.dropdown[1]"/>
+            </apply>
+            <apply id="uiMainLayout" select="Resources:GetLayout">
+                <string id="name" value="gui.desktop[0]"/>
+            </apply>
+
+            <function id="GetAbsCursorPos">
+                <apply id="wndRect" select="uiScreen:GetWindowRect"/>
+                <apply id="cPos" select="uiScreen:GetCursorPos"/>
+                <block>
+                    <integer id="x">$(wndRect:x) $(cPos:x) add</integer>
+                    <integer id="y">$(wndRect:y) $(cPos:y) add</integer>
+                </block>
+            </function>
+        </doin>
+    </compile>
+</xml>

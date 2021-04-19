@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Built-In: List.</title>
+    <description>
+        A built-in library of routines operating on lists.
+    </description>
+    <block>
+        <chunk id="At">
+            <type-name>function( list:list, index:int ) -&gt; IChunkPtr</type-name>
+            <defined-symbols/>
+            <description>
+                Get list element (node:head) at given index.
+                If index exceeds list size, the result is empty.
+            </description>
+        </chunk>
+        <chunk id="Last">
+            <type-name>function( list:list ) -&gt; list</type-name>
+            <defined-symbols/>
+            <description>
+                Get the last node of the selected list.
+                If passed list parameter is empty, the result is empty,
+                otherwise it is list starting at the last non-empty element.
+            </description>
+        </chunk>
+        <chunk id="LinkLast">
+            <type-name>function( list:list, tail:list ) -&gt; list</type-name>
+            <defined-symbols/>
+            <description>
+                This function appends other list at the tail of selected list.
+                If selected list is not empty, function modifies that list.
+                The result value is new list with appended tail.
+            </description>
+        </chunk>
+        <chunk id="Reverse">
+            <type-name>function( list:list ) -&gt; list</type-name>
+            <defined-symbols/>
+            <description>
+                Reverse the list.
+                The result is a new reversed list. Source list remains non-modified.
+            </description>
+        </chunk>
+        <chunk id="Size">
+            <type-name>function( list:list ) -&gt; int</type-name>
+            <defined-symbols/>
+            <description>
+                Calculate size of list. This is linear algorithm.
+            </description>
+        </chunk>
+        <chunk id="Sort">
+            <type-name>function( list:list, pred:function, first:string, second:string, reverse:bool ) -&gt; list</type-name>
+            <defined-symbols/>
+            <description>
+                Sort given list, using the pred function. Parameter reverse is optional.
+                Parameters first and second are names to which algorithm will map each pair of input, and
+                pass to the pred function.
+                The result is a new sorted list. Source list remains non-modified.
+            </description>
+        </chunk>
+    </block>
+</xml>

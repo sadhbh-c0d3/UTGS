@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="tutorial.xsl" type="text/xsl" version="1.0"?>
+
+<document>
+    <title>Useless GUI/KooLiXP Tutorial</title>
+    <sub-title>Easy Multimedia &amp; Games.</sub-title>
+
+    <chapters>
+        <toc>
+            <link>
+                <title><i>KooLiXP</i> Overview</title>
+                <href>../KooLiXPOverview.xml</href>
+            </link>
+            <link>
+                <title><i>UTGS</i> Overview</title>
+                <href>../utgs.xml</href>
+            </link>
+        </toc>
+        <chapter>
+            <title>Lesson 3 - Cascading Styles</title>
+            <name>Example3</name>
+            <body>
+                <p>
+                    Presented code shows how to:
+                    <ll>
+                        <li>create styles,</li>
+                        <li>create widgets using styles.</li>
+                    </ll>
+                </p>
+                <code lang="xml">
+                    <xml encoding="utf-8">
+                        <fixed-comment>
+KooLiXP (examples/tutorial/lesson003)
+Lesson 3.
+In addition to Lesson 2, we will learn how to:
++   use styles,
++   mount filesystems.
+                        </fixed-comment>
+                        <system>
+                            <screen id="screen"
+                                title="Lesson 3 - Cascading Styles"
+                                x="50"
+                                y="50"
+                                width="800"
+                                height="600"
+                                windowed="1"
+                                sys_cursor="1"
+                                />
+
+                            <soundcard id="soundcard"
+                                screen="screen"
+                                />
+
+                            <gui id="gui"
+                                screen="screen"
+                                />
+                        </system>
+
+                        <comment>mount themes path</comment>
+                        <filesystems>
+                            <dir path="../../themes" point="themes" priority="1000"/>
+                        </filesystems>
+
+                        <comment>now we're ready to include those packages</comment>
+                        <include src="themes/azure/skins/resources.xml"/>
+                        <include src="themes/azure/fonts/resources.xml"/>
+
+                        <comment>create predefined styles</comment>
+                        <styles>
+                            <style id="normal">
+                                <slider
+                                    skin="azure.skins.slider_horizontal.set"
+                                    size="16"
+                                    grip_size="128"
+                                    fixedheight="16"
+                                    />
+
+                                <text
+                                    align="left"
+                                    font="azure.fonts.font_luxi_sans_14_navy"
+                                    />
+
+                                <list
+                                    font="azure.fonts.font_luxi_sans_14.list"
+                                    skin="azure.skins.list.set"
+                                    shift="20"
+                                    />
+
+                                <frame
+                                    skin="azure.skins.frame"
+                                    layout="vertical"
+                                    />
+
+                                <scrollbar
+                                    skin="azure.skins.slider_vertical.set"
+                                    size="32"
+                                    size_limit="48"
+                                    />
+
+                                <button
+                                    skin="azure.skins.button.set"
+                                    font="azure.fonts.font_luxi_sans_14.button"
+                                    focusable="0"
+                                    />
+                            </style>
+
+                            <style id="backdrop">
+                                <frame skin="azure.skins.back"
+                                    autofill="1"
+                                    left="32" top="32" right="32" bottom="32"
+                                    layout="vertical"
+                                    />
+                            </style>
+
+                            <style id="caption">
+                                <text
+                                    font="azure.fonts.font_luxi_sans_14_blood"
+                                    align="center"
+                                    />
+                            </style>
+                        </styles>
+
+                        <widgets>
+                            <parent id="gui.desktop">
+                                <fixed-comment>
++   style       := the id of style used for that element,
++   inner_style := the id of style used for all child elements (*).
+
+(*) If 'inner_style' is not defined 'style' is used also for children.
+                                </fixed-comment>
+                                <frame style="backdrop" inner_style="normal">
+                                    <text style="caption">Change the size of this window (dragging by mouse the right-lower corner of this window), and look how it changes layout ;-)</text>
+                                    <frame layout="horizontal">
+                                        <comment>Fell free to override style attributes</comment>
+                                        <frame
+                                            left="32" right="32"
+                                            >
+                                            <text align="right">Nice text aligned to right (value overriden by attribute) frame border. Hello WORLD!!!</text>
+                                        </frame>
+                                        <frame
+                                            left="32" right="32"
+                                            >
+                                            <comment>like all other elements, this element derives style 'normal', where 'align="left"' was defined</comment>
+                                            <text>Nice text aligned to left (value from style 'normal') frame border. Hello WORLD!!!</text>
+                                        </frame>
+                                    </frame>
+                                    <frame
+                                        left="32" right="32"
+                                        >
+                                        <text align="center">Nice centered (value overriden by attribute) text. Hello WORLD!!!
+                                            Isn't it great having such simplified stuff?</text>
+                                    </frame>
+                                </frame>
+                            </parent>
+                        </widgets>
+
+                    </xml>
+                </code>
+            </body>
+        </chapter>
+    </chapters>
+
+</document>

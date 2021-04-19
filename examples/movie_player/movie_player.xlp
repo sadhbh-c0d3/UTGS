@@ -1,0 +1,107 @@
+<xml>
+    <system>
+        <screen id="screen" x="0" y="0" width="1024" height="768" bpp="32" windowed="1" sys_cursor="1" decorations="0"/>
+        <soundcard id="soundcard" screen="screen"/>
+        <gui id="gui" screen="screen" />
+    </system>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame layout="vertical" style="window_decorations" inner_style="normal">
+
+                <button id="title" style="window_decorations">--== Untitled ==--</button>
+
+                <activearea id="movie" always_dirty="1"/>
+
+                <button id="separator" style="horizontal_grip"/>
+
+                <frame style="back" layout="vertical" maxheight="45" inner_style="normal">
+                    <slider style="normal" states="3600"/>
+                    <image style="horizontal_line"/>
+                    <hub layout="horizontal" maxheight="16">
+                        <gap/>
+                        <slider style="normal" states="3600"/>
+                        <gap size="5px"/>
+                        <slider style="normal" state="100" states="100"/>
+                    </hub>
+                </frame>
+
+                <frame layout="vertical" style="back" minheight="200" inner_style="normal">
+                    <frame layout="vertical" style="frame_edge">
+                        <hub layout="vertical" fixedheight="64">
+                            <hub layout="horizontal">
+                                <text maxwidth="120">Files:</text>
+                                <dropdown style="dropdown_list">
+                                    <list>
+                                        <frame/>
+                                        <scrollbar/>
+                                        <text>Option 1</text>
+                                    </list>
+                                </dropdown>
+                            </hub>
+                            <gap size="5px"/>
+                            <hub layout="horizontal">
+                                <text maxwidth="120" >History:</text>
+                                <dropdown style="dropdown_table">
+                                    <tableview>
+                                        <tablelist data="data1">
+                                            <row size="32" fixed="1">
+                                                <col size="50" fixed="1"/>
+                                                <col/>
+                                            </row>
+                                        </tablelist>
+                                        <scrollbar/>
+                                        <scrollbar style="horizontal_slider"/>
+                                        <frame/>
+                                    </tableview>
+                                </dropdown>
+                            </hub>
+                        </hub>
+                        <gap size="5px"/>
+                        <text maxheight="32">Directory:</text>
+                        <list style="list">
+                            <frame/>
+                            <scrollbar/>
+                            <text>Option 1</text>
+                        </list>
+                    </frame>
+                </frame>
+
+                <hub id="buttons" layout="horizontal" fixedheight="47">
+                    <hub layout="vertical">
+                        <gap size="3px"/>
+                        <hub layout="horizontal" fixedheight="32">
+                            <gap size="4px"/>
+                            <button id="quit" weight="2">Quit</button>
+                            <gap size="4px"/>
+                            <instance class="TimeDisplay"/>
+                            <gap size="4px"/>
+                            <button id="full" weight="1">Full</button>
+                            <gap size="4px"/>
+                            <button id="compact" weight="1">Compact</button>
+                            <gap size="4px"/>
+                        </hub>
+                        <gap size="2px"/>
+                        <activearea id="resizeHeight"/>
+                    </hub>
+                    <activearea id="resize" maxwidth="32"/>
+                </hub>
+
+            </frame>
+        </parent>
+
+        <parent id="gui.menus">
+            <list id="movie" style="dropdown_list" width="200" height="216" hidden="1">
+                <frame/>
+                <scrollbar/>
+                <text>Play</text>
+                <text>Pause</text>
+                <text>Stop</text>
+                <text>Titlebar</text>
+                <text>MovieControl</text>
+                <text>Buttons</text>
+            </list>
+        </parent>
+
+    </widgets>
+</xml>

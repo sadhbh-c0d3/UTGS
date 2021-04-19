@@ -1,0 +1,96 @@
+<xml>
+    <images>
+        <image id="graphite.skins.button" src="themes/graphite/skins/button.tga" alpha="themes/graphite/skins/button.tga"/>
+        <image id="graphite.skins.back" src="themes/graphite/skins/back.tga" alpha="themes/graphite/skins/back.tga"/>
+        <image id="graphite.skins.decoration" src="themes/graphite/skins/decoration.tga" alpha="themes/graphite/skins/decoration.tga"/>
+        <image id="graphite.skins.frame" src="themes/graphite/skins/frame.tga" alpha="themes/graphite/skins/frame.tga"/>
+        <image id="graphite.skins.frame_edge" src="themes/graphite/skins/frame_edge.tga" alpha="themes/graphite/skins/frame_edge.tga"/>
+        <image id="graphite.skins.frame_and_shadow" src="themes/graphite/skins/frame_and_shadow.tga" alpha="themes/graphite/skins/frame_and_shadow.tga"/>
+        <image id="graphite.skins.selection" src="themes/graphite/skins/selection.tga" alpha="themes/graphite/skins/selection.tga"/>
+        <image id="graphite.skins.table" src="themes/graphite/skins/table.tga" alpha="themes/graphite/skins/table.tga"/>
+        <image id="graphite.skins.slider_vertical" src="themes/graphite/skins/slider_vertical.tga" alpha="themes/graphite/skins/slider_vertical.tga"/>
+        <image id="graphite.skins.slider_horizontal" src="themes/graphite/skins/slider_horizontal.tga" alpha="themes/graphite/skins/slider_horizontal.tga"/>
+        <image id="graphite.skins.grip_vertical" src="themes/graphite/skins/grip_vertical.tga" alpha="themes/graphite/skins/grip_vertical.tga"/>
+        <image id="graphite.skins.grip_horizontal" src="themes/graphite/skins/grip_horizontal.tga" alpha="themes/graphite/skins/grip_horizontal.tga"/>
+        <image id="graphite.skins.line_vertical" src="themes/graphite/skins/line_vertical.tga" alpha="themes/graphite/skins/line_vertical.tga"/>
+        <image id="graphite.skins.line_horizontal" src="themes/graphite/skins/line_horizontal.tga" alpha="themes/graphite/skins/line_horizontal.tga"/>
+        <image id="graphite.skins.slider_vertical_and_shadow" src="themes/graphite/skins/slider_vertical_and_shadow.tga" alpha="themes/graphite/skins/slider_vertical_and_shadow.tga"/>
+        <image id="graphite.skins.grip_vertical_and_shadow" src="themes/graphite/skins/grip_vertical_and_shadow.tga" alpha="themes/graphite/skins/grip_vertical_and_shadow.tga"/>
+    </images>
+
+    <mappings>
+        <map id="graphite.skins.empty" values="0"/>
+        <map id="graphite.skins.button" values="0,3,1,4"/>
+        <map id="graphite.skins.switch" values="0,2,1,4"/>
+        <map id="graphite.skins.list" values="2,8,10"/>
+        <map id="graphite.skins.slider" values="0,1,2,4,6,7"/>
+        <map id="graphite.skins.slider_and_shadow" values="0,4"/>
+        <map id="graphite.skins.grip" values="0,1,4"/>
+    </mappings>
+
+    <skins>
+        <skinset id="graphite.skins.empty.set" mapping="graphite.skins.empty">
+            <parametric border_type="NONE" use_body="0"/>
+        </skinset>
+        
+        <dicer id="graphite.skins.button.dicer" image_ids="graphite.skins.button.source" img="graphite.skins.button" columns="1" rows="4"/>
+        <skinset id="graphite.skins.button.set" mapping="graphite.skins.button">
+            <frame img="graphite.skins.button.source[0]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="graphite.skins.button.source[1]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="graphite.skins.button.source[2]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="graphite.skins.button.source[3]" left="15" right="15" top="15" bottom="15"/>
+        </skinset>
+        
+        <skinset id="graphite.skins.switch.set" mapping="graphite.skins.switch">
+            <frame img="graphite.skins.button.source[0]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="graphite.skins.button.source[1]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="graphite.skins.button.source[2]" left="15" right="15" top="15" bottom="15"/>
+            <frame img="graphite.skins.button.source[3]" left="15" right="15" top="15" bottom="15"/>
+        </skinset>
+        
+        <dicer id="graphite.skins.selection.dicer" image_ids="graphite.skins.selection.source" img="graphite.skins.selection" columns="1" rows="2"/>
+        <frame id="graphite.skins.selection.selected" img="graphite.skins.selection.source[0]" left="8" right="8" top="8" bottom="8" dimensions="128,32"/>
+        <frame id="graphite.skins.selection.focused" img="graphite.skins.selection.source[1]" left="8" right="8" top="8" bottom="8" dimensions="128,32"/>
+        <skinmixer id="graphite.skins.list.set" mapping="graphite.skins.list">
+            <state>
+                <mix id="graphite.skins.selection.selected"/>
+            </state>
+            <state>
+                <mix id="graphite.skins.selection.focused"/>
+            </state>
+            <state>
+                <mix id="graphite.skins.selection.selected"/>
+                <mix id="graphite.skins.selection.focused"/>
+            </state>
+        </skinmixer>
+
+        <image id="graphite.skins.back" img="graphite.skins.back"/>
+        <frame id="graphite.skins.decoration" img="graphite.skins.decoration" left="32" right="32" top="40" bottom="50" nointerior="1"/>
+
+        <frame id="graphite.skins.frame" img="graphite.skins.frame" left="8" right="8" top="8" bottom="8"/>
+        <frame id="graphite.skins.frame_edge" img="graphite.skins.frame_edge" left="8" right="8" top="8" bottom="8" nointerior="1"/>
+        <frame id="graphite.skins.frame_and_shadow" img="graphite.skins.frame_and_shadow" left="24" right="64" top="24" bottom="64"/>
+
+        <table id="graphite.skins.table" img="graphite.skins.table" xcut="8,116,122" ycut="8,116,122"/>
+
+        <skinset id="graphite.skins.slider_vertical.set" mapping="graphite.skins.slider">
+            <bars img="graphite.skins.slider_vertical" rows="1" columns="3" cut="32,96,96" orientation="vertical"/>
+            <bars img="graphite.skins.grip_vertical" rows="1" columns="3" cut="40,72,90" orientation="vertical"/>
+        </skinset>
+        
+        <skinset id="graphite.skins.slider_horizontal.set" mapping="graphite.skins.slider">
+            <bars img="graphite.skins.slider_horizontal" rows="3" columns="1" cut="32,96,96" orientation="horizontal"/>
+            <bars img="graphite.skins.grip_horizontal" rows="3" columns="1" cut="40,72,90" orientation="horizontal"/>
+        </skinset>
+        
+        <skinset id="graphite.skins.slider_vertical_and_shadow.set" mapping="graphite.skins.slider_and_shadow">
+            <bar img="graphite.skins.slider_vertical_and_shadow" cut="32,64,64" orientation="vertical"/>
+            <bars img="graphite.skins.grip_vertical_and_shadow" cut="40,64,80" orientation="vertical"/>
+        </skinset>
+        
+        <bars id="graphite.skins.grip_horizontal.set" img="graphite.skins.grip_horizontal" mapping="graphite.skins.grip" rows="3" columns="1" cut="40,72,90" orientation="horizontal"/>
+
+        <bar id="graphite.skins.line_vertical" img="graphite.skins.line_vertical" cut="32,96,96" orientation="vertical"/>
+        <bar id="graphite.skins.line_horizontal" img="graphite.skins.line_horizontal" cut="32,96,96" orientation="horizontal"/>
+    </skins>
+</xml>

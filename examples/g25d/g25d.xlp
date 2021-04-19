@@ -1,0 +1,223 @@
+<xml>
+    <!-- This program demonstrates 360 degree view rendered from photographs -->
+    <system>
+        <screen title="2.5-D Graphics"
+            id="screen"
+            width="800"
+            height="600"
+            bpp="32"
+            windowed="1"
+            sys_cursor="1"
+            />
+        <gui id="gui" screen="screen"/>
+    </system>
+
+    <skins>
+        <parametric id="minimap"/>
+    </skins>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <activearea id="QUIT" place="100,100,10,10" accel_key="ESC"/>
+            <activearea id="area" autofill="1"/>
+            <hub layout="horizontal" place="0,0,100,100" phantom="1">
+                <gap/>
+                <hub layout="vertical" fixedwidth="128" phantom="1">
+                    <gap/>
+                    <frame layout="vertical" fixedheight="128" skin="minimap">
+                        <activearea id="minimap"/>
+                    </frame>
+                </hub>
+            </hub>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="Resources">
+                <import id="Resources"/>
+            </let>
+            <let id="Math">
+                <import id="Math"/>
+            </let>
+            <let id="Dynamo">
+                <import id="Dynamo"/>
+            </let>
+            <compile run="1">
+                <apply id="module" select="Dynamo:LoadModule">
+                    <choose id="name">
+                        <when>
+                            <is-defined id="argv:debug"/>
+                            <string>g25dd.dll</string>
+                        </when>
+                        <otherwise>
+                            <string>g25d.dll</string>
+                        </otherwise>
+                    </choose>
+                </apply>
+            </compile>
+
+            <gui-event signal="onclick" source="gui.desktop.QUIT">
+                <call id="__application__:Terminate"/>
+            </gui-event>
+
+            <compile run="1">
+                <apply id="uiViewport" select="Resources:GetWidget">
+                    <string id="name" value="gui.desktop.area"/>
+                </apply>
+
+                HEADING-AND-PITCH
+                
+                <float id="headSens" value="60.0"/>
+                <float id="pitchSens" value="50.0"/>
+                
+                <float id="currentHead" value="0"/>
+                <float id="currentPitch" value="0"/>
+
+                <float id="lastHead" value="0"/>
+                <float id="lastPitch" value="0"/>
+                
+                <apply id="slotPress" select="uiViewport:Active:OnPress:Tie">
+                    <function id="callback">
+                        <set id="lastHead" select="currentHead"/>
+                        <set id="lastPitch" select="currentPitch"/>
+                    </function>
+                </apply>
+                
+                <apply id="slotDrag" select="uiViewport:Active:OnDrag:Tie">
+                    <function id="callback">
+                        <set id="currentHead">
+                            <fadd>
+                                <fmul>
+                                    <fadd>
+                                        <get id="first:x"/>
+                                        <fminus select="third:x"/>
+                                    </fadd>
+                                    <reciprocal><float value="-400.0"/></reciprocal>
+                                    <get id="headSens"/>
+                                    <reciprocal select="currentZoom"/>
+                                </fmul>
+                                <get id="lastHead"/>
+                            </fadd>
+                        </set>
+                        <set id="currentPitch">
+                            <fadd>
+                                <fmul>
+                                    <fadd>
+                                        <get id="first:y"/>
+                                        <fminus select="third:y"/>
+                                    </fadd>
+                                    <reciprocal><float value="-300.0"/></reciprocal>
+                                    <get id="pitchSens"/>
+                                    <reciprocal select="currentZoom"/>
+                                </fmul>
+                                <get id="lastPitch"/>
+                            </fadd>
+                        </set>
+                    </function>
+                </apply>
+
+                FIELD-OF-VIEW
+                
+                <float id="FOVwhenOne" value="90"/>
+                <float id="MaxZoom" value="4"/>
+                <float id="currentFOV" select="FOVwhenOne"/>
+                <float id="currentZoom" value="1.5"/>
+
+                <fmul id="FOVwhenOneRadi">
+                    <get id="FOVwhenOne"/>
+                    <get id="Math:PI2"/>
+                    <reciprocal>
+                        <float value="180.0"/>
+                    </reciprocal>
+                </fmul>
+
+                <apply id="slotWheel" select="uiViewport:Active:OnWheel:Tie">
+                    <function id="callback">
+                        <set id="currentZoom">
+                            <apply select="Math:fmin">
+                                <let id="a" select="MaxZoom"/>
+                                <apply id="b" select="Math:fmax">
+                                    <float id="a" value="1.0"/>
+                                    <fadd id="b">
+                                        <fmul>
+                                            <get id="second"/>
+                                            <float value="0.005"/>
+                                            <get id="currentZoom"/>
+                                        </fmul>
+                                        <get id="currentZoom"/>
+                                    </fadd>
+                                </apply>
+                            </apply>
+                        </set>
+                    </function>
+                </apply>
+                
+                <function id="OnAppIdle" parameters="timeDelta">
+                    <apply select="module:Tick"/>
+                    <apply select="UpdateAngles"/>
+                </function>
+
+                <function id="UpdateAngles">
+                    <set id="currentFOV">
+                        <fmul>
+                            <apply select="Math:atan2">
+                                <fmul id="y">
+                                    <apply select="Math:sin">
+                                        <let id="x" select="FOVwhenOneRadi"/>
+                                    </apply>
+                                    <reciprocal>
+                                        <apply select="Math:cos">
+                                            <let id="x" select="FOVwhenOneRadi"/>
+                                        </apply>
+                                    </reciprocal>
+                                    <reciprocal select="currentZoom"/>
+                                </fmul>
+                                <float id="x" value="1.0"/>
+                            </apply>
+                            <float value="180.0"/>
+                            <reciprocal>
+                                <get id="Math:PI2"/>
+                            </reciprocal>
+                        </fmul>
+                    </set>
+                    <set id="currentPitch">
+                        <apply select="Math:fmin">
+                            <fmul id="a">
+                                <fadd>
+                                    <get id="FOVwhenOne"/>
+                                    <fminus select="currentFOV"/>
+                                </fadd>
+                                <float value="0.5"/>
+                            </fmul>
+                            <apply id="b" select="Math:fmax">
+                                <fmul id="a">
+                                    <fadd>
+                                        <get id="FOVwhenOne"/>
+                                        <fminus select="currentFOV"/>
+                                    </fadd>
+                                    <float value="-0.5"/>
+                                </fmul>
+                                <let id="b" select="currentPitch"/>
+                            </apply>
+                        </apply>
+                    </set>
+                    <apply select="module:ChangeCameraHead">
+                        <let id="head" select="currentHead"/>
+                    </apply>
+                    <apply select="module:ChangeCameraPitch">
+                        <let id="pitch" select="currentPitch"/>
+                    </apply>
+                    <apply select="module:ChangeCameraFOV">
+                        <let id="fov" select="currentFOV"/>
+                    </apply>
+                </function>
+
+                <apply select="UpdateAngles"/>
+            </compile>
+
+
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+</xml>

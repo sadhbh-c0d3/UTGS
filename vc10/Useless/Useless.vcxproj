@@ -1,0 +1,1900 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C23F932A-23A6-44EE-9996-6BFC70FA2073}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../;$(BOOST_ROOT)/;$(CRYPTOPP_ROOT)/;$(OGGVORBIS_ROOT)/include/;$(DXSDK)/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UTGS_STATIC_MSVC10;WIN32;_DEBUG;_LIB</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)Useless.lib</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm800
+ %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>../../;$(BOOST_ROOT)/;$(CRYPTOPP_ROOT)../../;$(BOOST_ROOT)/;$(CRYPTOPP_ROOT)/;$(OGGVORBIS_ROOT)/include/;$(DXSDK)/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UTGS_STATIC_MSVC10;WIN32;NDEBUG;_LIB</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level1</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)Useless.lib</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Useless\ErrorConfig.h" />
+    <ClInclude Include="..\..\Useless\Errors1.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDIScreen.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDIScreen.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDISurface.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDISurfacePainter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDITransfer.h" />
+    <ClInclude Include="..\..\Useless\HatcheryConfig.h" />
+    <ClInclude Include="..\..\Useless\LocaleConfig.h" />
+    <ClInclude Include="..\..\Useless\PlatformConfig.h" />
+    <ClInclude Include="..\..\Useless\ResourcesPch.h" />
+    <ClInclude Include="..\..\Useless\TemplateConfig.h" />
+    <ClInclude Include="..\..\Useless\UselessLib.h" />
+    <ClInclude Include="..\..\Useless\UselessPch.h" />
+    <ClInclude Include="..\..\Useless\Error\AppError.h" />
+    <ClInclude Include="..\..\Useless\Error\AssertError.h" />
+    <ClInclude Include="..\..\Useless\Error\Error.h" />
+    <ClInclude Include="..\..\Useless\Error\ErrorMessage.h" />
+    <ClInclude Include="..\..\Useless\Error\IOError.h" />
+    <ClInclude Include="..\..\Useless\Error\Quit.h" />
+    <ClInclude Include="..\..\Useless\File\BlockCipher.h" />
+    <ClInclude Include="..\..\Useless\File\CryptoIFile.h" />
+    <ClInclude Include="..\..\Useless\File\CryptoOFile.h" />
+    <ClInclude Include="..\..\Useless\File\FileName.h" />
+    <ClInclude Include="..\..\Useless\File\Hatchery.h" />
+    <ClInclude Include="..\..\Useless\File\IFile.h" />
+    <ClInclude Include="..\..\Useless\File\IFileStream.h" />
+    <ClInclude Include="..\..\Useless\File\IFileSystem.h" />
+    <ClInclude Include="..\..\Useless\File\MemIFile.h" />
+    <ClInclude Include="..\..\Useless\File\MemOFile.h" />
+    <ClInclude Include="..\..\Useless\File\OFile.h" />
+    <ClInclude Include="..\..\Useless\File\OFileStream.h" />
+    <ClInclude Include="..\..\Useless\File\StdIFile.h" />
+    <ClInclude Include="..\..\Useless\File\StdIFileSystem.h" />
+    <ClInclude Include="..\..\Useless\File\StdOFile.h" />
+    <ClInclude Include="..\..\Useless\File\SubIFile.h" />
+    <ClInclude Include="..\..\Useless\File\SubIFileSystem.h" />
+    <ClInclude Include="..\..\Useless\File\VIFS.h" />
+    <ClInclude Include="..\..\Useless\File\detail\IFileStreamBuffer.h" />
+    <ClInclude Include="..\..\Useless\File\detail\OFileStreamBuffer.h" />
+    <ClInclude Include="..\..\Useless\Functional\CompositePredicate.h" />
+    <ClInclude Include="..\..\Useless\Functional\ConditionalFunctor.h" />
+    <ClInclude Include="..\..\Useless\Functional\ConditionalSignal.h" />
+    <ClInclude Include="..\..\Useless\Functional\DelayedExecutor.h" />
+    <ClInclude Include="..\..\Useless\Functional\DutyList.h" />
+    <ClInclude Include="..\..\Useless\Functional\EquationHolder.h" />
+    <ClInclude Include="..\..\Useless\Functional\Expression.h" />
+    <ClInclude Include="..\..\Useless\Functional\Functor.h" />
+    <ClInclude Include="..\..\Useless\Functional\Holder.h" />
+    <ClInclude Include="..\..\Useless\Functional\MethodPool.h" />
+    <ClInclude Include="..\..\Useless\Functional\MultiMethod.h" />
+    <ClInclude Include="..\..\Useless\Functional\PackedFunctor.h" />
+    <ClInclude Include="..\..\Useless\Functional\PseudoFunctor.h" />
+    <ClInclude Include="..\..\Useless\Functional\Signal.h" />
+    <ClInclude Include="..\..\Useless\Functional\SignalEvent.h" />
+    <ClInclude Include="..\..\Useless\Functional\SignalHelp.h" />
+    <ClInclude Include="..\..\Useless\Functional\SignalScope.h" />
+    <ClInclude Include="..\..\Useless\Functional\SignalSwitch.h" />
+    <ClInclude Include="..\..\Useless\Functional\SmallComposite.h" />
+    <ClInclude Include="..\..\Useless\Functional\VirtualFunctionObject.h" />
+    <ClInclude Include="..\..\Useless\Graphic\ClipList.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Linear.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Point.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Rect.h" />
+    <ClInclude Include="..\..\Useless\Graphic\RectList.h" />
+    <ClInclude Include="..\..\Useless\Graphic\UniDir.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\BMPStructure.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\ImageDesc.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\ImageLoaderRegistrator.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\ImageSaverRegistrator.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\ImageTypes.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\MemorySurface.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\PixelBuffer.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\SpecializedSurfacePainter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\SurfaceStructs.h" />
+    <ClInclude Include="..\..\Useless\Graphic\detail\TGAStructure.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\CreateScreen.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\GVM_Context.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\GVM_Message.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Screen.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Surface.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\SurfaceExtFun.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\GLContextSurface.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\GL\GLImageTesselator.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\GLResourcePool.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\GLSurfacePainter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\GL\GLTexture.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\GLTextureSurface.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\GL\GLTextureSurfaceAllocator.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\GL\GVM_GLContext.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLExtensions.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLScreen.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLSurface.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\Gl\wGL\factory\CreateWGLScreen.h" />
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\BMPLoader.h" />
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\BMPSaver.h" />
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageFactory.h" />
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageLoader.h" />
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageSaver.h" />
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\PNGLoader.h" />
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\TGALoader.h" />
+    <ClInclude Include="..\..\Useless\Graphic\FileIO\TGASaver.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDIPrinter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\CopyPixels.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\Dither.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\DrawLine.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\Edge.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\Pixel.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\PixelPointer.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\PixelPtr.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\PixelShaders.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\PixelTypes.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\Poly.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\ScanLine.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\ThickLine.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Pixel\ThinLine.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\AdvImageBuffer.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\Animation.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\BufferedImage.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\IGraphics.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\Image.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\ImageBase.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\ImageBuffer.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\ImageToFile.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\MaskedColor.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\MemSurface.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\OGraphics.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\Painter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\SurfacePainter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Planes\TransparentImage.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\GenericTransfer.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\IGfxFilter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\IGfxReader.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\MemOGfx.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\NopGfxFilter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\OGfxBuffer.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\OGfxFilter.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\PixelTransfer.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\SurfaceReader.h" />
+    <ClInclude Include="..\..\Useless\Graphic\Transfer\SurfaceWriter.h" />
+    <ClInclude Include="..\..\Useless\Gui\DebugGUI.h" />
+    <ClInclude Include="..\..\Useless\Gui\Form.h" />
+    <ClInclude Include="..\..\Useless\Gui\GUIMaster.h" />
+    <ClInclude Include="..\..\Useless\Gui\PopupCycler.h" />
+    <ClInclude Include="..\..\Useless\Gui\Types.h" />
+    <ClInclude Include="..\..\Useless\Gui\WidgetEnvironment.h" />
+    <ClInclude Include="..\..\Useless\Gui\WidgetInterfaces.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets.h" />
+    <ClInclude Include="..\..\Useless\Gui\Workspace.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\DisplayMan.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\HintMan.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\Hints.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\ImageCursor.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\MouseCursor.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\NullHints.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\OffscreenMan.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\ScreenMan.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\ScreenShooter.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\SkinnedHints.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\TablePainter.h" />
+    <ClInclude Include="..\..\Useless\Gui\Display\WidgetPainter.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\ButtonLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\DraggerLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\HiliteLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\KeyButtonLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\ListLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\LogicWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\MarkLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\MultiItemLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\NumericEditLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\RadioLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\SwitchLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\TabLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\TextEditLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Logic\TriggerLogic.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\DT_Inspector.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\DT_Painter.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\DT_StateChanger.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\DataFilter.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\DataStream.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\DataTypes.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\DisplayState.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\FontSelector.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\KeyPredicates.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\Layout.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\Paylist.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\SkinSelector.h" />
+    <ClInclude Include="..\..\Useless\Gui\Misc\WidgetCycler.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\AdvScrollRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\AppearRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\ComboRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\FillRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\GroupRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\MultiTabRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\PlaceRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\Relation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\ResizeRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Relations\ScrollRelation.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\AlphaFont.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\ArraySkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\BarSkinner.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\CaptionSkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\FacedFont.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\FontSkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\FrameSkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\ImageDicer.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\ImageDotTracer.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\ImageSkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\NullSkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\ParametricSkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\SizerSkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\Skin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\SkinMan.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\SkinMixer.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\SkinSet.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\TableSkin.h" />
+    <ClInclude Include="..\..\Useless\Gui\Skins\Tiler.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\Font.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\FontPainter.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\FontSet.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\LineWrapper.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\LineWrapper_inline.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\NamedFontSet.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\PreformatedText.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\Text.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\TextInfo.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\VerticalText.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\WordSelector.h" />
+    <ClInclude Include="..\..\Useless\Gui\Text\WordStatus.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ActiveAreaWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ActiveWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\AdvListWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\AdvScrollbarWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\AdvTableSystemWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\AdvTextWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\BridgeWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ButtonWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionButton.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionHilite.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionMark.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionRadio.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionSwitch.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionTab.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionTrigger.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CaptionWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CompoundWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ContentWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\CreditsWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DataConnector.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DataTableWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DraggerWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DropDown.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\DualTextWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\EnumWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FacedWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FontChanger.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FontWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FormWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\FrameWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\GraphWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\HiliteWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\HubWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\IconButton.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\IconWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ImageWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\InFrameWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\InterceptorWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ListMenu.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ListWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ListedTextItems.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\LoomWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\MarkWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\MenuWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\NullWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\NumericField.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\Popup.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\PopupWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ProgressBar.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ProgressWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\RadioWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\RollerWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ScrollbarWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\ScrolledWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SizerWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SkinManagedWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SliderWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SmallHint.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\SwitchWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TabWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableListWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableListedItems.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableListedWidgets.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableMenu.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableSystemWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TableWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TemplateWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextBarWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextButtonWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextEditWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextField.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TextWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\TriggerWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\Widget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\WidgetIterator.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\WidgetRequest.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\WidgetTableWidget.h" />
+    <ClInclude Include="..\..\Useless\Gui\Widgets\detail\Belt.h" />
+    <ClInclude Include="..\..\Useless\Movie\Audio.h" />
+    <ClInclude Include="..\..\Useless\Movie\Video.h" />
+    <ClInclude Include="..\..\Useless\Movie\Ogg\OggVorbisDecoder.h" />
+    <ClInclude Include="..\..\Useless\Movie\DShow\CAudioRender.h" />
+    <ClInclude Include="..\..\Useless\Movie\DShow\CSurfaceRender.h" />
+    <ClInclude Include="..\..\Useless\Movie\DShow\DSMedia.h" />
+    <ClInclude Include="..\..\Useless\Movie\DShow\detail\asyncio.h" />
+    <ClInclude Include="..\..\Useless\Movie\DShow\detail\asyncrdr.h" />
+    <ClInclude Include="..\..\Useless\Movie\DShow\detail\filestrm.h" />
+    <ClInclude Include="..\..\Useless\Movie\DShow\detail\memstrm.h" />
+    <ClInclude Include="..\..\Useless\Sound\BasicSample.h" />
+    <ClInclude Include="..\..\Useless\Sound\Channel.h" />
+    <ClInclude Include="..\..\Useless\Sound\MultiChannel.h" />
+    <ClInclude Include="..\..\Useless\Sound\Note.h" />
+    <ClInclude Include="..\..\Useless\Sound\Sample.h" />
+    <ClInclude Include="..\..\Useless\Sound\SampleFile.h" />
+    <ClInclude Include="..\..\Useless\Sound\SampleStream.h" />
+    <ClInclude Include="..\..\Useless\Sound\SampleType.h" />
+    <ClInclude Include="..\..\Useless\Sound\detail\CoolTypes.h" />
+    <ClInclude Include="..\..\Useless\Sound\detail\SoundCreatorRegistrator.h" />
+    <ClInclude Include="..\..\Useless\Sound\detail\WaveHeader.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\SampleData.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\SoundCard.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\SoundStructs.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSampleData.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSStructs.h" />
+    <ClInclude Include="..\..\Useless\Sound\FileIO\SampleWriter.h" />
+    <ClInclude Include="..\..\Useless\Sound\FileIO\SoundFactory.h" />
+    <ClInclude Include="..\..\Useless\Sound\FileIO\SoundInterface.h" />
+    <ClInclude Include="..\..\Useless\Sound\FileIO\WaveLoader.h" />
+    <ClInclude Include="..\..\Useless\Sound\FileIO\WaveSaver.h" />
+    <ClInclude Include="..\..\Useless\System\Application.h" />
+    <ClInclude Include="..\..\Useless\System\Assert.h" />
+    <ClInclude Include="..\..\Useless\System\DbgOut.h" />
+    <ClInclude Include="..\..\Useless\System\KeyCodes.h" />
+    <ClInclude Include="..\..\Useless\System\MMX.h" />
+    <ClInclude Include="..\..\Useless\System\Timer.h" />
+    <ClInclude Include="..\..\Useless\System\TypeInfo.h" />
+    <ClInclude Include="..\..\Useless\System\Types.h" />
+    <ClInclude Include="..\..\Useless\System\Window.h" />
+    <ClInclude Include="..\..\Useless\System\w32\Application.h" />
+    <ClInclude Include="..\..\Useless\System\w32\Assert.h" />
+    <ClInclude Include="..\..\Useless\System\w32\BetterAssert.h" />
+    <ClInclude Include="..\..\Useless\System\w32\COMInitializer.h" />
+    <ClInclude Include="..\..\Useless\System\w32\COMObject.h" />
+    <ClInclude Include="..\..\Useless\System\w32\DbgOut.h" />
+    <ClInclude Include="..\..\Useless\System\w32\ErrorDialog.h" />
+    <ClInclude Include="..\..\Useless\System\w32\KeyCodes.h" />
+    <ClInclude Include="..\..\Useless\System\w32\MMX.h" />
+    <ClInclude Include="..\..\Useless\System\w32\Timer.h" />
+    <ClInclude Include="..\..\Useless\System\w32\Types.h" />
+    <ClInclude Include="..\..\Useless\System\w32\Window.h" />
+    <ClInclude Include="..\..\Useless\System\w32\DirectX\DDrawWindow.h" />
+    <ClInclude Include="..\..\Useless\System\w32\DirectX\DirectInput.h" />
+    <ClInclude Include="..\..\Useless\System\w32\DirectX\Keyboard.h" />
+    <ClInclude Include="..\..\Useless\System\w32\DirectX\Mouse.h" />
+    <ClInclude Include="..\..\Useless\System\factory\CreateBase.h" />
+    <ClInclude Include="..\..\Useless\System\factory\CreateMovie.h" />
+    <ClInclude Include="..\..\Useless\System\factory\CreateScreen.h" />
+    <ClInclude Include="..\..\Useless\System\factory\CreateSound.h" />
+    <ClInclude Include="..\..\Useless\Util\CPT.h" />
+    <ClInclude Include="..\..\Useless\Util\Crypto.h" />
+    <ClInclude Include="..\..\Useless\Util\CTC.h" />
+    <ClInclude Include="..\..\Useless\Util\CommonReference.h" />
+    <ClInclude Include="..\..\Useless\Util\CopyingFactory.h" />
+    <ClInclude Include="..\..\Useless\Util\CtorWrapper.h" />
+    <ClInclude Include="..\..\Useless\Util\Garbage.h" />
+    <ClInclude Include="..\..\Useless\Util\GarbageCollector.h" />
+    <ClInclude Include="..\..\Useless\Util\IOStruct.h" />
+    <ClInclude Include="..\..\Useless\Util\LangSelector.h" />
+    <ClInclude Include="..\..\Useless\Util\LibC.h" />
+    <ClInclude Include="..\..\Useless\Util\LiveVariable.h" />
+    <ClInclude Include="..\..\Useless\Util\LocaleIO.h" />
+    <ClInclude Include="..\..\Useless\Util\LockObj.h" />
+    <ClInclude Include="..\..\Useless\Util\Math.h" />
+    <ClInclude Include="..\..\Useless\Util\New.h" />
+    <ClInclude Include="..\..\Useless\Util\ParmList.h" />
+    <ClInclude Include="..\..\Useless\Util\PreInitializer.h" />
+    <ClInclude Include="..\..\Useless\Util\ReferenceCounter.h" />
+    <ClInclude Include="..\..\Useless\Util\Socket.h" />
+    <ClInclude Include="..\..\Useless\Util\SPointer.h" />
+    <ClInclude Include="..\..\Useless\Util\SafePtr.h" />
+    <ClInclude Include="..\..\Useless\Util\Shares.h" />
+    <ClInclude Include="..\..\Useless\Util\Singleton.h" />
+    <ClInclude Include="..\..\Useless\Util\SingletonKiller.h" />
+    <ClInclude Include="..\..\Useless\Util\StackAlloc.h" />
+    <ClInclude Include="..\..\Useless\Util\StaticAttr.h" />
+    <ClInclude Include="..\..\Useless\Util\StaticCheck.h" />
+    <ClInclude Include="..\..\Useless\Util\TemplateDefines.h" />
+    <ClInclude Include="..\..\Useless\Util\UTF8.h" />
+    <ClInclude Include="..\..\Useless\Util\VariableLink.h" />
+    <ClInclude Include="..\..\Useless\Util\VariableUpdater.h" />
+    <ClInclude Include="..\..\Useless\Util\VirtualValue.h" />
+    <ClInclude Include="..\..\Useless\Util\Visitor.h" />
+    <ClInclude Include="..\..\Useless\Util\XMLTag.h" />
+    <ClInclude Include="..\..\Useless\Util\lexy_less.h" />
+    <ClInclude Include="..\..\Useless\Util\std_traits.h" />
+    <ClInclude Include="..\..\Useless\Util\stl_addon.h" />
+    <ClInclude Include="..\..\Useless\Util\str_conv.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\AssocVector.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\AutoVector.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\BitVector-inline.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\BitVector.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\DependencyTree.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\Independent.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\ListOfUniques.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\MemBlock.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\PointerStorage.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\SortedVector.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\StupidVector.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\VectorIterator.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\VectorTraits.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\assoc_vector.h" />
+    <ClInclude Include="..\..\Useless\Util\Storage\cell_division_vector.h" />
+    <ClInclude Include="..\..\Useless\Xml\XMLParser.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateBinders.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateConnections.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateDatabase.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateFilesystems.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateFonts.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateFromXML.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateGUIResources.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateHints.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateSignalEvents.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateSkins.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateSounds.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateStyle.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateSystem.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateText.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\CreateWidgets.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\GUIBinder.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\Resources.h" />
+    <ClInclude Include="..\..\Useless\Xml\Resources\SignalMap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\wGL\factory\CreateWGLScreenByLib.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\wGL\factory\CreateWGLSurfaceByLib.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDIScreen.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDIScreenByLib.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDISurfaceByLib.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDIScreen.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDISurface.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDITransfer.cpp" />
+    <ClCompile Include="..\..\Useless\ResourcesPch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\UselessPch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Error\AppError.cpp" />
+    <ClCompile Include="..\..\Useless\Error\AssertError.cpp" />
+    <ClCompile Include="..\..\Useless\Error\Error.cpp" />
+    <ClCompile Include="..\..\Useless\Error\ErrorMessage.cpp" />
+    <ClCompile Include="..\..\Useless\Error\IOError.cpp" />
+    <ClCompile Include="..\..\Useless\File\CryptoIFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\CryptoOFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\FileName.cpp" />
+    <ClCompile Include="..\..\Useless\File\HatchedIFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\Hatchery.cpp" />
+    <ClCompile Include="..\..\Useless\File\HatcheryBuilder.cpp" />
+    <ClCompile Include="..\..\Useless\File\IFSAutoMounterInit.cpp" />
+    <ClCompile Include="..\..\Useless\File\IFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\IFileStream.cpp" />
+    <ClCompile Include="..\..\Useless\File\IFileSystem.cpp" />
+    <ClCompile Include="..\..\Useless\File\MemIFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\MemOFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\OFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\OFileStream.cpp" />
+    <ClCompile Include="..\..\Useless\File\StdIFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\StdIFileSystem.cpp" />
+    <ClCompile Include="..\..\Useless\File\StdOFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\SubIFile.cpp" />
+    <ClCompile Include="..\..\Useless\File\SubIFileSystem.cpp" />
+    <ClCompile Include="..\..\Useless\File\VIFS.cpp" />
+    <ClCompile Include="..\..\Useless\File\detail\IFileStreamBuffer.cpp" />
+    <ClCompile Include="..\..\Useless\File\detail\OFileStreamBuffer.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\CompositePredicate.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\ConditionalFunctor.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\ConditionalSignal.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\DelayedExecutor.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\DutyList.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\EquationHolder.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\Functor.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\Holder.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\MethodPool.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\MultiMethod.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\PackedFunctor.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\PseudoFunctor.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\Signal.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\SignalSwitch.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\SmallComposite.cpp" />
+    <ClCompile Include="..\..\Useless\Functional\VirtualFunctionObject.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\ClipList.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Point.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Rect.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\RectList.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageDesc.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageFactory.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageFormat.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageLoaderRegistrator.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageSaverRegistrator.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\ImageTypes.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\MemorySurface.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\PixelBuffer.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\SpecializedSurfacePainter.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\detail\SurfaceStructs.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\CreateScreen.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\Surface.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\GLContextSurface.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\GLImageTesselator.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\GLResourcePool.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\GLTexture.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\GLTextureSurface.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\GLTextureSurfaceAllocator.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\GL\GVM_GLContext.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLExtensions.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLScreen.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\wGL\WGLSurface.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\Gl\wGL\factory\CreateWGLScreen.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\BMPLoader.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\BMPSaver.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\ImageLoader.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\ImageSaver.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\PNGLoader.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(LIBPNG_ROOT)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(LIBPNG_ROOT)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\TGALoader.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\FileIO\TGASaver.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDIPrinter.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Pixel\DrawLine.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Pixel\Pixel.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Pixel\PixelShaders.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Pixel\ScanLine.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\AdvImageBuffer.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\Animation.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\BufferedImage.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\IGraphics.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\Image.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\ImageBase.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\ImageBuffer.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\ImageToFile.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\MaskedColor.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\MemSurface.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\OGraphics.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\Painter.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Planes\TransparentImage.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\GenericTransfer.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\IGfxFilter.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\IGfxReader.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\MemOGfx.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\NopGfxFilter.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\OGfxBuffer.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\OGfxFilter.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\SurfaceReader.cpp" />
+    <ClCompile Include="..\..\Useless\Graphic\Transfer\SurfaceWriter.cpp" />
+    <ClCompile Include="..\..\Useless\Gui\GUIMaster.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\PopupCycler.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\WidgetEnvironment.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\WidgetInterfaces.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Workspace.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\DisplayMan.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\HintMan.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\Hints.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\ImageCursor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\MouseCursor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\NullHints.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\OffscreenMan.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\ScreenMan.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\ScreenShooter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\SkinnedHints.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\TablePainter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Display\WidgetPainter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\ButtonLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\DraggerLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\HiliteLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\KeyButtonLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\ListLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\LogicWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\MarkLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\NumericEditLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\RadioLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\SwitchLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\TabLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\TextEditLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Logic\TriggerLogic.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\DT_SingleRow.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\DataStream.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\DisplayState.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\FontSelector.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\KeyPredicates.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\Layout.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\Paylist.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\SkinSelector.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Misc\WidgetCycler.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\AdvScrollRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\AppearRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\ComboRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\FillRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\GroupRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\MultiTabRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\PlaceRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\Relation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\ResizeRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Relations\ScrollRelation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\AlphaFont.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ArraySkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\BarSkinner.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\CaptionSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\FacedFont.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\FontSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\FrameSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ImageDicer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ImageDotTracer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ImageSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\NullSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\ParametricSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\SizerSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\Skin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\SkinMan.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\SkinMixer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\SkinSet.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\TableSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Skins\Tiler.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\Font.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\FontPainter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\FontSet.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\LineWrapper.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\NamedFontSet.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\PreformatedText.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\Text.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\VerticalText.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Text\WordSelector.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ActiveAreaWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ActiveWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\AdvListWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\AdvScrollbarWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\AdvTableSystemWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\AdvTextWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\BridgeWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ButtonWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionButton.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionHilite.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionMark.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionRadio.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionSwitch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionTab.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionTrigger.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CaptionWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CompoundWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ContentWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\CreditsWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DataConnector.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DataTableWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DraggerWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DropDown.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\DualTextWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\EnumWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\FacedWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\FormWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\FrameWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\GraphWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\HiliteWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\HubWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\IconButton.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\IconWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ImageWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\InFrameWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\InterceptorWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ListMenu.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ListWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ListedTextItems.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\LoomWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\MarkWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\MenuWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\NullWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\NumericField.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\Popup.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\PopupWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ProgressBar.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\RadioWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\RollerWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ScrollbarWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\ScrolledWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SizerWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SkinManagedWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SliderWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SmallHint.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\SwitchWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TabWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableListWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableListedItems.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableListedWidgets.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableMenu.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableSystemWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TableWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TemplateWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextBarWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextButtonWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextEditWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextField.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TextWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\TriggerWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\Widget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Gui\Widgets\WidgetTableWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)UselessPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Movie\Ogg\OggVorbisDecoder.cpp" />
+    <ClCompile Include="..\..\Useless\Movie\DShow\CAudioRender.cpp" />
+    <ClCompile Include="..\..\Useless\Movie\DShow\CSurfaceRender.cpp" />
+    <ClCompile Include="..\..\Useless\Movie\DShow\DSMedia.cpp" />
+    <ClCompile Include="..\..\Useless\Movie\DShow\detail\asyncio.cpp" />
+    <ClCompile Include="..\..\Useless\Movie\DShow\detail\asyncrdr.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\BasicSample.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Channel.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\MultiChannel.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Note.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Sample.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\SampleFile.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\SampleType.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Device\SampleData.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Device\SoundCard.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Device\SoundStructs.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSampleData.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSStructs.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\FileIO\SampleWriter.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\FileIO\SoundFactory.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\FileIO\WaveLoader.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\FileIO\WaveSaver.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\AppConstants.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\AppExit.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\Application.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\BetterAssert.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\COMInitializer.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\DbgOut.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\ErrorDialog.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\KeyCodes.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\MMX.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\Timer.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\Types.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\WinMain.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\Window.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\DirectX\DDrawWindow.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\DirectX\DirectInput.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\DirectX\Keyboard.cpp" />
+    <ClCompile Include="..\..\Useless\System\w32\DirectX\Mouse.cpp" />
+    <ClCompile Include="..\..\Useless\System\factory\CreateBase.cpp" />
+    <ClCompile Include="..\..\Useless\Util\CommonReference.cpp" />
+    <ClCompile Include="..\..\Useless\Util\CopyingFactory.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Crypto.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Garbage.cpp" />
+    <ClCompile Include="..\..\Useless\Util\GarbageCollector.cpp" />
+    <ClCompile Include="..\..\Useless\Util\IOStruct.cpp" />
+    <ClCompile Include="..\..\Useless\Util\LangSelector.cpp" />
+    <ClCompile Include="..\..\Useless\Util\LiveVariable.cpp" />
+    <ClCompile Include="..\..\Useless\Util\LockObj.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Math.cpp" />
+    <ClCompile Include="..\..\Useless\Util\New.cpp" />
+    <ClCompile Include="..\..\Useless\Util\ParmList.cpp" />
+    <ClCompile Include="..\..\Useless\Util\PreInitializer.cpp" />
+    <ClCompile Include="..\..\Useless\Util\ReferenceCounter.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Socket.cpp" />
+    <ClCompile Include="..\..\Useless\Util\SPointer.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Shares.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Singleton.cpp" />
+    <ClCompile Include="..\..\Useless\Util\SingletonKiller.cpp" />
+    <ClCompile Include="..\..\Useless\Util\StackAlloc.cpp" />
+    <ClCompile Include="..\..\Useless\Util\StaticCheck.cpp" />
+    <ClCompile Include="..\..\Useless\Util\UTF8.cpp" />
+    <ClCompile Include="..\..\Useless\Util\VariableLink.cpp" />
+    <ClCompile Include="..\..\Useless\Util\VariableUpdater.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Storage\AssocVector.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Storage\AutoVector.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Storage\BitVector.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Storage\MemBlock.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Storage\PointerStorage.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Storage\SortedVector.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Storage\StupidVector.cpp" />
+    <ClCompile Include="..\..\Useless\Util\Storage\VectorIterator.cpp" />
+    <ClCompile Include="..\..\Useless\Xml\XMLParser.cpp" />
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateActiveArea.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateAlphaFont.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateAnimation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateBarSkins.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateBinders.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateButtonWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateConnections.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateCredits.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateDatabase.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateDropDown.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFacedFont.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFilesystems.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFontSet.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFrameSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFrameWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateFromXML.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateGUI.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateGraphWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateHLText.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateHints.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImageCursor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImageDicer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImageSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateImageWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateLayoutGap.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateListWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateLoomWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateMapping.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateNullSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateParametricSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreatePlaySoundEvent.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreatePopup.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateProgressBar.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateRollerWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateScreen.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateScrollbar.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateScrolledWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSizer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSizerSkin.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSkinMixer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSkinSet.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSlider.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSounds.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateStyle.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateSysOutput.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\XML\Resources\CreateTableSkin.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateTableView.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateTemplateWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateText.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateTextField.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateTextWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\CreateWidgetTableWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\GUIBinder.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\InstantiateTemplateWidget.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Xml\Resources\Resources.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Useless\Gui\Logic\ListLogic.inl" />
+    <None Include="..\..\Useless\Gui\Widgets\CaptionWidget.inl" />
+    <None Include="..\..\Useless\Gui\Widgets\DropDown.inl" />
+    <None Include="..\..\Useless\Gui\Widgets\FacedWidget.inl" />
+    <None Include="..\..\Useless\Gui\Widgets\ImageWidget.inl" />
+    <None Include="..\..\Useless\Gui\Widgets\ListMenu.inl" />
+    <None Include="..\..\Useless\Gui\Widgets\ListWidget.inl" />
+    <None Include="..\..\Useless\Gui\Widgets\ListedTextItems.inl" />
+    <None Include="..\..\Useless\Gui\Widgets\TableMenu.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,192 @@
+<xml encoding="utf-8">
+    <!-- KooLiXP (examples/tutorial/lesson002)
+    Lesson 2.
+    In addition to Lesson 1, we will create resources:
+    +   skins,
+    +   fonts,
+    +   widgets.
+    In next lesson you will learn how to AVOID typing all of THOSE PARAMETERS like skin, font etc..!
+    -->
+    <system>
+        <screen id="screen"
+            title="Lesson 2 - Skins, Fonts & Widgets"
+            x="50"
+            y="50"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <!-- create image resources -->
+    <images>
+        <!-- create an image resource:
+        +   src     := filename of image used for RGB pixels,
+        +   alpha   := filename of image used as ALPHA channel.
+
+        What for 'alpha' image:
+        +   RGBA image, then alpha channel is extracted,
+        +   GREY image, then alpha channel is equal to grey values,
+        +   RGB image,  then alpha channel is equal to value of (0.75*R + 0.25*G + 0.125*B).
+        -->
+        <image id="frame1"
+            src="frame.tga"
+            alpha="frame.tga"
+            />
+        
+        <!-- w/o 'alpha' attribute transparency channel will be ignored here -->
+        <image id="frame2"
+            src="frame.tga"
+            />
+
+        <image id="font_luxi_sans_14_shiny_gold"
+            src="font_luxi_sans_14_shiny_gold.tga"
+            alpha="font_luxi_sans_14_shiny_gold.tga"
+            />
+        
+        <image id="font_luxi_sans_14_navy"
+            src="font_luxi_sans_14_navy.tga"
+            alpha="font_luxi_sans_14_navy.tga"
+            />
+    </images>
+
+    <!-- create fonts -->
+    <fonts>
+        <!-- create non-coloured font.
+        +   img     := the id of image resource,
+        +   desc    := filename of font description file.
+        -->
+        <faced id="font_luxi_sans_14_shiny_gold"
+            img="font_luxi_sans_14_shiny_gold"
+            desc="font_luxi_sans_14.desc"
+            />
+        
+        <faced id="font_luxi_sans_14_navy"
+            img="font_luxi_sans_14_navy"
+            desc="font_luxi_sans_14.desc"
+            />
+    </fonts>
+
+    <!-- create skins -->
+    <skins>
+        <!-- create frame skin.
+        +   img                     := the id of image resource,
+        +   left,top,right,bottom   := margins.
+
+        FrameSkin is painted from tiles.
+        
+        +   4 frame corners are copied from source image areas:
+        .   *   left    upper   :=  [0, 0, left, top]
+        .   *   right   upper   :=  [ImageWidth-right, 0, right, top]
+        .   *   left    lower   :=  [0, ImageHeight-bottom, left, bottom]
+        .   *   right   lower   :=  [ImageWidth-right, ImageHeight-bottom, right, bottom]
+        
+        +   4 borders are created via tiling, repeated copying of source image areas:
+        .   *   top     := [left, 0, ImageWidth-(left+right), top]
+        .   *   bottom  := [left, ImageHeight-bottom, ImageWidth-(left+right), bottom]
+        .   *   left    := [0, top, left, ImageHeight-(top+bottom)]
+        .   *   right   := [ImageWidth-right, top, right, ImageHeight-(top+bottom)]
+        
+        +   cenral are is created via tiling, repeated copying of source image area:
+        .   *       [left, top, ImageWidth-(left+right), ImageHeight-(top+bottom)]
+
+        (*) area is defined as [ left-x, top-y, width, height ]
+        -->
+        <frame id="frame1"
+            img="frame1"
+            left="16"
+            top="16"
+            right="16"
+            bottom="16"
+            />
+        
+        <frame id="frame2"
+            img="frame2"
+            left="16"
+            top="16"
+            right="16"
+            bottom="16"
+            />
+    </skins>
+
+    <!-- create GUI resources -->
+    <widgets>
+        <!-- create widgets.
+        You may put your widgets into default widget called 'desktop'.
+        To do so we use 'parent' xml element.
+        +   id  :=  the id of widget into which we will place children.
+        -->
+        <parent id="gui.desktop">
+            <!-- create frame
+            +   skin                    := the id of skin to be used,
+            +   left,top,right,bottom   := margins used for children placement, (by default skin ise querried for those parameters),
+            +   layout                  := the method of children placement, can be 'horizontal' or 'vertical',
+            +   autofill                := fill whole parent's area,
+            -->
+            <frame
+                skin="frame2"
+                left="4" top="4" right="4" bottom="4"
+                autofill="1"
+                layout="vertical"
+                >
+                <frame
+                    skin="frame1"
+                    left="4" top="4" right="4" bottom="4"
+                    layout="horizontal"
+                    >
+                    <frame
+                        skin="frame1"
+                        layout="horizontal"
+                        >
+                        <!-- create aligned text.
+                        +   font        := the id of font to be used,
+                        +   align       := text alignment, can be 'left', 'right' or 'center'.
+                        -->
+                        <text
+                            font="font_luxi_sans_14_navy"
+                            align="right"
+                            >
+                            1-st text in upper frame.&nl;
+                            Notice, this text is multiline, and is aligned to right border.
+                        </text>
+                    </frame>
+                    <frame
+                        skin="frame1"
+                        layout="horizontal"
+                        >
+                        <text
+                            font="font_luxi_sans_14_navy"
+                            align="left"
+                            >
+                            2-nd text in upper frame.&nl;
+                            Notice, this text is multiline too, but is aligned to left border.
+                        </text>
+                    </frame>
+                </frame>
+                <frame
+                    skin="frame1"
+                    left="4" top="4" right="4" bottom="4"
+                    layout="horizontal"
+                    >
+                    <!-- create single line text (label like)
+                    +   fonts       := the id of font to be used.
+                    -->
+                    <text
+                        font="font_luxi_sans_14_shiny_gold"
+                        >
+                        Text in lower frame
+                    </text>
+                </frame>
+            </frame>
+        </parent>
+    </widgets>
+</xml>

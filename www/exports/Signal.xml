@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="import.xsl" type="text/xsl" version="1.0"?>
+
+<xml encoding="utf-8">
+    <title>Type: Signal.</title>
+    <description>
+        Flexible connection between events and metfods.
+    </description>
+    <block>
+        <chunk id="Send">
+            <type-name>function( ... ) -&gt; void</type-name>
+            <defined-symbols/>
+            <description>
+                <p>
+                    Invoke all callback functions connected to this signal.
+                </p>
+                <parameters>
+                    <param><n>...</n> <d>parameters required by all callbacks connected to this signal</d></param>
+                </parameters>
+                <note>
+                    You'd almost never use this method.
+                </note>
+            </description>
+        </chunk>
+        <chunk id="Tie">
+            <type-name>function( parameters:unicode-string, callback:class IChunk ) -&gt; slot-id</type-name>
+            <defined-symbols/>
+            <description>
+                <p>
+                    Connect <a>callback</a> method to this signal.
+                </p>
+                <parameters>
+                    <param><n>parameters</n>
+                        <d> unicode-string
+                            <p>
+                                The <a>parameters</a> string contains white-space separated names to which signal argumens will be mapped.
+                                The <a>callback</a> method may refer to signal arguments only by names defined in the <a>parameters</a> string.
+                            </p>
+                        </d>
+                    </param>
+                    <param><n>callback</n>
+                        <d>class IChunk
+                            <p>
+                                A callback method taking any arguments.
+                            </p>
+                        </d>
+                    </param>
+                </parameters>
+                <returns>
+                    <ret><n>slot-id</n>
+                        <d>
+                            The handle, which must be keeped, until the signal-to-method connection is to be closed.
+                        </d>
+                    </ret>
+                </returns>
+                <note>
+                    The method passed as <a>callback</a> argument, will be called by this signal when the given event shows up.
+                    If method <a>callback</a> uses any symbols from outside of its definition (arguments or globals), make sure
+                    all those symbols are defined at the event time.
+                </note>
+                <examples>
+                    <example>
+                        <p>
+                            Let's connect to an OnClick signal of a Widget:Active object, a simple method that shows an error on screen,
+                            telling the position relative to button's upper left corrner.
+                        </p>
+                        <code lang="xml">
+                            <apply id="slotClickMyButton" select="MyButton:Active:OnClick:Tie">
+                                <string id="parameters">
+                                    clickPoint
+                                </string>
+                                <function id="callback">
+                                    <error>
+                                        The position you've clicked at button is #(clickPoint:x) #(clickPoint:y).
+                                    </error>
+                                </function>
+                            </apply>
+                        </code>
+                    </example>
+                    <example>
+                        <p>
+                            Let's connect to an OnDrag signal of a Widget:Active object, a simple method that shows an error on screen,
+                            telling the distance we've been dragging.
+                        </p>
+                        <code lang="xml">
+                            <apply id="slotDragMyButton" select="MyButton:Active:OnDrag:Tie">
+                                <string id="parameters">
+                                    clickPoint
+                                    moveDelta
+                                    pickPoint
+                                </string>
+                                <function id="callback">
+                                    <add id="dragDeltaX">
+                                        <get id="clickPoint:x"/>
+                                        <minus select="pickPoint:x"/>
+                                    </add>
+                                    <add id="dragDeltaY">
+                                        <get id="clickPoint:y"/>
+                                        <minus select="pickPoint:y"/>
+                                    </add>
+                                    <error>
+                                        The position you've clicked at button is #(dragDeltaX) #(dragDeltaY).
+                                    </error>
+                                </function>
+                            </apply>
+                        </code>
+                    </example>
+                </examples>
+            </description>
+        </chunk>
+    </block>
+</xml>

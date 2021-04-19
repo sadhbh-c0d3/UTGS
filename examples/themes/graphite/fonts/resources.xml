@@ -1,0 +1,135 @@
+<xml>
+    <images>
+        <image id="graphite.fonts.font_luxi_sans_14_azure"
+            src="themes/graphite/fonts/font_luxi_sans_14_azure.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_azure.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_black"
+            src="themes/graphite/fonts/font_luxi_sans_14_black.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_black.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_blood"
+            src="themes/graphite/fonts/font_luxi_sans_14_blood.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_blood.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_dark_grey"
+            src="themes/graphite/fonts/font_luxi_sans_14_dark_grey.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_dark_grey.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_dark_red"
+            src="themes/graphite/fonts/font_luxi_sans_14_dark_red.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_dark_red.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_light_grey"
+            src="themes/graphite/fonts/font_luxi_sans_14_light_grey.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_light_grey.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_navy"
+            src="themes/graphite/fonts/font_luxi_sans_14_navy.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_navy.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_shadow_gold"
+            src="themes/graphite/fonts/font_luxi_sans_14_shadow_gold.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_shadow_gold.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_shiny_gold"
+            src="themes/graphite/fonts/font_luxi_sans_14_shiny_gold.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_shiny_gold.tga"/>
+
+        <image id="graphite.fonts.font_luxi_sans_14_white"
+            src="themes/graphite/fonts/font_luxi_sans_14_white.tga"
+            alpha="themes/graphite/fonts/font_luxi_sans_14_white.tga"/>
+
+    </images>
+
+    <mappings>
+        <map id="graphite.fonts.font_luxi_sans_14.button"
+            values="0,1,4"/>
+
+        <map id="graphite.fonts.font_luxi_sans_14.list"
+            values="0,1,3,4"/>
+
+    </mappings>
+
+    <fonts>
+        <faced id="graphite.fonts.font_luxi_sans_14_azure"
+            img="graphite.fonts.font_luxi_sans_14_azure"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_black"
+            img="graphite.fonts.font_luxi_sans_14_black"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_blood"
+            img="graphite.fonts.font_luxi_sans_14_blood"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_dark_grey"
+            img="graphite.fonts.font_luxi_sans_14_dark_grey"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_dark_red"
+            img="graphite.fonts.font_luxi_sans_14_dark_red"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_light_grey"
+            img="graphite.fonts.font_luxi_sans_14_light_grey"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_navy"
+            img="graphite.fonts.font_luxi_sans_14_navy"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_shadow_gold"
+            img="graphite.fonts.font_luxi_sans_14_shadow_gold"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_shiny_gold"
+            img="graphite.fonts.font_luxi_sans_14_shiny_gold"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+        <faced id="graphite.fonts.font_luxi_sans_14_white"
+            img="graphite.fonts.font_luxi_sans_14_white"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"/>
+
+
+        <alpha id="graphite.fonts.font_luxi_sans_14_c1"
+            src="themes/graphite/fonts/font_luxi_sans_14_white.tga"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"
+            color="0x201000"/>
+
+        <alpha id="graphite.fonts.font_luxi_sans_14_c2"
+            src="themes/graphite/fonts/font_luxi_sans_14_white.tga"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"
+            color="0xFFFFFF"/>
+
+        <alpha id="graphite.fonts.font_luxi_sans_14_c3"
+            src="themes/graphite/fonts/font_luxi_sans_14_white.tga"
+            desc="themes/graphite/fonts/font_luxi_sans_14.desc"
+            color="0xA0A0A0"/>
+
+
+        <fontset id="graphite.fonts.font_luxi_sans_14.button"
+            mapping="graphite.fonts.font_luxi_sans_14.button">
+            <link id="graphite.fonts.font_luxi_sans_14_c1"/>
+
+            <link id="graphite.fonts.font_luxi_sans_14_c2"/>
+
+            <link id="graphite.fonts.font_luxi_sans_14_c3"/>
+
+        </fontset>
+
+        <fontset id="graphite.fonts.font_luxi_sans_14.list"
+            mapping="graphite.fonts.font_luxi_sans_14.list">
+            <link id="graphite.fonts.font_luxi_sans_14_black"/>
+
+            <link id="graphite.fonts.font_luxi_sans_14_azure"/>
+
+            <link id="graphite.fonts.font_luxi_sans_14_white"/>
+
+            <link id="graphite.fonts.font_luxi_sans_14_dark_red"/>
+
+        </fontset>
+    </fonts>
+
+</xml>

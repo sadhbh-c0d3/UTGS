@@ -1,0 +1,50 @@
+<xml>
+    <images>
+        <image id="azure.fonts.font_luxi_sans_14_azure" src="themes/azure/fonts/font_luxi_sans_14_azure.tga" alpha="themes/azure/fonts/font_luxi_sans_14_azure.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_black" src="themes/azure/fonts/font_luxi_sans_14_black.tga" alpha="themes/azure/fonts/font_luxi_sans_14_black.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_blood" src="themes/azure/fonts/font_luxi_sans_14_blood.tga" alpha="themes/azure/fonts/font_luxi_sans_14_blood.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_dark_grey" src="themes/azure/fonts/font_luxi_sans_14_dark_grey.tga" alpha="themes/azure/fonts/font_luxi_sans_14_dark_grey.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_dark_red" src="themes/azure/fonts/font_luxi_sans_14_dark_red.tga" alpha="themes/azure/fonts/font_luxi_sans_14_dark_red.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_light_grey" src="themes/azure/fonts/font_luxi_sans_14_light_grey.tga" alpha="themes/azure/fonts/font_luxi_sans_14_light_grey.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_navy" src="themes/azure/fonts/font_luxi_sans_14_navy.tga" alpha="themes/azure/fonts/font_luxi_sans_14_navy.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_shadow_gold" src="themes/azure/fonts/font_luxi_sans_14_shadow_gold.tga" alpha="themes/azure/fonts/font_luxi_sans_14_shadow_gold.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_shiny_gold" src="themes/azure/fonts/font_luxi_sans_14_shiny_gold.tga" alpha="themes/azure/fonts/font_luxi_sans_14_shiny_gold.tga"/>
+        <image id="azure.fonts.font_luxi_sans_14_white" src="themes/azure/fonts/font_luxi_sans_14_white.tga" alpha="themes/azure/fonts/font_luxi_sans_14_white.tga"/>
+    </images>
+
+    <mappings>
+        <map id="azure.fonts.font_luxi_sans_14.button" values="0,1,4"/>
+        <map id="azure.fonts.font_luxi_sans_14.list" values="0,1,3,4"/>
+    </mappings>
+    
+    <fonts>
+        <faced id="azure.fonts.font_luxi_sans_14_azure" img="azure.fonts.font_luxi_sans_14_azure" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_black" img="azure.fonts.font_luxi_sans_14_black" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_blood" img="azure.fonts.font_luxi_sans_14_blood" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_dark_grey" img="azure.fonts.font_luxi_sans_14_dark_grey" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_dark_red" img="azure.fonts.font_luxi_sans_14_dark_red" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_light_grey" img="azure.fonts.font_luxi_sans_14_light_grey" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_navy" img="azure.fonts.font_luxi_sans_14_navy" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_shadow_gold" img="azure.fonts.font_luxi_sans_14_shadow_gold" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_shiny_gold" img="azure.fonts.font_luxi_sans_14_shiny_gold" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        <faced id="azure.fonts.font_luxi_sans_14_white" img="azure.fonts.font_luxi_sans_14_white" desc="themes/azure/fonts/font_luxi_sans_14.desc"/>
+        
+        <alpha id="azure.fonts.font_luxi_sans_14_c1" src="themes/azure/fonts/font_luxi_sans_14_white.tga" desc="themes/azure/fonts/font_luxi_sans_14.desc" color="0x201000"/>
+        <alpha id="azure.fonts.font_luxi_sans_14_c2" src="themes/azure/fonts/font_luxi_sans_14_white.tga" desc="themes/azure/fonts/font_luxi_sans_14.desc" color="0xFFFFFF"/>
+        <alpha id="azure.fonts.font_luxi_sans_14_c3" src="themes/azure/fonts/font_luxi_sans_14_white.tga" desc="themes/azure/fonts/font_luxi_sans_14.desc" color="0xA0A0A0"/>
+
+        <fontset id="azure.fonts.font_luxi_sans_14.button" mapping="azure.fonts.font_luxi_sans_14.button">
+            <link id="azure.fonts.font_luxi_sans_14_c1"/>
+            <link id="azure.fonts.font_luxi_sans_14_c2"/>
+            <link id="azure.fonts.font_luxi_sans_14_c3"/>
+        </fontset>
+        
+        <fontset id="azure.fonts.font_luxi_sans_14.list" mapping="azure.fonts.font_luxi_sans_14.list">
+            <link id="azure.fonts.font_luxi_sans_14_black"/>
+            <link id="azure.fonts.font_luxi_sans_14_azure"/>
+            <link id="azure.fonts.font_luxi_sans_14_white"/>
+            <link id="azure.fonts.font_luxi_sans_14_dark_red"/>
+        </fontset>
+    </fonts>
+
+</xml>

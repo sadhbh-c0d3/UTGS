@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="tutorial.xsl" type="text/xsl" version="1.0"?>
+
+<document>
+    <title>Useless GUI/KooLiXP Tutorial</title>
+    <sub-title>Lesson 3 - Arranging widgets in layouts.</sub-title>
+
+    <chapters>
+        <toc>
+            <link>
+                <title><i>KooLiXP</i> Overview</title>
+                <href>../KooLiXPOverview.xml</href>
+            </link>
+            <link>
+                <title><i>UTGS</i> Overview</title>
+                <href>../utgs.xml</href>
+            </link>
+        </toc>
+        <chapter>
+            <title>Fill with fixed size margins.</title>
+            <name>Example3a</name>
+            <body>
+                <image src="lesson003_1.png"/>
+                <p>
+                    Placing a widget, that covers some part of its parent's area using <b>left</b>/<b>top</b>/<b>right</b>/<b>bottom</b> margins.
+                </p>
+                <code lang="xml">
+                    <parent id="gui.desktop">
+                        <comment>Following hub will be attached to the "gui.desktop", which
+                            is the root widget that covers whole window (or screen in fullscreen) area.
+                            Our "gui.desktop.main" will cover the area of "gui.desktop" that starts at
+                            10 pixels from left, 12 pixels from top, and ends 16 pixels to the right and 20 pixels to the bottom.
+                        </comment>
+                        <hub id="main" autofill="1" hpadstart="10" hpadend="16" vpadstart="12" vpadend="20"/>
+                    </parent>
+                </code>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Proportional placement.</title>
+            <name>Example3b</name>
+            <body>
+                <image src="lesson003_2.png"/>
+                <p>
+                    Placing a widget, that covers some part of its parent's area using proportions.
+                </p>
+                <code lang="xml">
+                    <parent id="gui.desktop">
+                        <comment>Following hub will be attached to the "gui.desktop", which
+                            is the root widget that covers whole window (or screen in fullscreen) area.
+                            Our "gui.desktop.main" will cover the area of "gui.desktop" that starts at
+                            10/200 of parent's width, 20/150 of parent's height, with dimensions 80/200 of parent's width and 70/150 of parent's height.
+                        </comment>
+                        <hub id="main" place="10,20,80,70" placer_base="200,150"/>
+                    </parent>
+                </code>
+            </body>
+        </chapter>
+        <chapter>
+            <title>Layout placement.</title>
+            <name>Example3c</name>
+            <body>
+                <image src="lesson003_3.png"/>
+                <p>
+                    Placing a set of widgets, using proportions and constrains.
+                </p>
+                <code lang="xml">
+                    <hub id="ourParent" layout="vertical">
+                        <comment>
+                            Place 2 widgets one bellow other.
+                            Widget "ourParent.child1" is placed vertically after 10 pixel gap and 20 pixels from left, and 40 pixels to right edge.
+                            Its maximum height is 40 and minimum height is 20.
+                            The attributes "weight=2" and "size=1" says button will be 2 times higher than gap.
+                            Using "px" as "gap size" unit, creates a fixed size (pixel based) gap.
+                        </comment>
+                        <gap size="10px"/>
+                        <button id="child1" padstart="20" padend="40" weight="2" minsize="20" maxsize="40"/>
+                        <gap size="1"/>
+                        <button id="child2" padstart="40" padend="20" weight="2" minsize="20" maxsize="40"/>
+                        <gap size="10px"/>
+                    </hub>
+                </code>
+            </body>
+        </chapter>
+    </chapters>
+
+</document>

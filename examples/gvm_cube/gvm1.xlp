@@ -1,0 +1,131 @@
+<xml>
+    <!-- This program demonstrates simple 3D operation using dynamically loaded module -->
+
+    <filesystems>
+        <dir path="../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <system>
+        <screen title="KooLiXP Program"
+            id="screen"
+            x="0"
+            y="0"
+            width="800"
+            height="600"
+            bpp="16"
+            windowed="1"
+            sys_cursor="1"
+            refresh="0"
+            />
+        <gui id="gui" screen="screen"/>
+
+    </system>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame layout="vertical" autofill="1" style="back" inner_style="normal">
+                <activearea id="area"/>
+                <hub layout="horizontal" fixedheight="32" weight="1">
+                    <hub layout="horizontal" minsize="140">
+                        <button id="QUIT" focusable="0" minsize="60" accel_key="Q">Quit!</button>
+                        <gap size="5px"/>
+                        <button id="STOP" focusable="0" minsize="60" accel_key="R" >Stop!</button>
+                        <button id="RESTART" focusable="0" minsize="60" accel_key="R" >Retart!</button>
+                    </hub>
+                    <gap/>
+                </hub>
+            </frame>
+            <frame layout="vertical" place="70,70,30,30" style="normal">
+                <slider id="camAngle" states="180" style="normal"/>
+                <slider id="camFov" states="90" style="normal"/>
+                <activearea id="minimap"/>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="Resources">
+                <import id="Resources"/>
+            </let>
+            <let id="Dynamo">
+                <import id="Dynamo"/>
+            </let>
+            <let id="module">
+                <empty/>
+            </let>
+
+            <gui-event signal="onclick" source="gui.desktop.STOP">
+                <goto id="stopped_state"/>
+            </gui-event>
+            
+            <gui-event signal="onclick" source="gui.desktop.RESTART">
+                <goto id="running_module"/>
+            </gui-event>
+            
+            <gui-event signal="onclick" source="gui.desktop.QUIT">
+                <call id="__application__:Terminate"/>
+            </gui-event>
+
+            <state id="stopped_state">
+            </state>
+
+            <state id="running_module">
+                <compile run="1">
+                    <set id="module">
+                        <apply select="Dynamo:LoadModule">
+                            <choose id="name">
+                                <when>
+                                    <is-defined id="argv:debug"/>
+                                    <string>gvm1d.dll</string>
+                                </when>
+                                <otherwise>
+                                    <string>gvm1.dll</string>
+                                </otherwise>
+                            </choose>
+                        </apply>
+                    </set>
+                    <function id="OnLeave">
+                        <set id="module">
+                            <empty/>
+                        </set>
+                    </function>
+                    <function id="OnAppIdle" parameters="timeDelta">
+                        <apply select="module:Tick"/>
+                    </function>
+                    <apply id="uiCamAngle" select="Resources:GetWidget">
+                        <string id="name" value="gui.desktop.camAngle"/>
+                    </apply>
+                    <apply id="uiCamFov" select="Resources:GetWidget">
+                        <string id="name" value="gui.desktop.camFov"/>
+                    </apply>
+                    <apply id="slotCamAngle" select="uiCamAngle:Enum:OnChange:Tie">
+                        <function id="callback">
+                            <apply select="module:ChangeCameraAngle">
+                                <fadd id="angle">
+                                    <get id="first"/>
+                                    <float value="-90"/>
+                                </fadd>
+                            </apply>
+                        </function>
+                    </apply>
+                    <apply id="slotCamFov" select="uiCamFov:Enum:OnChange:Tie">
+                        <function id="callback">
+                            <apply select="module:ChangeCameraFOV">
+                                <fadd id="fov">
+                                    <get id="first"/>
+                                    <float value="10"/>
+                                </fadd>
+                            </apply>
+                        </function>
+                    </apply>
+                </compile>
+            </state>
+
+            <goto id="running_module"/>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+</xml>

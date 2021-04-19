@@ -1,0 +1,56 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: Printer"
+            width="320"
+            height="240"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <image img="img.png" autofill="1"/>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="Toolkit"><import id="Toolkit"/></let>
+            <compile run="1">
+                <do>
+                    <apply id="prn1" select="Toolkit:CreatePrinter"/>
+                    <error>
+                        <cat>
+                            <string>Your printer has following attributes:&nl;</string>
+                            <fold>
+                                <iterator id="sym"/>
+                                <accumulator id="astr" select="__Empty__"/>
+                                <list select="prn1:__symbols__"/>
+                                <cat>
+                                    <get id="astr"/>
+                                    <get id="sym:1-st"/>
+                                    <string>&sp;&lt;$(sym:2-nd:type-name)&gt;&sp;</string>
+                                    <string>=</string>
+                                    <get id="sym:2-nd"/>
+                                    <string>&nl;</string>
+                                </cat>
+                            </fold>
+                        </cat>
+                    </error>
+                </do>
+            </compile>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

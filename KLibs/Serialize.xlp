@@ -1,0 +1,264 @@
+<xml>
+    <!--
+    This file is part of UTGS library, which is distributed under BSD License.
+    Further information may be found on UTGS homepage: http://www.utgs.berlios.de
+    -->
+    <do in="__globals__">
+        <compile run="1">
+            <function id="Serialize" parameters="object maxLevel replaceXMLEntities">
+                <block id="next">
+                </block>
+                <if>
+                    <is-defined id="maxLevel"/>
+                    <register>
+                        <let id="dict" select="next"/>
+                        <string id="name" value="maxLevel"/>
+                        <add id="value">
+                            <get id="maxLevel"/>
+                            <integer value="-1"/>
+                        </add>
+                    </register>
+                </if>
+                <choose>
+                    <when>
+                        <equal-type>
+                            <type-of select="object"/>
+                            <type-of-empty/>
+                        </equal-type>
+                        <block>
+                            <string id="name" value="empty"/>
+                        </block>
+                    </when>
+                    <when>
+                        <equal-type>
+                            <type-of select="object"/>
+                            <type-of-string/>
+                        </equal-type>
+                        <block>
+                            <string id="name" value="string"/>
+                            <string id="value" select="object"/>
+                        </block>
+                    </when>
+                    <when>
+                        <equal-type>
+                            <type-of select="object"/>
+                            <type-of-float/>
+                        </equal-type>
+                        <block>
+                            <string id="name" value="float"/>
+                            <string id="value" select="object"/>
+                        </block>
+                    </when>
+                    <when>
+                        <equal-type>
+                            <type-of select="object"/>
+                            <type-of-integer/>
+                        </equal-type>
+                        <block>
+                            <string id="name" value="integer"/>
+                            <string id="value" select="object"/>
+                        </block>
+                    </when>
+                    <when>
+                        <and>
+                            <is-defined id="maxLevel"/>
+                            <less-int>
+                                <get id="maxLevel"/>
+                                <integer value="0"/>
+                            </less-int>
+                        </and>
+                        <block>
+                            <string id="name" value="..."/>
+                        </block>
+                    </when>
+                    <when>
+                        <equal-type>
+                                <type-of select="object"/>
+                                <type-of-list/>
+                        </equal-type>
+                        <choose>
+                            <when>
+                                <or>
+                                    <equal-type>
+                                        <type-of select="object:tail"/>
+                                        <type-of-list/>
+                                    </equal-type>
+                                    <equal-type>
+                                        <type-of select="object:tail"/>
+                                        <type-of-empty/>
+                                    </equal-type>
+                                </or>
+                                <block>
+                                    <string id="name" value="list"/>
+                                    <map id="children" iterator="object">
+                                        <let id="list" select="object"/>
+                                        <let id="func" select="Serialize"/>
+                                        <!--
+                                        <curry id="func" select="Serialize">
+                                            <extract select="next"/>
+                                        </curry>
+                                        -->
+                                    </map>
+                                </block>
+                            </when>
+                            <otherwise>
+                                <block>
+                                    <string id="name" value="list"/>
+                                    <block id="attributes">
+                                        <string id="type" value="stream"/>
+                                    </block>
+                                    <list id="children">
+                                        <apply select="Serialize">
+                                            <let id="object" select="object:head"/>
+                                            <!--
+                                            <extract select="next"/>
+                                            -->
+                                        </apply>
+                                    </list>
+                                </block>
+                            </otherwise>
+                        </choose>
+                    </when>
+                    <when>
+                        <equal-type>
+                            <type-of select="object"/>
+                            <type-of-block/>
+                        </equal-type>
+                        <block>
+                            <string id="name" value="block"/>
+                            <map id="children" iterator="pair">
+                                <let id="list" select="object:__symbols__"/>
+                                <function id="func">
+                                    <apply id="serial" select="Serialize">
+                                        <let id="object" select="pair:2-nd"/>
+                                        <extract select="next"/>
+                                    </apply>
+                                    <choose>
+                                        <when>
+                                            <is-defined id="serial:attributes"/>
+                                            <set id="serial:attributes">
+                                                <block>
+                                                    <extract select="serial:attributes"/>
+                                                    <string id="id" select="pair:1-st"/>
+                                                </block>
+                                            </set>
+                                            <get id="serial"/>
+                                        </when>
+                                        <otherwise>
+                                            <block>
+                                                <extract select="serial"/>
+                                                <block id="attributes">
+                                                    <string id="id" select="pair:1-st"/>
+                                                </block>
+                                            </block>
+                                        </otherwise>
+                                    </choose>
+                                </function>
+                            </map>
+                        </block>
+                    </when>
+                    <otherwise>
+                        <block>
+                            <string id="name">chunk</string>
+                            <list id="children">
+                                <block>
+                                    <string id="name" value="type-name"/>
+                                    <choose id="value">
+                                        <when>
+                                            <and>
+                                                <is-defined id="replaceXMLEntities"/>
+                                                <get id="replaceXMLEntities"/>
+                                            </and>
+                                            <apply select="String:Cat">
+                                                <apply id="list" select="String:SmartSplit">
+                                                    <apply id="text" select="String:Cat">
+                                                        <apply id="list" select="String:SmartSplit">
+                                                            <string id="text">$(object:type-name)</string>
+                                                            <string id="sepa">&gt;</string>
+                                                        </apply>
+                                                        <string id="sepa">&amp;gt;</string>
+                                                    </apply>
+                                                    <string id="sepa">&lt;</string>
+                                                </apply>
+                                                <string id="sepa">&amp;lt;</string>
+                                            </apply>
+                                        </when>
+                                        <otherwise>
+                                            <string>$(object:type-name)</string>
+                                        </otherwise>
+                                    </choose>
+                                </block>
+                                <block>
+                                    <string id="name" value="defined-symbols"/>
+                                    <string id="value">$(object:defined-symbols)</string>
+                                </block>
+                            </list>
+                        </block>
+                    </otherwise>
+                </choose>
+            </function>
+            <function id="SerializeToXMLString">
+                <apply select="Toolkit:ToXMLString">
+                    <apply id="root" select="Serialize"/>
+                </apply>
+            </function>
+        </compile>
+
+        <compile run="1">
+            <function id="WriteObject" parameters="object file encrypted">
+                <apply select="Toolkit:WriteFile">
+                    <string id="file" select="file"/>
+                    <apply id="data" select="Toolkit:ToXMLString">
+                        <doin id="root">
+                            <copy>
+                                <xml encoding="utf-8">
+                                    <block/>
+                                </xml>
+                            </copy>
+                            <set id="children:head:children">
+                                <list>
+                                    <do>
+                                        <apply id="serial" select="Serialize">
+                                            <let id="object" select="object"/>
+                                            <integer id="replaceXMLEntities" select="__True__"/>
+                                        </apply>
+                                        <block>
+                                            <extract select="serial"/>
+                                        </block>
+                                    </do>
+                                </list>
+                            </set>
+                            <get id="children:head"/>
+                        </doin>
+                    </apply>
+                </apply>
+            </function>
+        </compile>
+
+        <function id="ReadObject" parameters="file">
+            <call>
+                <compile>
+                    <choose>
+                        <when>
+                            <apply select="Toolkit:FileExists">
+                                <let id="path" select="file"/>
+                            </apply>
+                            <apply id="Kompiled" select="Kompiler:CompileString">
+                                <apply id="code" select="Toolkit:ReadFile"/>
+                            </apply>
+                            <apply select="Kompiled"/>
+                        </when>
+                        <when>
+                            <is-defined id="initialObject"/>
+                            <get id="initialObject"/>
+                        </when>
+                        <otherwise>
+                            <error>Cannot find file: '$(file)'.</error>
+                        </otherwise>
+                    </choose>
+                </compile>
+            </call>
+        </function>
+    </do>
+
+</xml>

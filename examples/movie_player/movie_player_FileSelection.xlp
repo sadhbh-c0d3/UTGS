@@ -1,0 +1,256 @@
+<xml>
+    <compile run="1">
+        <string id="currentDir">C:/</string>
+        <list id="dirHistory">
+            <string>C:/</string>
+            <string>D:/</string>
+            <string>E:/</string>
+            <string>F:/</string>
+            <string>G:/</string>
+            <string>H:/</string>
+            <string>X:/</string>
+            <string>Y:/</string>
+            <string>Z:/</string>
+        </list>
+        <list id="SupportedExtensions">
+            <string>.avi</string>
+            <string>.mpg</string>
+        </list>
+        <function id="CheckExtension">
+            <fold iterator="iter" accumulator="accum">
+                <false id="accum"/>
+                <let id="list" select="SupportedExtensions"/>
+                <function id="func">
+                    <or>
+                        <get id="accum"/>
+                        <less>
+                            <compare>
+                                <integer value="-1"/>
+                                <apply select="String:rfind">
+                                    <let id="text" select="fileName"/>
+                                    <let id="pattern" select="iter"/>
+                                    <integer id="pos" value="-1"/>
+                                </apply>
+                            </compare>
+                        </less>
+                    </or>
+                </function>
+            </fold>
+        </function>
+        <function id="UpdateList">
+            <apply select="uiList:List:ClearEntries"/>
+            <apply select="uiList1:List:ClearEntries"/>
+            <apply select="uiList1:Active:SetActive">
+                <fold id="active" iterator="iter" accumulator="accum">
+                    <integer id="accum" value="0"/>
+                    <apply id="list" select="List:Sort">
+                        <apply id="list" select="Toolkit:ListFiles">
+                            <let id="path" select="currentDir"/>
+                        </apply>
+                        <string id="first" value="first"/>
+                        <string id="second" value="second"/>
+                        <function id="pred">
+                            <compare id="cmpDir">
+                                <get id="second:dir"/>
+                                <get id="first:dir"/>
+                            </compare>
+                            <strcmp id="cmpFile">
+                                <get id="first:file"/>
+                                <get id="second:file"/>
+                            </strcmp>
+                            <or>
+                                <less><get id="cmpDir"/></less>
+                                <and>
+                                    <equal><get id="cmpDir"/></equal>
+                                    <less><get id="cmpFile"/></less>
+                                </and>
+                            </or>
+                        </function>
+                    </apply>
+                    <function id="func">
+                        <apply id="fileName" select="String:substr">
+                            <let id="text" select="iter:file"/>
+                            <apply id="start" select="String:Length">
+                                <string id="text">$(currentDir)/</string>
+                            </apply>
+                            <integer id="end" value="-1"/>
+                        </apply>
+                        <choose>
+                            <when>
+                                <get id="iter:dir"/>
+                                <apply select="uiList:List:Insert">
+                                    <string id="text">$(iter:file)</string>
+                                </apply>
+                                <get id="accum"/>
+                            </when>
+                            <when>
+                                <apply select="CheckExtension"/>
+                                <apply select="uiList1:List:Insert">
+                                    <string id="text">$(fileName)</string>
+                                </apply>
+                                <integer value="1"/>
+                            </when>
+                            <otherwise>
+                                <get id="accum"/>
+                            </otherwise>
+                        </choose>
+                    </function>
+                </fold>
+            </apply>
+            
+            <copy id="updateRows">
+                <widgets>
+                    <parent id="gui.desktop.tablelist">
+                        <row row="0" size="32" fixed="1">
+                            <col/><col/>
+                        </row>
+                    </parent>
+                </widgets>
+            </copy>
+            <set id="updateRows:children:head:children:head:children:tail">
+                <map iterator="iter">
+                    <let id="list" select="dirHistory:tail"/>
+                    <function id="func">
+                        <copy id="row">
+                            <row size="32" fixed="1"/>
+                        </copy>
+                        <get id="row:children:head"/>
+                    </function>
+                </map>
+            </set>
+            <apply select="Resources:CreateFromXMLString">
+                <apply id="xml" select="Toolkit:ToXMLString">
+                    <let id="root" select="updateRows"/>
+                </apply>
+            </apply>
+            <copy id="update">
+                <database>
+                    <update table="data1">
+                        <body>
+                            <row/>
+                        </body>
+                    </update>
+                </database>
+            </copy>
+            <set id="update:children:head:children:head:children:head:children">
+                <do>
+                    <integer id="iterNo" value="0"/>
+                    <map iterator="iter">
+                        <let id="list" select="dirHistory"/>
+                        <function id="func">
+                            <set id="iterNo">
+                                <add><get id="iterNo"/><integer value="1"/></add>
+                            </set>
+                            <block>
+                                <string id="name" value="row"/>
+                                <list id="children">
+                                    <block>
+                                        <string id="name" value="text"/>
+                                        <let id="value" select="iterNo"/>
+                                    </block>
+                                    <block>
+                                        <string id="name" value="text"/>
+                                        <let id="value" select="iter"/>
+                                    </block>
+                                </list>
+                            </block>
+                        </function>
+                    </map>
+                </do>
+            </set>
+            <apply select="Resources:CreateFromXMLString">
+                <apply id="xml" select="Toolkit:ToXMLString">
+                    <let id="root" select="update"/>
+                </apply>
+            </apply>
+        </function>
+        <apply select="UpdateList"/>
+        <apply id="slotOnSelectDir" select="uiList:Enum:OnConfirm:Tie">
+            <function id="callback">
+                <set id="currentDir">
+                    <apply select="uiList:List:GetText">
+                        <let id="no" select="first"/>
+                    </apply>
+                </set>
+                <if>
+                    <fold iterator="iter" accumulator="accum">
+                        <integer id="accum" value="1"/>
+                        <let id="list" select="dirHistory"/>
+                        <function id="func">
+                            <choose>
+                                <when>
+                                    <equal>
+                                        <strcmp><get id="iter"/><get id="currentDir"/></strcmp>
+                                    </equal>
+                                    <integer value="0"/>
+                                </when>
+                                <otherwise>
+                                    <get id="accum"/>
+                                </otherwise>
+                            </choose>
+                        </function>
+                    </fold>
+                    <set id="dirHistory">
+                        <listnode>
+                            <let id="head" select="currentDir"/>
+                            <let id="tail" select="dirHistory"/>
+                        </listnode>
+                    </set>
+                </if>
+                <function id="find" parameters="node no">
+                    <choose>
+                        <when>
+                            <equal>
+                                <strcmp><get id="node:head"/><get id="currentDir"/></strcmp>
+                            </equal>
+                            <get id="no"/>
+                        </when>
+                        <otherwise>
+                            <apply select="find">
+                                <let id="node" select="node:tail"/>
+                                <add id="no"><get id="no"/><integer value="1"/></add>
+                            </apply>
+                        </otherwise>
+                    </choose>
+                </function>
+                <apply select="UpdateList"/>
+                <apply select="uiTable:Enum:SetSelected">
+                    <integer id="no" value="-1"/>
+                </apply>
+                <apply select="uiTable:Enum:SetSelected">
+                    <apply id="no" select="find">
+                        <let id="node" select="dirHistory"/>
+                        <integer id="no" value="0"/>
+                    </apply>
+                </apply>
+            </function>
+        </apply>
+        <apply id="slotOnSelectFile" select="uiList1:Enum:OnConfirm:Tie">
+            <function id="callback">
+                <apply select="LeaveState"/>
+                <apply select="EnterPlayMovieState">
+                    <cat id="movie">
+                        <string>$(currentDir)/</string>
+                        <apply select="uiList1:List:GetText">
+                            <let id="no" select="first"/>
+                        </apply>
+                    </cat>
+                </apply>
+            </function>
+        </apply>
+        <apply id="slotSelectHistory" select="uiTable:Enum:OnConfirm:Tie">
+            <function id="callback">
+                <seek id="selected">
+                    <let id="list" select="dirHistory"/>
+                    <let id="count" select="first"/>
+                </seek>
+                <if>
+                    <is-not-empty id="selected"/>
+                    <set id="currentDir" select="selected:head"/>
+                    <apply select="UpdateList"/>
+                </if>
+            </function>
+        </apply>
+
+    </compile>
+</xml>

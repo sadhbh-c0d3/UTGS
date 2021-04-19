@@ -1,0 +1,82 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: Pbuffer"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <activearea id="area" autofill="1" hpadstart="32" hpadend="32" vpadstart="32" vpadend="32"/>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="screen">screen</let>
+            <let id="Toolkit"><import id="Toolkit"/></let>
+            <let id="Resources"><import id="Resources"/></let>
+            <compile run="1">
+                <apply id="uiArea" select="Resources:GetWidget">
+                    <string id="name">gui.desktop.area</string>
+                </apply>
+                <apply id="Pbuffer1" select="Toolkit:CreateImageBuffer">
+                    <integer id="width" value="400"/>
+                    <integer id="height" value="300"/>
+                </apply>
+                <apply id="Pbuffer1Painter" select="Pbuffer1:CreatePainter"/>
+                <apply select="Pbuffer1Painter:FillRect">
+                    <string id="color">0xFFFFFF00</string>
+                    <string id="where">0 0 400 300</string>
+                </apply>
+                <apply select="Pbuffer1Painter:FillRect">
+                    <string id="color">0xFFFF0000</string>
+                    <string id="where">50 50 300 200</string>
+                </apply>
+                <apply select="Pbuffer1Painter:FillRect">
+                    <string id="color">0xFF0000FF</string>
+                    <string id="where">100 100 200 100</string>
+                </apply>
+                <apply select="Pbuffer1:WriteImage">
+                    <string id="file">Pbuffer.tga</string>
+                </apply>
+                <apply id="slotPaint" select="uiArea:OnPaint:Tie">
+                    <string id="parameters">__painter__</string>
+                    <function id="callback">
+                        <apply select="__painter__:FastBlit">
+                            <let id="Imag" select="Pbuffer1"/>
+                            <block id="Canv">
+                                <integer id="x" value="0"/>
+                                <integer id="y" value="0"/>
+                                <apply id="w" select="uiArea:GetWidth"/>
+                                <apply id="h" select="uiArea:GetHeight"/>
+                            </block>
+                        </apply>
+                    </function>
+                </apply>
+            </compile>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

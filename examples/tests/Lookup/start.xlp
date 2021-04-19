@@ -1,0 +1,74 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: Lookup"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <text id="output" align="left" autofill="1">Output:</text>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="String"><import id="String"/></let>            
+            <let id="List"><import id="List"/></let>            
+            <let id="Dict0">
+                <block a="10" b="20"/>
+            </let>
+            <compile run="1">
+                <block id="Dict">
+                    <string id="y">(Y)</string>
+                </block>
+                <register>
+                    <let id="dict" select="Dict"/>
+                    <string id="name">x</string>
+                    <string id="value">[X]</string>
+                </register>
+                <cat id="out_text">
+                    <lookup>
+                        <let id="dict" select="Dict"/>
+                        <string id="name">x</string>
+                    </lookup>
+                    <string>&sp;</string>
+                    <lookup>
+                        <let id="dict" select="Dict0"/>
+                        <string id="name">a</string>
+                    </lookup>
+                    <string>&sp;</string>
+                    <lookup>
+                        <let id="dict" select="Dict0"/>
+                        <string id="name">z</string>
+                        <string id="default">0</string>
+                    </lookup>
+                </cat>
+                
+            </compile>
+            <gui-set-text target="gui.desktop.output"><get id="out_text"/></gui-set-text>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>

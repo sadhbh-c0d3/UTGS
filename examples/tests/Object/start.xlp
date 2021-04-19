@@ -1,0 +1,73 @@
+<xml encoding="utf-8">
+    <system>
+        <screen id="screen"
+            title="Unit Test: Object"
+            width="800"
+            height="600"
+            windowed="1"
+            sys_cursor="1"
+            />
+
+        <soundcard id="soundcard"
+            screen="screen"
+            />
+
+        <gui id="gui"
+            screen="screen"
+            />
+    </system>
+
+    <filesystems>
+        <dir path="../../themes" point="themes" priority="1000"/>
+    </filesystems>
+
+    <include src="themes/graphite/styles.xml"/>
+
+    <widgets>
+        <parent id="gui.desktop">
+            <frame style="back" inner_style="normal" autofill="1">
+                <text id="output" align="left" autofill="1">Output:</text>
+            </frame>
+        </parent>
+    </widgets>
+
+    <programms>
+        <fsm id="main">
+            <let id="String"><import id="String"/></let>            
+            <let id="List"><import id="List"/></let>            
+            <compile run="1">
+                <empty id="getName"/>
+                <empty id="getPrice"/>
+
+                <do>
+                    <object id="object1">
+                        <string id="name">Ring</string>
+                        <integer id="price" value="100"/>
+                        <function id="GetName">
+                            <get id="__self__:name"/>
+                        </function>
+                        <function id="GetPrice">
+                            <get id="__self__:price"/>
+                        </function>
+                    </object>
+                    <set id="getName" select="object1:GetName"/>
+                    <set id="getPrice" select="object1:GetPrice"/>
+                </do>
+
+                <cat id="out_text">
+                    <string>Name:&sp;</string>
+                    <apply select="getName"/>
+                    <string>&nl;</string>
+                    <string>Price:&sp;</string>
+                    <apply select="getPrice"/>
+                </cat>                
+                
+            </compile>
+            <gui-set-text target="gui.desktop.output">
+                <get id="out_text"/>
+            </gui-set-text>
+        </fsm>
+        <run fsm="main" object="main"/>
+    </programms>
+
+</xml>
