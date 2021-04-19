@@ -92,6 +92,11 @@ Should be used only when building DLL of koolib project.
 * Download CRYPTO++ library from http://www.cryptopp.com/
 * Set environment variable CRYPTOPP_ROOT (e.g. CRYPTOPP_ROOT = C:\Dev\CryptoPP\)
 
+#### Direct Show Base Classes (strmbase) [Optional - ON by default]
+
+* The Direct Show Base Classes (strmbase) is required for this to work
+* https://docs.microsoft.com/en-us/windows/win32/directshow/using-the-directshow-base-classes
+
 
 #### OGG/VORBIS library [Optional - ON by default]
 
