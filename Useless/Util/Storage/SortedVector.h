@@ -14,40 +14,40 @@ class SortedVector : public StupidVector<T>
 {
 public:
     SortedVector() {}
-    SortedVector( const std::vector<T> &ref ): StupidVector<T>(ref) { std::sort(begin(),end()); }
+    SortedVector( const std::vector<T> &ref ): StupidVector<T>(ref) { std::sort(this->begin(),this->end()); }
 
     virtual void Insert( const T& x )
     {
         int i,n; T r=x;
-        for( i=0, n=size(); i<n;  ++i ) 
+        for( i=0, n=this->size(); i<n;  ++i ) 
         {
-            if ( at(i)<=x ) continue;
+            if (this->at(i)<=x ) continue;
             else
             {
-                T t = at(i);
-                at(i) = r;
+                T t = this->at(i);
+                this->at(i) = r;
                 r = t;
             }
         }
-        push_back(r);
+        this->push_back(r);
     }
 
 
-    const int* FindID( const T &value, ConstIterator *p_iterator = NULL) const
+    const int* FindID( const T &value, StupidVector<T>::ConstIterator *p_iterator = NULL) const
     {
-        int n = size();
+        int n = this->size();
         int p = 0;
         int q = n;
 
         while( p<q )
         {
-            int i = (p+q)/2; T k = at(i);
+            int i = (p+q)/2; T k = this->at(i);
             if ( value == k )
             {
-                while( i>0 && at(i-1)==value ) {--i;}
-                _current = i;
-                if (p_iterator) (*p_iterator) = ConstBegin() + i;
-                return &_current;
+                while( i>0 && this->at(i-1)==value ) {--i;}
+                this->_current = i;
+                if (p_iterator) (*p_iterator) = this->ConstBegin() + i;
+                return &this->_current;
             }
             else if ( value < k )
             {
@@ -58,7 +58,7 @@ public:
                 p = (p==i)? p+1 : i;
             }
         }
-        if (p_iterator) (*p_iterator) = ConstBegin() + p;
+        if (p_iterator) (*p_iterator) = this->ConstBegin() + p;
         return NULL;
     }
 

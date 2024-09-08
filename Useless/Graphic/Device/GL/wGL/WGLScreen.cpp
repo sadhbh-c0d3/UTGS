@@ -266,7 +266,9 @@ namespace Useless {
         {
             SwapBuffers( _glContextSurface->_devContext );
             _glContextSurface->GLFreeGarbage();
+#ifdef USELESS_HAS_DSHOW
             GLUpdateMovieSamples( _glContextSurface.get() );
+#endif
         }
     }
 

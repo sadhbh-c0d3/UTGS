@@ -11,6 +11,9 @@
 
 #include "UselessPch.h"
 
+#ifdef USELESS_HAS_DSHOW
+
+
 #include "strmbase/streams.h"
 #include "asyncio.h"
 #include "asyncrdr.h"
@@ -389,4 +392,5 @@ CAsyncReader::GetPin(int n)
     }
 }
 
+#endif // USELESS_HAS_DSHOW
 

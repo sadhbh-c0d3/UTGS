@@ -123,50 +123,21 @@ template< int I > struct ArgAt {};
 
 //! InList<L>::At<I> - get type in list L at position I
 //-------------------------------------------------
-#ifdef WIN32// MSVC version
-namespace TypeList_imp {
-    template< int I> struct TypeAt
-    {
-        template< class L > struct InList
-        {
-            typedef typename TypeAt<I-1>::InList< L::Tail >::Result Result;
-        };
 
-        template<> struct InList< NullType >
-        {
-            typedef NullType Result;
-        };
-    };
+template< class L, int I > struct InListAt
+{
+    typedef typename InListAt< typename L::Tail, I-1 >::Result Result;
+};
 
-    template<> struct TypeAt<0>
-    {
-        template< class L > struct InList
-        {
-            typedef typename L::Head Result;
-        };
-    };
-};//namespace
-    template< class L, int I > struct InListAt
-    {
-        typedef typename TypeList_imp::TypeAt<I>::InList<L>::Result Result;
-    };
-//-------------------------------------------------
-#else// GCC version
-    template< class L, int I > struct InListAt
-    {
-        typedef typename InListAt< typename L::Tail, I-1 >::Result Result;
-    };
+template< class L> struct InListAt<L,0>
+{
+    typedef typename L::Head Result;
+};
 
-    template< class L> struct InListAt<L,0>
-    {
-        typedef typename L::Head Result;
-    };
-
-    template< int I> struct InListAt< NullType, I>
-    {
-        typedef NullType Result;
-    };
-#endif
+template< int I> struct InListAt< NullType, I>
+{
+    typedef NullType Result;
+};
 
 //! Struct<L> - create instance of TypeList L
 template< class L >
@@ -189,48 +160,18 @@ struct Struct<NullType>
 };
 
 //! InStruct<S>::At<I> - retrive I-th ancestor Struct type
-#ifdef WIN32// MSVC version
-namespace Struct_imp {
-    template< const int I > struct TypeAt
-    {
-        template< class S > struct In
-        {
-            typedef USELESS_TYPENAME TypeAt<I-1>::In< S::Next >::Result Result;
-            typedef USELESS_TYPENAME TypeAt<I-1>::In< S::Next >::Arg Arg;
-        };
-    };
-    
-    template<> struct TypeAt<0>
-    {
-        template< class S > struct In
-        {
-            typedef S Result;
-            typedef USELESS_TYPENAME S::Arg Arg;
-        };
-    };
-};//namespace Struct_imp
 
-    //! InStructAt< S, I> = InStruct<S>::At<I>; defines Arg type
-    template< class S, int I >
-    struct InStructAt
-    {
-        typedef USELESS_TYPENAME Struct_imp::TypeAt<I>::In<S>::Result Result;
-        typedef USELESS_TYPENAME Struct_imp::TypeAt<I>::In<S>::Arg Arg;
-    };
+template< class S, int I > struct InStructAt
+{
+    typedef USELESS_TYPENAME InStructAt< USELESS_TYPENAME S::Next, I-1 >::Result Result;
+    typedef USELESS_TYPENAME InStructAt< USELESS_TYPENAME S::Next, I-1 >::Arg Arg;
+};
 
-#else// GCC version
-    template< class S, int I > struct InStructAt
-    {
-        typedef USELESS_TYPENAME InStructAt< USELESS_TYPENAME S::Next, I-1 >::Result Result;
-        typedef USELESS_TYPENAME InStructAt< USELESS_TYPENAME S::Next, I-1 >::Arg Arg;
-    };
-
-    template< class S > struct InStructAt< S, 0>
-    {
-        typedef S Result;
-        typedef USELESS_TYPENAME  S::Arg Arg;
-    };
-#endif
+template< class S > struct InStructAt< S, 0>
+{
+    typedef S Result;
+    typedef USELESS_TYPENAME  S::Arg Arg;
+};
 
 //! Nth<I>::In( S &s ) - gain access to argument at position I (also const version)
 template< int I >

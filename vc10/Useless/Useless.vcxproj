@@ -18,10 +18,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -101,6 +103,9 @@
     <ClInclude Include="..\..\Useless\LocaleConfig.h" />
     <ClInclude Include="..\..\Useless\PlatformConfig.h" />
     <ClInclude Include="..\..\Useless\ResourcesPch.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSampleData.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.h" />
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSStructs.h" />
     <ClInclude Include="..\..\Useless\TemplateConfig.h" />
     <ClInclude Include="..\..\Useless\UselessLib.h" />
     <ClInclude Include="..\..\Useless\UselessPch.h" />
@@ -422,9 +427,6 @@
     <ClInclude Include="..\..\Useless\Sound\Device\SampleData.h" />
     <ClInclude Include="..\..\Useless\Sound\Device\SoundCard.h" />
     <ClInclude Include="..\..\Useless\Sound\Device\SoundStructs.h" />
-    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSampleData.h" />
-    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.h" />
-    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSStructs.h" />
     <ClInclude Include="..\..\Useless\Sound\FileIO\SampleWriter.h" />
     <ClInclude Include="..\..\Useless\Sound\FileIO\SoundFactory.h" />
     <ClInclude Include="..\..\Useless\Sound\FileIO\SoundInterface.h" />
@@ -550,6 +552,9 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ResourcesPch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)ResourcesPch.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSampleData.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.cpp" />
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSStructs.cpp" />
     <ClCompile Include="..\..\Useless\UselessPch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UselessPch.h</PrecompiledHeaderFile>
@@ -1431,9 +1436,6 @@
     <ClCompile Include="..\..\Useless\Sound\Device\SampleData.cpp" />
     <ClCompile Include="..\..\Useless\Sound\Device\SoundCard.cpp" />
     <ClCompile Include="..\..\Useless\Sound\Device\SoundStructs.cpp" />
-    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSampleData.cpp" />
-    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.cpp" />
-    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSStructs.cpp" />
     <ClCompile Include="..\..\Useless\Sound\FileIO\SampleWriter.cpp" />
     <ClCompile Include="..\..\Useless\Sound\FileIO\SoundFactory.cpp" />
     <ClCompile Include="..\..\Useless\Sound\FileIO\WaveLoader.cpp" />

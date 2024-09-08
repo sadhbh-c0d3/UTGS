@@ -8,10 +8,9 @@
 
 namespace Useless {
 
-    // REMOVED: Reserve border pixels to avoid bad filtering (Radeon W/A). The border is: (1+1) columns and (1+1) rows.
-    // ADDED: G_GLTesselator{*}TexelOffset added
-    USELESS_API double G_GLTesselatorStartingTexelOffset = 0.05;
-    USELESS_API double G_GLTesselatorEndingTexelOffset = 0.05;
+    // ADDED: On nVidia it is always 0.5
+    USELESS_API double G_GLTesselatorStartingTexelOffset = 0.5;
+    USELESS_API double G_GLTesselatorEndingTexelOffset = 0.5;
 
     GLImageTesselator::GLImageTesselator( const PixelBuffer &pix_buf )
     {

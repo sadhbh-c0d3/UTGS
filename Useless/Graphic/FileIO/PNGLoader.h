@@ -17,6 +17,10 @@
 #include "Useless/Graphic/FileIO/ImageLoader.h"
 #include "Useless/Graphic/detail/ImageLoaderRegistrator.h"
 
+#ifndef USELESS_HAS_LIBPNG
+#error "To use PNGLoader you need LibPNG installed"
+#endif
+
 namespace Useless {
 
 /*! \ingroup ImgIO

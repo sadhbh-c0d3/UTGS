@@ -1,5 +1,8 @@
 #include "UselessPch.h"
 
+#ifdef USELESS_HAS_DSHOW
+
+
 #include "CAudioRender.h"
 #include "Useless/Util/Math.h"
 
@@ -132,3 +135,5 @@ void CAudioRender::SetSampleData( SampleData *sd)
 }
     
 };//namespace Useless
+
+#endif // USELESS_HAS_DSHOW

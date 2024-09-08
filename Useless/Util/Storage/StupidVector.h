@@ -57,17 +57,17 @@ public:
 
     T* Find(int id ) const
     {
-        if (id < (int)size() ) return (T*)&at(id);
+        if (id < (int)this->size() ) return (T*)&this->at(id);
         else                    return NULL;
     }
 
     template< class Ty>
     const int* FindID( const Ty &value, ConstIterator *p_iterator = NULL ) const
     {
-        int i, n=size();
+        int i, n=this->size();
         for ( i=0; i<n; ++i)
         {
-            if ( at(i) == value )
+            if ( this->at(i) == value )
             {
                 _current = i;
                 if (p_iterator) (*p_iterator) = ConstBegin() + i;
@@ -79,50 +79,50 @@ public:
 
     void Remove( int i) 
     {
-        int n=size();
+        int n=this->size();
         for (; i<n-1; ++i )
         {
-            at(i) = at(i+1);
+            this->at(i) = this->at(i+1);
         }
-        if (n>0) { resize(n-1); }
+        if (n>0) { this->resize(n-1); }
     }
 
     //! Remove current
     void Remove()      
     { 
         int i,n;
-        for( i=_current, n=size(); i<n-1; ++i )
+        for( i=_current, n=this->size(); i<n-1; ++i )
         {
-            at(i) = at(i+1);
+            this->at(i) = this->at(i+1);
         }
-        resize(n-1);
+        this->resize(n-1);
     }
 
 
-    int  Size()  const { return size(); }
-    bool Empty() const { return empty();}
-    void Clear()       { clear();       }
-    void Reserve(long len) { reserve(len); }
-    void Resize(long len) { resize(len); }
+    int  Size()  const { return this->size(); }
+    bool Empty() const { return this->empty();}
+    void Clear()       { this->clear();       }
+    void Reserve(long len) { this->reserve(len); }
+    void Resize(long len) { this->resize(len); }
 
     ConstIterator ConstBegin() const
     {
-        return empty() ? ConstIterator(NULL,0) : ConstIterator( (ConstT*)&*begin(), size() );
+        return this->empty() ? ConstIterator(NULL,0) : ConstIterator( (ConstT*)&*this->begin(), this->size() );
     }
 
     ConstIterator ConstEnd() const
     {
-        return empty() ? ConstIterator(NULL,0) : ConstIterator( (ConstT*)&*begin(), size() ) += size();
+        return this->empty() ? ConstIterator(NULL,0) : ConstIterator( (ConstT*)&*this->begin(), this->size() ) += this->size();
     }
 
     Iterator Begin()
     {
-        return empty() ? Iterator(NULL,0) : Iterator( (T*)&*begin(), size() );
+        return this->empty() ? Iterator(NULL,0) : Iterator( (T*)&*this->begin(), this->size() );
     }
 
     Iterator End()
     {
-        return empty() ? Iterator(NULL,0) : Iterator( (T*)&*begin(), size() ) += size();
+        return this->empty() ? Iterator(NULL,0) : Iterator( (T*)&*this->begin(), this->size() ) += this->size();
     }
 
 
@@ -131,50 +131,50 @@ public:
     Reference First()
     {
         _current=0;
-        if ( !empty() ) 
+        if ( !this->empty() )
         { 
-            return Reference( at(_current) );
+            return Reference(this->at(_current) );
         }
         else return Reference();
     }
 
     Reference Last()
     {
-        _current=size()-1;
-        if ( !empty() ) 
+        _current= this->size()-1;
+        if ( !this->empty() )
         { 
-            return Reference( at(_current) );
+            return Reference(this->at(_current) );
         }
         else return Reference();
     }
 
     Reference Each()
     {
-        if ( _current >= 0 && _current < size() )
+        if ( _current >= 0 && _current < this->size() )
         { 
             assert(_current >= 0);
             int k = _current++;
-            return Reference( at(k) );
+            return Reference(this->at(k) );
         }
         else return Reference();
     }
 
     Reference EachReversed()
     {
-        if ( _current >= 0 && _current < size() )
+        if ( _current >= 0 && _current < this->size() )
         { 
             int k = _current--;
-            return Reference( at(k) );
+            return Reference(this->at(k) );
         }
         else return Reference();
     }
 
     Reference Next()
     {
-        if ( _current+1 < size() ) 
+        if ( _current+1 < this->size() )
         { 
             int k = ++_current;
-            return Reference( at(k) );
+            return Reference(this->at(k) );
         }
         else return Reference();
     }
@@ -184,7 +184,7 @@ public:
         if ( _current > 0 ) 
         { 
             int k = --_current;
-            return Reference( at(k) );
+            return Reference(this->at(k) );
         }
         else return Reference();
     }
@@ -193,50 +193,50 @@ public:
     ConstReference First() const
     {
         _current=0;
-        if ( !empty() ) 
+        if ( !this->empty() )
         { 
-            return ConstReference( at(_current) );
+            return ConstReference(this->at(_current) );
         }
         else return ConstReference();
     }
 
     ConstReference Last() const
     {
-        _current=size()-1;
-        if ( !empty() ) 
+        _current= this->size()-1;
+        if ( !this->empty() )
         { 
-            return ConstReference( at(_current) );
+            return ConstReference(this->at(_current) );
         }
         else return ConstReference();
     }
 
     ConstReference Each() const
     {
-        if ( _current >= 0 && _current < size() )
+        if ( _current >= 0 && _current < this->size() )
         { 
             assert(_current >= 0);
             int k = _current++;
-            return ConstReference( at(k) );
+            return ConstReference(this->at(k) );
         }
         else return ConstReference();
     }
 
     ConstReference EachReversed() const
     {
-        if ( _current >= 0 && _current < size() )
+        if ( _current >= 0 && _current < this->size() )
         { 
             int k = _current--;
-            return ConstReference( at(k) );
+            return ConstReference(this->at(k) );
         }
         else return ConstReference();
     }
 
     ConstReference Next() const
     {
-        if ( _current+1 < size() ) 
+        if ( _current+1 < this->size() )
         { 
             int k = ++_current;
-            return ConstReference( at(k) );
+            return ConstReference(this->at(k) );
         }
         else return ConstReference();
     }
@@ -246,7 +246,7 @@ public:
         if ( _current > 0 ) 
         { 
             int k = --_current;
-            return ConstReference( at(k) );
+            return ConstReference(this->at(k) );
         }
         else return ConstReference();
     }

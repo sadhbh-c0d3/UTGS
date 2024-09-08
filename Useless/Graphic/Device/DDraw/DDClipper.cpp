@@ -1,3 +1,5 @@
+#include "UselessPch.h"
+
 #include "DDClipper.h"
 #include "Useless/Graphic/Device/DDraw/DDScreen.h"
 #include "Useless/Graphic/Device/DDraw/DDSurface.h"

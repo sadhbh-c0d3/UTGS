@@ -9,6 +9,8 @@
 
 #include "UselessPch.h"
 
+#ifdef USELESS_HAS_DSHOW
+
 #include "strmbase/streams.h"
 #include "asyncio.h"
 
@@ -645,3 +647,4 @@ CAsyncIo::Alignment(LONG *pl)
     return S_OK;
 }
 
+#endif // USELESS_HAS_DSHOW

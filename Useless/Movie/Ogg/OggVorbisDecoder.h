@@ -1,5 +1,9 @@
-#ifndef __INCLUDED__DECODER_H__
+#ifdef __INCLUDED__DECODER_H__
 #define __INCLUDED__DECODER_H__
+
+#ifndef USELESS_HAS_VORBIS
+#error "Need Ogg/Vorbis library to use this header"
+#endif
 
 #include "Useless/UselessConfig.h"
 #include "Useless/File/IFile.h"

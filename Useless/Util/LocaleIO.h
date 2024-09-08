@@ -23,11 +23,8 @@ Read( std::basic_string< CharType > &wstr,
         const std::basic_string< Byte > &strIn,
         std::locale &loc )
 {
-#ifdef WIN32
-    std::mbstate_t state(0);
-#else
-    std::mbstate_t state;
-#endif
+    std::mbstate_t state{};
+
     typedef std::codecvt_byname< CharType, Byte, std::mbstate_t > CodeCvt;
     const CodeCvt &codeCvt = std::use_facet< CodeCvt >( loc );
 

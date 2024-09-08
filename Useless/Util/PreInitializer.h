@@ -30,6 +30,8 @@ namespace Useless {
                     }
                 }
 
+                void Force() {}
+
             private:
                 static int & Counter();
         };

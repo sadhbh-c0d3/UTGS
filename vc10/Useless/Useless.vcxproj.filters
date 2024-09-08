@@ -34,9 +34,6 @@
     <Filter Include="Useless\Graphic\Device\GL\wGL\factory">
       <UniqueIdentifier>{a771218b-605b-456c-aa92-ef02f390cb6b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Useless\Graphic\Device\FileIO">
-      <UniqueIdentifier>{d0665ad8-081b-44a4-a2c3-a7ab3ba2db96}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Useless\Graphic\Device\winGDI">
       <UniqueIdentifier>{8387e8fd-0ade-4025-a811-a2afe541e1dd}</UniqueIdentifier>
     </Filter>
@@ -97,9 +94,6 @@
     <Filter Include="Useless\Sound\Device">
       <UniqueIdentifier>{903dba3b-2485-4ef9-9403-fd2d961632d5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Useless\Sound\Device\DSound">
-      <UniqueIdentifier>{4ddba416-8fb9-4539-9219-39a857c2c7c4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Useless\Sound\FileIO">
       <UniqueIdentifier>{8b2e4384-e9b7-49c8-8201-2f8c99a24b60}</UniqueIdentifier>
     </Filter>
@@ -135,6 +129,12 @@
     </Filter>
     <Filter Include="Useless\Graphic\Device\winGDI\factory">
       <UniqueIdentifier>{af1476ed-3f76-4500-8439-8c2529ccff6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Graphic\FileIO">
+      <UniqueIdentifier>{d0665ad8-081b-44a4-a2c3-a7ab3ba2db96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Useless\Sound\Device\DSound">
+      <UniqueIdentifier>{c2c4b3f7-ecac-48d7-a49e-9c35b9dc302a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -409,28 +409,28 @@
       <Filter>Useless\Graphic\Device\GL\wGL\factory</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\FileIO\BMPLoader.h">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\FileIO\BMPSaver.h">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageFactory.h">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageLoader.h">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\FileIO\ImageSaver.h">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\FileIO\PNGLoader.h">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\FileIO\TGALoader.h">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\FileIO\TGASaver.h">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Useless\Graphic\Device\winGDI\GDIPrinter.h">
       <Filter>Useless\Graphic\Device\winGDI</Filter>
@@ -1119,15 +1119,6 @@
     <ClInclude Include="..\..\Useless\Sound\Device\SoundStructs.h">
       <Filter>Useless\Sound\Device</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSampleData.h">
-      <Filter>Useless\Sound\Device\DSound</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.h">
-      <Filter>Useless\Sound\Device\DSound</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSStructs.h">
-      <Filter>Useless\Sound\Device\DSound</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Useless\Sound\FileIO\SampleWriter.h">
       <Filter>Useless\Sound\FileIO</Filter>
     </ClInclude>
@@ -1464,6 +1455,15 @@
     <ClInclude Include="..\..\Useless\Util\UTF8.h">
       <Filter>Useless\Util</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSampleData.h">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.h">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Useless\Sound\Device\DSound\DSStructs.h">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Useless\ResourcesPch.cpp">
@@ -1683,25 +1683,25 @@
       <Filter>Useless\Graphic\Device\GL\wGL\factory</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\FileIO\BMPLoader.cpp">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\FileIO\BMPSaver.cpp">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\FileIO\ImageLoader.cpp">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\FileIO\ImageSaver.cpp">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\FileIO\PNGLoader.cpp">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\FileIO\TGALoader.cpp">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\FileIO\TGASaver.cpp">
-      <Filter>Useless\Graphic\Device\FileIO</Filter>
+      <Filter>Useless\Graphic\FileIO</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\GDIPrinter.cpp">
       <Filter>Useless\Graphic\Device\winGDI</Filter>
@@ -2282,15 +2282,6 @@
     <ClCompile Include="..\..\Useless\Sound\Device\SoundStructs.cpp">
       <Filter>Useless\Sound\Device</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSampleData.cpp">
-      <Filter>Useless\Sound\Device\DSound</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.cpp">
-      <Filter>Useless\Sound\Device\DSound</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSStructs.cpp">
-      <Filter>Useless\Sound\Device\DSound</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Useless\Sound\FileIO\SampleWriter.cpp">
       <Filter>Useless\Sound\FileIO</Filter>
     </ClCompile>
@@ -2647,6 +2638,15 @@
     </ClCompile>
     <ClCompile Include="..\..\Useless\Graphic\Device\winGDI\factory\CreateGDISurfaceByLib.cpp">
       <Filter>Useless\Graphic\Device\winGDI\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSampleData.cpp">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSSoundCard.cpp">
+      <Filter>Useless\Sound\Device\DSound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Useless\Sound\Device\DSound\DSStructs.cpp">
+      <Filter>Useless\Sound\Device\DSound</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

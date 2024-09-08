@@ -1,8 +1,6 @@
 #include "UselessPch.h"
 
-#ifndef USELESS_HAS_DSHOW
-#   error  "USELESS_HAS_DSHOW is not defined. Please, exclude appropriate files from build."
-#endif
+#ifdef USELESS_HAS_DSHOW
 
 #include "DSMedia.h"
 
@@ -322,3 +320,5 @@ void DSMedia::Cooperate( const SoundCard &reference)
 
     
 };//namespace Useless
+
+#endif // USELESS_HAS_DSHOW

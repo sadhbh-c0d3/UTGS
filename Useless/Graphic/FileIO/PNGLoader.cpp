@@ -12,9 +12,7 @@
 
 #include "UselessPch.h"
 
-#ifndef USELESS_HAS_LIBPNG
-#   error  "USELESS_HAS_LIBPNG is not defined. Please, exclude appropriate files from build."
-#endif
+#ifdef USELESS_HAS_LIBPNG
 
 
 #include "Useless/Error/Error.h"
@@ -266,3 +264,5 @@ namespace Useless {
     }
 
 };
+
+#endif // USELESS_HAS_LIBPNG

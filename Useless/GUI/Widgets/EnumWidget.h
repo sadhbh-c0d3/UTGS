@@ -24,7 +24,7 @@ namespace Useless {
 
             /* Signal Refeernce            | Name            |      Args
              *------------------------------------------------------------------*/
-            mutable Signal_1<int>           &OnChange;       // selected item no
+            Signal_1<int>                   &OnChange;       // selected item no
             mutable Signal_1<int>            OnConfirm;      // selected item no
 
 

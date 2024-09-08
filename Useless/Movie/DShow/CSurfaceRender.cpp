@@ -1,5 +1,8 @@
 #include "UselessPch.h"
 
+#ifdef USELESS_HAS_DSHOW
+
+
 #include "CSurfaceRender.h"
 
 #include "Useless/Graphic/Device/GL/GLTextureSurfaceAllocator.h"
@@ -202,3 +205,5 @@ HRESULT CSurfaceRender::OnStopStreaming(void)
 }
     
 };//namespace Useless
+
+#endif //  USELESS_HAS_DSHOW

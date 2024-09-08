@@ -75,7 +75,7 @@ struct TypeCompare
     typedef TypeCompareFcn< T1, T2> Fc;
     enum 
     { 
-        equal = sizeof( Fc::Compare( Fc::tc_type<T1>(), Fc::tc_type<T2>() ) ) == sizeof(CTRUE),
+        equal = sizeof( Fc::Compare( Fc::template tc_type<T1>(), Fc::template tc_type<T2>() ) ) == sizeof(CTRUE),
         casts = sizeof( Fc::Casts( T2() ) ) == sizeof(CTRUE),
     };
 };
@@ -140,7 +140,9 @@ template< class T > struct Null_Traits
     template< const bool Y, class T >
     struct MakeConst
     {
-        typedef typename imp::MakeConst<T>::Choose<Y>::Result Result;
+        using MakeConstT = imp::MakeConst<T>;
+        using ChooseY = typename MakeConstT::template Choose<Y>;
+        typedef typename ChooseY::Result Result;
     };
 // GCC version
 #else

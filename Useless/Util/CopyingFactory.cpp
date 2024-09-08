@@ -16,6 +16,8 @@ void RTCopyingFactory::Register( __Key key, __Creator creator )
 {
     __Creators::Iterator it;
 
+    s_PreInitializerRTCopyingFactory.Force();
+
     _creators->Find( key, (__Creators::ConstIterator*)&it );
 
     for ( ; !!it && it.Key()==key; ++it )

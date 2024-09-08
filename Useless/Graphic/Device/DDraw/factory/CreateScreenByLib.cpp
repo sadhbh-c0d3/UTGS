@@ -1,3 +1,5 @@
+#include "UselessPch.h"
+
 #include "Useless/Graphic/Device/DDraw/DDScreen.h"
 
 namespace Useless {

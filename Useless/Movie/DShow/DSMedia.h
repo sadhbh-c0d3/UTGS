@@ -2,6 +2,11 @@
 #define __INCLUDED_USELESS_DS_MEDIA_H__
 
 #include "Useless/UselessConfig.h"
+
+#ifndef USELESS_HAS_DSHOW
+#error "To use DSMedia you need DirectShow base classes installed"
+#endif
+
 #include "Useless/System/w32/COMInitializer.h"
 #include "Useless/System/w32/COMObject.h"
 #include "Useless/Movie/DShow/CSurfaceRender.h"

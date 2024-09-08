@@ -38,7 +38,7 @@ public:
     typedef  AssocIterator<T_ID, T_VALUE, VectorIterator >      Iterator;
 
 
-    AssocVector( const __Data &ref ): _data(ref) { std::sort(begin(),end()); }
+    AssocVector( const __Data &ref ): _data(ref) { std::sort(_data.begin(),_data.end()); }
     operator const std::vector<T_VALUE>& () { return _data; }
 
     //! Insert association: id => val

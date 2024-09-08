@@ -23,6 +23,7 @@ last mod: $Id: OggVorbisDecoder.cpp,v 1.17 2005/03/10 14:18:05 koolas Exp $
 
 #include "UselessPch.h"
 
+#ifdef USELESS_HAS_VORBIS
 
 #include <math.h>
 
@@ -474,3 +475,5 @@ namespace Useless {
     }
 
 };//namespace Useless
+
+#endif //USELESS_HAS_VORBIS
