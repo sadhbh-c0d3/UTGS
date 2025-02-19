@@ -56,9 +56,17 @@ I also want to thank my manager Jacek for always inspiring me to solve difficult
 
 #### ***Documentation***
 
-There is some minimal documentation &amp; tutorial in the <https://github.com/sadhbh-c0d3/UTGS/tree/main/www> folder. 
+Serve the `www` folder over HTTP, e.g. using Python `http.server`:
+```
+python -m http.server --directory www
+```
 
-This documentation is written using XML files with XSL stylesheet, which at the time was only supported by Mozilla Firefox.
+And then in address bar of your browser type:
+```
+http://localhost:8000/
+```
+
+And you should see documentation.
 
 ### **Architecture**
 
