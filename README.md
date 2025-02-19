@@ -61,10 +61,7 @@ Serve the `www` folder over HTTP, e.g. using Python `http.server`:
 python -m http.server --directory www
 ```
 
-And then in address bar of your browser type:
-```
-http://localhost:8000/
-```
+And then in your web browser open <http://localhost:8000/>
 
 And you should see documentation.
 
