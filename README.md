@@ -1,9 +1,16 @@
 ## **Game Development Framework - UTGS**
 
+#### ***Watch***
+
 [![Watch My Video!](https://img.youtube.com/vi/ecjnQza6s0k/0.jpg)](https://www.youtube.com/watch?v=ecjnQza6s0k&list=PLAetEEjGZI7OUBYFoQvI0QcO9GKAvT1xT&index=15)
 
+#### ***See Documentation***
 
-Game development framework developed in years 2001 - 2006, available as Open Source since 2005.
+<https://sadhbh-c0d3.github.io/UTGS/>
+
+#### ***Read more...***
+
+Game Development Framework developed in years 2001 - 2006, available as Open Source since 2005.
 
 Nowadays, this project might be seen as inspiration to build something new.
 
@@ -53,17 +60,6 @@ I also want to thank my manager Jacek for always inspiring me to solve difficult
 - Function Objects, Signals (Multicast Delegate)
 - Resource Definition Language (XML)
 - Scripting Functional Programming Language
-
-#### ***Documentation***
-
-Serve the `www` folder over HTTP, e.g. using Python `http.server`:
-```
-python -m http.server --directory www
-```
-
-And then in your web browser open <http://localhost:8000/>
-
-And you should see documentation.
 
 ### **Architecture**
 
